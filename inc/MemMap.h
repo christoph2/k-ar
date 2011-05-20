@@ -1,0 +1,14454 @@
+/*
+ * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
+ *
+ * (C) 2007-2010 by Christoph Schueler <chris@konnex-tools.de,
+ *                                      cpu12.gems@googlemail.com>
+ *
+ * All Rights Reserved
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ */
+#if !defined(__MEMMAP_H)
+#define	__MEMMAP_H
+
+/*
+**  Plain Memory-Mapping for IAR-HCS12 - we need a _LINKER-FILE_-Configuration Tool !!!
+*/
+/* This File is Configuration-Specific. */
+
+#define	MEMMAP_VENDOR_ID            ((uint16)4711)
+#define	MEMMAP_AR_MAJOR_VERSION	    ((uint8)1)
+#define	MEMMAP_AR_MINOR_VERSION	    ((uint8)0)
+#define	MEMMAP_AR_PATCH_VERSION	    ((uint8)0)
+#define	MEMMAP_SW_MAJOR_VERSION	    ((uint8)0)
+#define	MEMMAP_SW_MINOR_VERSION	    ((uint8)1)
+#define	MEMMAP_SW_PATCH_VERSION	    ((uint8)0)
+
+#define MEMMAP_ERROR
+
+/*
+**
+**  Section-Start Keywords.
+**
+*/
+
+
+
+/*
+**	OS: OS.
+*/
+#if defined(OS_START_SEC_CODE)
+	#undef OS_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef OS_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef OS_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef OS_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef OS_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef OS_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef OS_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef OS_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef OS_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef OS_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef OS_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef OS_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef OS_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef OS_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef OS_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef OS_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef OS_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_CODE_SLOW)
+	#undef OS_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(OS_START_SEC_CODE_LIB)
+	#undef OS_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	ECUM: ECU State Manager.
+*/
+#elif defined(ECUM_START_SEC_CODE)
+	#undef ECUM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ECUM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef ECUM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef ECUM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef ECUM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef ECUM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef ECUM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef ECUM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef ECUM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef ECUM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef ECUM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef ECUM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_CODE_SLOW)
+	#undef ECUM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_START_SEC_CODE_LIB)
+	#undef ECUM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FIM: Function Inhibition Manager.
+*/
+#elif defined(FIM_START_SEC_CODE)
+	#undef FIM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FIM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FIM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FIM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FIM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FIM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FIM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FIM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FIM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FIM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FIM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FIM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_CODE_SLOW)
+	#undef FIM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FIM_START_SEC_CODE_LIB)
+	#undef FIM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	COMM: COM Manager.
+*/
+#elif defined(COMM_START_SEC_CODE)
+	#undef COMM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COMM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef COMM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef COMM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef COMM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef COMM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef COMM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef COMM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef COMM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef COMM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef COMM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef COMM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_CODE_SLOW)
+	#undef COMM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(COMM_START_SEC_CODE_LIB)
+	#undef COMM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	WDGM: Watchdog Manager.
+*/
+#elif defined(WDGM_START_SEC_CODE)
+	#undef WDGM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef WDGM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef WDGM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef WDGM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef WDGM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef WDGM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef WDGM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef WDGM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef WDGM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef WDGM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef WDGM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_CODE_SLOW)
+	#undef WDGM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_START_SEC_CODE_LIB)
+	#undef WDGM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	DET: Development Error Tracer.
+*/
+#elif defined(DET_START_SEC_CODE)
+	#undef DET_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef DET_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef DET_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef DET_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef DET_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DET_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DET_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef DET_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef DET_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef DET_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef DET_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef DET_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef DET_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef DET_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef DET_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef DET_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef DET_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_CODE_SLOW)
+	#undef DET_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(DET_START_SEC_CODE_LIB)
+	#undef DET_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	NVM: NVRAM Manager.
+*/
+#elif defined(NVM_START_SEC_CODE)
+	#undef NVM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NVM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef NVM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef NVM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef NVM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef NVM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef NVM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef NVM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef NVM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef NVM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef NVM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef NVM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_CODE_SLOW)
+	#undef NVM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(NVM_START_SEC_CODE_LIB)
+	#undef NVM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FEE: Flash EEPROM Emulation.
+*/
+#elif defined(FEE_START_SEC_CODE)
+	#undef FEE_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FEE_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FEE_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FEE_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FEE_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FEE_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FEE_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FEE_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FEE_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FEE_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FEE_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FEE_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_CODE_SLOW)
+	#undef FEE_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FEE_START_SEC_CODE_LIB)
+	#undef FEE_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	MEMIF: Memory Abstraction Interface.
+*/
+#elif defined(MEMIF_START_SEC_CODE)
+	#undef MEMIF_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MEMIF_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef MEMIF_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef MEMIF_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef MEMIF_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef MEMIF_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef MEMIF_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef MEMIF_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef MEMIF_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef MEMIF_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef MEMIF_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef MEMIF_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_CODE_SLOW)
+	#undef MEMIF_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_START_SEC_CODE_LIB)
+	#undef MEMIF_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	NM: Generic NM Interface.
+*/
+#elif defined(NM_START_SEC_CODE)
+	#undef NM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef NM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef NM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef NM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef NM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef NM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef NM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef NM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef NM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef NM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef NM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef NM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef NM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef NM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef NM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_CODE_SLOW)
+	#undef NM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(NM_START_SEC_CODE_LIB)
+	#undef NM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	CANNM: CAN NM.
+*/
+#elif defined(CANNM_START_SEC_CODE)
+	#undef CANNM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANNM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef CANNM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef CANNM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef CANNM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef CANNM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANNM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef CANNM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef CANNM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef CANNM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef CANNM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANNM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_CODE_SLOW)
+	#undef CANNM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_START_SEC_CODE_LIB)
+	#undef CANNM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FRNM: FlexRay NM.
+*/
+#elif defined(FRNM_START_SEC_CODE)
+	#undef FRNM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRNM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FRNM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FRNM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FRNM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FRNM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRNM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FRNM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FRNM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FRNM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FRNM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRNM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_CODE_SLOW)
+	#undef FRNM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_START_SEC_CODE_LIB)
+	#undef FRNM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	CANTP: CAN Transport Layer.
+*/
+#elif defined(CANTP_START_SEC_CODE)
+	#undef CANTP_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTP_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef CANTP_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef CANTP_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef CANTP_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef CANTP_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANTP_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef CANTP_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef CANTP_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef CANTP_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef CANTP_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANTP_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_CODE_SLOW)
+	#undef CANTP_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_START_SEC_CODE_LIB)
+	#undef CANTP_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FRTP: FlexRay Transport Layer.
+*/
+#elif defined(FRTP_START_SEC_CODE)
+	#undef FRTP_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTP_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FRTP_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FRTP_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FRTP_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FRTP_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRTP_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FRTP_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FRTP_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FRTP_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FRTP_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRTP_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_CODE_SLOW)
+	#undef FRTP_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_START_SEC_CODE_LIB)
+	#undef FRTP_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	EA: EEPROM Abstraction.
+*/
+#elif defined(EA_START_SEC_CODE)
+	#undef EA_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef EA_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef EA_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef EA_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef EA_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EA_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EA_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef EA_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef EA_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef EA_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef EA_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef EA_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef EA_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef EA_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef EA_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef EA_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef EA_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_CODE_SLOW)
+	#undef EA_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(EA_START_SEC_CODE_LIB)
+	#undef EA_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	WDGIF: Watchdog Interface.
+*/
+#elif defined(WDGIF_START_SEC_CODE)
+	#undef WDGIF_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGIF_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef WDGIF_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef WDGIF_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef WDGIF_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef WDGIF_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef WDGIF_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef WDGIF_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef WDGIF_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef WDGIF_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef WDGIF_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef WDGIF_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_CODE_SLOW)
+	#undef WDGIF_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_START_SEC_CODE_LIB)
+	#undef WDGIF_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	COM: AUTOSAR COM.
+*/
+#elif defined(COM_START_SEC_CODE)
+	#undef COM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef COM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef COM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef COM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef COM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef COM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef COM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef COM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef COM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef COM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef COM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef COM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef COM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef COM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef COM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_CODE_SLOW)
+	#undef COM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(COM_START_SEC_CODE_LIB)
+	#undef COM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	PDUR: PDU Router.
+*/
+#elif defined(PDUR_START_SEC_CODE)
+	#undef PDUR_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PDUR_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef PDUR_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef PDUR_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef PDUR_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef PDUR_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef PDUR_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef PDUR_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef PDUR_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef PDUR_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef PDUR_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef PDUR_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_CODE_SLOW)
+	#undef PDUR_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_START_SEC_CODE_LIB)
+	#undef PDUR_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	IPDUM: IPDU Multiplexer.
+*/
+#elif defined(IPDUM_START_SEC_CODE)
+	#undef IPDUM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef IPDUM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef IPDUM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef IPDUM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef IPDUM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef IPDUM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef IPDUM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef IPDUM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef IPDUM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef IPDUM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef IPDUM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef IPDUM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_CODE_SLOW)
+	#undef IPDUM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_START_SEC_CODE_LIB)
+	#undef IPDUM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	DCM: Diagnostic Communication Manager.
+*/
+#elif defined(DCM_START_SEC_CODE)
+	#undef DCM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DCM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef DCM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef DCM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef DCM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef DCM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef DCM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef DCM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef DCM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef DCM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef DCM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef DCM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_CODE_SLOW)
+	#undef DCM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(DCM_START_SEC_CODE_LIB)
+	#undef DCM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	DEM: Diagnostic Event Manager.
+*/
+#elif defined(DEM_START_SEC_CODE)
+	#undef DEM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DEM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef DEM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef DEM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef DEM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef DEM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef DEM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef DEM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef DEM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef DEM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef DEM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef DEM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_CODE_SLOW)
+	#undef DEM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(DEM_START_SEC_CODE_LIB)
+	#undef DEM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	CANIF: CAN Interface.
+*/
+#elif defined(CANIF_START_SEC_CODE)
+	#undef CANIF_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANIF_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef CANIF_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef CANIF_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef CANIF_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef CANIF_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANIF_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef CANIF_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef CANIF_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef CANIF_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef CANIF_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANIF_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_CODE_SLOW)
+	#undef CANIF_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_START_SEC_CODE_LIB)
+	#undef CANIF_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FRIF: FlexRay Interface.
+*/
+#elif defined(FRIF_START_SEC_CODE)
+	#undef FRIF_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRIF_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FRIF_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FRIF_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FRIF_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FRIF_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRIF_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FRIF_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FRIF_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FRIF_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FRIF_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRIF_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_CODE_SLOW)
+	#undef FRIF_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_START_SEC_CODE_LIB)
+	#undef FRIF_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	LINIF: LIN Interface.
+*/
+#elif defined(LINIF_START_SEC_CODE)
+	#undef LINIF_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINIF_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef LINIF_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef LINIF_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef LINIF_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef LINIF_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef LINIF_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef LINIF_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef LINIF_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef LINIF_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef LINIF_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef LINIF_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_CODE_SLOW)
+	#undef LINIF_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_START_SEC_CODE_LIB)
+	#undef LINIF_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	LINNM: LIN NM.
+*/
+#elif defined(LINNM_START_SEC_CODE)
+	#undef LINNM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINNM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef LINNM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef LINNM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef LINNM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef LINNM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef LINNM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef LINNM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef LINNM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef LINNM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef LINNM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef LINNM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_CODE_SLOW)
+	#undef LINNM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_START_SEC_CODE_LIB)
+	#undef LINNM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	CANTRCV: CAN Tranceiver Driver.
+*/
+#elif defined(CANTRCV_START_SEC_CODE)
+	#undef CANTRCV_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTRCV_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef CANTRCV_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef CANTRCV_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef CANTRCV_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef CANTRCV_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANTRCV_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef CANTRCV_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef CANTRCV_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef CANTRCV_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef CANTRCV_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANTRCV_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_CODE_SLOW)
+	#undef CANTRCV_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_START_SEC_CODE_LIB)
+	#undef CANTRCV_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FRTRCV: FlexRay Tranceiver Driver.
+*/
+#elif defined(FRTRCV_START_SEC_CODE)
+	#undef FRTRCV_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTRCV_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FRTRCV_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FRTRCV_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FRTRCV_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FRTRCV_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRTRCV_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FRTRCV_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FRTRCV_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FRTRCV_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FRTRCV_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRTRCV_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_CODE_SLOW)
+	#undef FRTRCV_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_START_SEC_CODE_LIB)
+	#undef FRTRCV_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	CAN: Can Driver.
+*/
+#elif defined(CAN_START_SEC_CODE)
+	#undef CAN_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CAN_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef CAN_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef CAN_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef CAN_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef CAN_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CAN_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef CAN_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef CAN_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef CAN_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef CAN_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CAN_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_CODE_SLOW)
+	#undef CAN_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(CAN_START_SEC_CODE_LIB)
+	#undef CAN_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FR: FlexRay Driver.
+*/
+#elif defined(FR_START_SEC_CODE)
+	#undef FR_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FR_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FR_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FR_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FR_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FR_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FR_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FR_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FR_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FR_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FR_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FR_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FR_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FR_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FR_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FR_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FR_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_CODE_SLOW)
+	#undef FR_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FR_START_SEC_CODE_LIB)
+	#undef FR_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	LIN: LIN Driver.
+*/
+#elif defined(LIN_START_SEC_CODE)
+	#undef LIN_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LIN_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef LIN_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef LIN_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef LIN_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef LIN_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef LIN_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef LIN_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef LIN_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef LIN_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef LIN_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef LIN_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_CODE_SLOW)
+	#undef LIN_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(LIN_START_SEC_CODE_LIB)
+	#undef LIN_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	SPI: SPI Handler Driver.
+*/
+#elif defined(SPI_START_SEC_CODE)
+	#undef SPI_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SPI_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef SPI_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef SPI_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef SPI_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef SPI_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef SPI_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef SPI_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef SPI_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef SPI_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef SPI_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef SPI_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_CODE_SLOW)
+	#undef SPI_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(SPI_START_SEC_CODE_LIB)
+	#undef SPI_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	EEP: Internal/External EEPROM Driver.
+*/
+#elif defined(EEP_START_SEC_CODE)
+	#undef EEP_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EEP_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef EEP_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef EEP_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef EEP_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef EEP_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef EEP_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef EEP_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef EEP_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef EEP_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef EEP_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef EEP_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_CODE_SLOW)
+	#undef EEP_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(EEP_START_SEC_CODE_LIB)
+	#undef EEP_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FLS: Internal/External FLASH Driver.
+*/
+#elif defined(FLS_START_SEC_CODE)
+	#undef FLS_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FLS_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FLS_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FLS_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FLS_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FLS_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FLS_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FLS_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FLS_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FLS_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FLS_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FLS_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_CODE_SLOW)
+	#undef FLS_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FLS_START_SEC_CODE_LIB)
+	#undef FLS_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	RAMTST: RAM Test.
+*/
+#elif defined(RAMTST_START_SEC_CODE)
+	#undef RAMTST_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef RAMTST_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef RAMTST_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef RAMTST_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef RAMTST_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef RAMTST_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef RAMTST_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef RAMTST_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef RAMTST_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef RAMTST_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef RAMTST_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef RAMTST_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_CODE_SLOW)
+	#undef RAMTST_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_START_SEC_CODE_LIB)
+	#undef RAMTST_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	GPT: GPT Driver.
+*/
+#elif defined(GPT_START_SEC_CODE)
+	#undef GPT_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef GPT_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef GPT_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef GPT_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef GPT_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef GPT_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef GPT_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef GPT_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef GPT_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef GPT_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef GPT_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef GPT_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_CODE_SLOW)
+	#undef GPT_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(GPT_START_SEC_CODE_LIB)
+	#undef GPT_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	MCU: MCU Driver.
+*/
+#elif defined(MCU_START_SEC_CODE)
+	#undef MCU_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MCU_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef MCU_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef MCU_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef MCU_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef MCU_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef MCU_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef MCU_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef MCU_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef MCU_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef MCU_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef MCU_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_CODE_SLOW)
+	#undef MCU_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(MCU_START_SEC_CODE_LIB)
+	#undef MCU_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	WDG: Internal/External Watchdog Driver.
+*/
+#elif defined(WDG_START_SEC_CODE)
+	#undef WDG_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDG_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef WDG_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef WDG_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef WDG_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef WDG_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef WDG_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef WDG_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef WDG_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef WDG_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef WDG_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef WDG_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_CODE_SLOW)
+	#undef WDG_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(WDG_START_SEC_CODE_LIB)
+	#undef WDG_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	DIO: DIO Driver.
+*/
+#elif defined(DIO_START_SEC_CODE)
+	#undef DIO_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DIO_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef DIO_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef DIO_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef DIO_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef DIO_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef DIO_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef DIO_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef DIO_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef DIO_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef DIO_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef DIO_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_CODE_SLOW)
+	#undef DIO_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(DIO_START_SEC_CODE_LIB)
+	#undef DIO_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	PWM: PWM Driver.
+*/
+#elif defined(PWM_START_SEC_CODE)
+	#undef PWM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PWM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef PWM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef PWM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef PWM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef PWM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef PWM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef PWM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef PWM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef PWM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef PWM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef PWM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_CODE_SLOW)
+	#undef PWM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(PWM_START_SEC_CODE_LIB)
+	#undef PWM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	ICU: ICU Driver.
+*/
+#elif defined(ICU_START_SEC_CODE)
+	#undef ICU_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ICU_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef ICU_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef ICU_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef ICU_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef ICU_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef ICU_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef ICU_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef ICU_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef ICU_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef ICU_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef ICU_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_CODE_SLOW)
+	#undef ICU_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(ICU_START_SEC_CODE_LIB)
+	#undef ICU_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	ADC: ADC Driver.
+*/
+#elif defined(ADC_START_SEC_CODE)
+	#undef ADC_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ADC_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef ADC_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef ADC_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef ADC_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef ADC_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef ADC_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef ADC_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef ADC_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef ADC_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef ADC_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef ADC_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_CODE_SLOW)
+	#undef ADC_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(ADC_START_SEC_CODE_LIB)
+	#undef ADC_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	PORT: Port Driver.
+*/
+#elif defined(PORT_START_SEC_CODE)
+	#undef PORT_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PORT_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef PORT_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef PORT_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef PORT_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef PORT_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef PORT_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef PORT_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef PORT_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef PORT_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef PORT_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef PORT_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_CODE_SLOW)
+	#undef PORT_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(PORT_START_SEC_CODE_LIB)
+	#undef PORT_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	SCHM: BSW Scheduler Module.
+*/
+#elif defined(SCHM_START_SEC_CODE)
+	#undef SCHM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SCHM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef SCHM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef SCHM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef SCHM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef SCHM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef SCHM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef SCHM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef SCHM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef SCHM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef SCHM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef SCHM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_CODE_SLOW)
+	#undef SCHM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_START_SEC_CODE_LIB)
+	#undef SCHM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	CANSM: CAN State Manager.
+*/
+#elif defined(CANSM_START_SEC_CODE)
+	#undef CANSM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANSM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef CANSM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef CANSM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef CANSM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef CANSM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANSM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef CANSM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef CANSM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef CANSM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef CANSM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANSM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_CODE_SLOW)
+	#undef CANSM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_START_SEC_CODE_LIB)
+	#undef CANSM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	LINSM: LIN State Manager.
+*/
+#elif defined(LINSM_START_SEC_CODE)
+	#undef LINSM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINSM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef LINSM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef LINSM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef LINSM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef LINSM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef LINSM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef LINSM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef LINSM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef LINSM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef LINSM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef LINSM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_CODE_SLOW)
+	#undef LINSM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_START_SEC_CODE_LIB)
+	#undef LINSM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FRSM: FlexRay State Manager.
+*/
+#elif defined(FRSM_START_SEC_CODE)
+	#undef FRSM_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRSM_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FRSM_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FRSM_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FRSM_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FRSM_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRSM_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FRSM_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FRSM_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FRSM_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FRSM_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRSM_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_CODE_SLOW)
+	#undef FRSM_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_START_SEC_CODE_LIB)
+	#undef FRSM_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	CRC: CRC Routines.
+*/
+#elif defined(CRC_START_SEC_CODE)
+	#undef CRC_START_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CRC_START_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef CRC_START_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef CRC_START_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef CRC_START_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef CRC_START_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CRC_START_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef CRC_START_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef CRC_START_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef CRC_START_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef CRC_START_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CRC_START_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_CODE_SLOW)
+	#undef CRC_START_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(CRC_START_SEC_CODE_LIB)
+	#undef CRC_START_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+#endif
+
+
+
+/*
+**
+**  Section-Stop Keywords.
+**
+*/
+
+
+
+/*
+**	OS: OS.
+*/
+#if defined(OS_STOP_SEC_CODE)
+	#undef OS_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef OS_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef OS_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef OS_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef OS_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef OS_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef OS_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef OS_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef OS_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef OS_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef OS_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef OS_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_CODE_SLOW)
+	#undef OS_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(OS_STOP_SEC_CODE_LIB)
+	#undef OS_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	ECUM: ECU State Manager.
+*/
+#elif defined(ECUM_STOP_SEC_CODE)
+	#undef ECUM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ECUM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef ECUM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef ECUM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef ECUM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef ECUM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef ECUM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef ECUM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef ECUM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef ECUM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef ECUM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef ECUM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_CODE_SLOW)
+	#undef ECUM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(ECUM_STOP_SEC_CODE_LIB)
+	#undef ECUM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FIM: Function Inhibition Manager.
+*/
+#elif defined(FIM_STOP_SEC_CODE)
+	#undef FIM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FIM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FIM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FIM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FIM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FIM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FIM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FIM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FIM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FIM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FIM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FIM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_CODE_SLOW)
+	#undef FIM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FIM_STOP_SEC_CODE_LIB)
+	#undef FIM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	COMM: COM Manager.
+*/
+#elif defined(COMM_STOP_SEC_CODE)
+	#undef COMM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COMM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef COMM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef COMM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef COMM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef COMM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef COMM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef COMM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef COMM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef COMM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef COMM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef COMM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_CODE_SLOW)
+	#undef COMM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(COMM_STOP_SEC_CODE_LIB)
+	#undef COMM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	WDGM: Watchdog Manager.
+*/
+#elif defined(WDGM_STOP_SEC_CODE)
+	#undef WDGM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef WDGM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef WDGM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef WDGM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef WDGM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef WDGM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef WDGM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef WDGM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef WDGM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef WDGM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef WDGM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_CODE_SLOW)
+	#undef WDGM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(WDGM_STOP_SEC_CODE_LIB)
+	#undef WDGM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	DET: Development Error Tracer.
+*/
+#elif defined(DET_STOP_SEC_CODE)
+	#undef DET_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DET_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef DET_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef DET_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef DET_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef DET_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef DET_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef DET_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef DET_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef DET_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef DET_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef DET_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_CODE_SLOW)
+	#undef DET_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(DET_STOP_SEC_CODE_LIB)
+	#undef DET_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	NVM: NVRAM Manager.
+*/
+#elif defined(NVM_STOP_SEC_CODE)
+	#undef NVM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NVM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef NVM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef NVM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef NVM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef NVM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef NVM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef NVM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef NVM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef NVM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef NVM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef NVM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_CODE_SLOW)
+	#undef NVM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(NVM_STOP_SEC_CODE_LIB)
+	#undef NVM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FEE: Flash EEPROM Emulation.
+*/
+#elif defined(FEE_STOP_SEC_CODE)
+	#undef FEE_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FEE_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FEE_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FEE_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FEE_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FEE_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FEE_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FEE_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FEE_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FEE_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FEE_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FEE_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_CODE_SLOW)
+	#undef FEE_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FEE_STOP_SEC_CODE_LIB)
+	#undef FEE_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	MEMIF: Memory Abstraction Interface.
+*/
+#elif defined(MEMIF_STOP_SEC_CODE)
+	#undef MEMIF_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MEMIF_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef MEMIF_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef MEMIF_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef MEMIF_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef MEMIF_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef MEMIF_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef MEMIF_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef MEMIF_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef MEMIF_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef MEMIF_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef MEMIF_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_CODE_SLOW)
+	#undef MEMIF_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(MEMIF_STOP_SEC_CODE_LIB)
+	#undef MEMIF_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	NM: Generic NM Interface.
+*/
+#elif defined(NM_STOP_SEC_CODE)
+	#undef NM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef NM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef NM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef NM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef NM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef NM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef NM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef NM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef NM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef NM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef NM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef NM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_CODE_SLOW)
+	#undef NM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(NM_STOP_SEC_CODE_LIB)
+	#undef NM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	CANNM: CAN NM.
+*/
+#elif defined(CANNM_STOP_SEC_CODE)
+	#undef CANNM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANNM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef CANNM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef CANNM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef CANNM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef CANNM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANNM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef CANNM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef CANNM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef CANNM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef CANNM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANNM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_CODE_SLOW)
+	#undef CANNM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(CANNM_STOP_SEC_CODE_LIB)
+	#undef CANNM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FRNM: FlexRay NM.
+*/
+#elif defined(FRNM_STOP_SEC_CODE)
+	#undef FRNM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRNM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FRNM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FRNM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FRNM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FRNM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRNM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FRNM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FRNM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FRNM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FRNM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRNM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_CODE_SLOW)
+	#undef FRNM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FRNM_STOP_SEC_CODE_LIB)
+	#undef FRNM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	CANTP: CAN Transport Layer.
+*/
+#elif defined(CANTP_STOP_SEC_CODE)
+	#undef CANTP_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTP_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef CANTP_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef CANTP_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef CANTP_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef CANTP_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANTP_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef CANTP_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef CANTP_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef CANTP_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef CANTP_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANTP_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_CODE_SLOW)
+	#undef CANTP_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(CANTP_STOP_SEC_CODE_LIB)
+	#undef CANTP_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FRTP: FlexRay Transport Layer.
+*/
+#elif defined(FRTP_STOP_SEC_CODE)
+	#undef FRTP_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTP_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FRTP_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FRTP_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FRTP_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FRTP_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRTP_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FRTP_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FRTP_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FRTP_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FRTP_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRTP_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_CODE_SLOW)
+	#undef FRTP_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FRTP_STOP_SEC_CODE_LIB)
+	#undef FRTP_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	EA: EEPROM Abstraction.
+*/
+#elif defined(EA_STOP_SEC_CODE)
+	#undef EA_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EA_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef EA_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef EA_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef EA_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef EA_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef EA_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef EA_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef EA_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef EA_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef EA_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef EA_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_CODE_SLOW)
+	#undef EA_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(EA_STOP_SEC_CODE_LIB)
+	#undef EA_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	WDGIF: Watchdog Interface.
+*/
+#elif defined(WDGIF_STOP_SEC_CODE)
+	#undef WDGIF_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDGIF_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef WDGIF_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef WDGIF_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef WDGIF_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef WDGIF_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef WDGIF_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef WDGIF_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef WDGIF_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef WDGIF_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef WDGIF_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef WDGIF_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_CODE_SLOW)
+	#undef WDGIF_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(WDGIF_STOP_SEC_CODE_LIB)
+	#undef WDGIF_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	COM: AUTOSAR COM.
+*/
+#elif defined(COM_STOP_SEC_CODE)
+	#undef COM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef COM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef COM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef COM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef COM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef COM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef COM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef COM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef COM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef COM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef COM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef COM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_CODE_SLOW)
+	#undef COM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(COM_STOP_SEC_CODE_LIB)
+	#undef COM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	PDUR: PDU Router.
+*/
+#elif defined(PDUR_STOP_SEC_CODE)
+	#undef PDUR_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PDUR_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef PDUR_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef PDUR_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef PDUR_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef PDUR_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef PDUR_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef PDUR_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef PDUR_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef PDUR_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef PDUR_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef PDUR_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_CODE_SLOW)
+	#undef PDUR_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(PDUR_STOP_SEC_CODE_LIB)
+	#undef PDUR_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	IPDUM: IPDU Multiplexer.
+*/
+#elif defined(IPDUM_STOP_SEC_CODE)
+	#undef IPDUM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef IPDUM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef IPDUM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef IPDUM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef IPDUM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef IPDUM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef IPDUM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef IPDUM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef IPDUM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef IPDUM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef IPDUM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef IPDUM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_CODE_SLOW)
+	#undef IPDUM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(IPDUM_STOP_SEC_CODE_LIB)
+	#undef IPDUM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	DCM: Diagnostic Communication Manager.
+*/
+#elif defined(DCM_STOP_SEC_CODE)
+	#undef DCM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DCM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef DCM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef DCM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef DCM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef DCM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef DCM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef DCM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef DCM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef DCM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef DCM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef DCM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_CODE_SLOW)
+	#undef DCM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(DCM_STOP_SEC_CODE_LIB)
+	#undef DCM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	DEM: Diagnostic Event Manager.
+*/
+#elif defined(DEM_STOP_SEC_CODE)
+	#undef DEM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DEM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef DEM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef DEM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef DEM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef DEM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef DEM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef DEM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef DEM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef DEM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef DEM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef DEM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_CODE_SLOW)
+	#undef DEM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(DEM_STOP_SEC_CODE_LIB)
+	#undef DEM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	CANIF: CAN Interface.
+*/
+#elif defined(CANIF_STOP_SEC_CODE)
+	#undef CANIF_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANIF_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef CANIF_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef CANIF_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef CANIF_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef CANIF_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANIF_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef CANIF_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef CANIF_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef CANIF_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef CANIF_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANIF_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_CODE_SLOW)
+	#undef CANIF_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(CANIF_STOP_SEC_CODE_LIB)
+	#undef CANIF_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FRIF: FlexRay Interface.
+*/
+#elif defined(FRIF_STOP_SEC_CODE)
+	#undef FRIF_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRIF_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FRIF_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FRIF_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FRIF_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FRIF_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRIF_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FRIF_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FRIF_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FRIF_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FRIF_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRIF_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_CODE_SLOW)
+	#undef FRIF_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FRIF_STOP_SEC_CODE_LIB)
+	#undef FRIF_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	LINIF: LIN Interface.
+*/
+#elif defined(LINIF_STOP_SEC_CODE)
+	#undef LINIF_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINIF_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef LINIF_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef LINIF_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef LINIF_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef LINIF_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef LINIF_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef LINIF_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef LINIF_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef LINIF_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef LINIF_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef LINIF_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_CODE_SLOW)
+	#undef LINIF_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(LINIF_STOP_SEC_CODE_LIB)
+	#undef LINIF_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	LINNM: LIN NM.
+*/
+#elif defined(LINNM_STOP_SEC_CODE)
+	#undef LINNM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINNM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef LINNM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef LINNM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef LINNM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef LINNM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef LINNM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef LINNM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef LINNM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef LINNM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef LINNM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef LINNM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_CODE_SLOW)
+	#undef LINNM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(LINNM_STOP_SEC_CODE_LIB)
+	#undef LINNM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	CANTRCV: CAN Tranceiver Driver.
+*/
+#elif defined(CANTRCV_STOP_SEC_CODE)
+	#undef CANTRCV_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANTRCV_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef CANTRCV_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef CANTRCV_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef CANTRCV_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef CANTRCV_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANTRCV_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef CANTRCV_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef CANTRCV_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef CANTRCV_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef CANTRCV_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANTRCV_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_CODE_SLOW)
+	#undef CANTRCV_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(CANTRCV_STOP_SEC_CODE_LIB)
+	#undef CANTRCV_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FRTRCV: FlexRay Tranceiver Driver.
+*/
+#elif defined(FRTRCV_STOP_SEC_CODE)
+	#undef FRTRCV_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRTRCV_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FRTRCV_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FRTRCV_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FRTRCV_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FRTRCV_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRTRCV_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FRTRCV_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FRTRCV_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FRTRCV_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FRTRCV_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRTRCV_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_CODE_SLOW)
+	#undef FRTRCV_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FRTRCV_STOP_SEC_CODE_LIB)
+	#undef FRTRCV_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	CAN: Can Driver.
+*/
+#elif defined(CAN_STOP_SEC_CODE)
+	#undef CAN_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CAN_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef CAN_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef CAN_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef CAN_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef CAN_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CAN_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef CAN_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef CAN_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef CAN_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef CAN_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CAN_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_CODE_SLOW)
+	#undef CAN_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(CAN_STOP_SEC_CODE_LIB)
+	#undef CAN_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FR: FlexRay Driver.
+*/
+#elif defined(FR_STOP_SEC_CODE)
+	#undef FR_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FR_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FR_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FR_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FR_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FR_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FR_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FR_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FR_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FR_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FR_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FR_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_CODE_SLOW)
+	#undef FR_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FR_STOP_SEC_CODE_LIB)
+	#undef FR_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	LIN: LIN Driver.
+*/
+#elif defined(LIN_STOP_SEC_CODE)
+	#undef LIN_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LIN_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef LIN_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef LIN_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef LIN_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef LIN_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef LIN_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef LIN_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef LIN_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef LIN_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef LIN_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef LIN_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_CODE_SLOW)
+	#undef LIN_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(LIN_STOP_SEC_CODE_LIB)
+	#undef LIN_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	SPI: SPI Handler Driver.
+*/
+#elif defined(SPI_STOP_SEC_CODE)
+	#undef SPI_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SPI_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef SPI_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef SPI_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef SPI_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef SPI_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef SPI_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef SPI_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef SPI_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef SPI_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef SPI_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef SPI_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_CODE_SLOW)
+	#undef SPI_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(SPI_STOP_SEC_CODE_LIB)
+	#undef SPI_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	EEP: Internal/External EEPROM Driver.
+*/
+#elif defined(EEP_STOP_SEC_CODE)
+	#undef EEP_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef EEP_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef EEP_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef EEP_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef EEP_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef EEP_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef EEP_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef EEP_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef EEP_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef EEP_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef EEP_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef EEP_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_CODE_SLOW)
+	#undef EEP_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(EEP_STOP_SEC_CODE_LIB)
+	#undef EEP_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FLS: Internal/External FLASH Driver.
+*/
+#elif defined(FLS_STOP_SEC_CODE)
+	#undef FLS_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FLS_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FLS_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FLS_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FLS_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FLS_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FLS_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FLS_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FLS_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FLS_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FLS_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FLS_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_CODE_SLOW)
+	#undef FLS_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FLS_STOP_SEC_CODE_LIB)
+	#undef FLS_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	RAMTST: RAM Test.
+*/
+#elif defined(RAMTST_STOP_SEC_CODE)
+	#undef RAMTST_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef RAMTST_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef RAMTST_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef RAMTST_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef RAMTST_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef RAMTST_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef RAMTST_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef RAMTST_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef RAMTST_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef RAMTST_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef RAMTST_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef RAMTST_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_CODE_SLOW)
+	#undef RAMTST_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(RAMTST_STOP_SEC_CODE_LIB)
+	#undef RAMTST_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	GPT: GPT Driver.
+*/
+#elif defined(GPT_STOP_SEC_CODE)
+	#undef GPT_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef GPT_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef GPT_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef GPT_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef GPT_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef GPT_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef GPT_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef GPT_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef GPT_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef GPT_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef GPT_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef GPT_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_CODE_SLOW)
+	#undef GPT_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(GPT_STOP_SEC_CODE_LIB)
+	#undef GPT_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	MCU: MCU Driver.
+*/
+#elif defined(MCU_STOP_SEC_CODE)
+	#undef MCU_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef MCU_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef MCU_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef MCU_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef MCU_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef MCU_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef MCU_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef MCU_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef MCU_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef MCU_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef MCU_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef MCU_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_CODE_SLOW)
+	#undef MCU_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(MCU_STOP_SEC_CODE_LIB)
+	#undef MCU_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	WDG: Internal/External Watchdog Driver.
+*/
+#elif defined(WDG_STOP_SEC_CODE)
+	#undef WDG_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef WDG_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef WDG_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef WDG_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef WDG_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef WDG_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef WDG_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef WDG_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef WDG_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef WDG_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef WDG_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef WDG_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_CODE_SLOW)
+	#undef WDG_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(WDG_STOP_SEC_CODE_LIB)
+	#undef WDG_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	DIO: DIO Driver.
+*/
+#elif defined(DIO_STOP_SEC_CODE)
+	#undef DIO_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef DIO_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef DIO_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef DIO_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef DIO_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef DIO_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef DIO_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef DIO_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef DIO_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef DIO_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef DIO_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef DIO_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_CODE_SLOW)
+	#undef DIO_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(DIO_STOP_SEC_CODE_LIB)
+	#undef DIO_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	PWM: PWM Driver.
+*/
+#elif defined(PWM_STOP_SEC_CODE)
+	#undef PWM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PWM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef PWM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef PWM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef PWM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef PWM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef PWM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef PWM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef PWM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef PWM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef PWM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef PWM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_CODE_SLOW)
+	#undef PWM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(PWM_STOP_SEC_CODE_LIB)
+	#undef PWM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	ICU: ICU Driver.
+*/
+#elif defined(ICU_STOP_SEC_CODE)
+	#undef ICU_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ICU_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef ICU_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef ICU_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef ICU_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef ICU_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef ICU_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef ICU_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef ICU_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef ICU_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef ICU_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef ICU_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_CODE_SLOW)
+	#undef ICU_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(ICU_STOP_SEC_CODE_LIB)
+	#undef ICU_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	ADC: ADC Driver.
+*/
+#elif defined(ADC_STOP_SEC_CODE)
+	#undef ADC_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef ADC_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef ADC_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef ADC_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef ADC_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef ADC_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef ADC_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef ADC_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef ADC_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef ADC_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef ADC_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef ADC_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_CODE_SLOW)
+	#undef ADC_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(ADC_STOP_SEC_CODE_LIB)
+	#undef ADC_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	PORT: Port Driver.
+*/
+#elif defined(PORT_STOP_SEC_CODE)
+	#undef PORT_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef PORT_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef PORT_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef PORT_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef PORT_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef PORT_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef PORT_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef PORT_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef PORT_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef PORT_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef PORT_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef PORT_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_CODE_SLOW)
+	#undef PORT_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(PORT_STOP_SEC_CODE_LIB)
+	#undef PORT_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	SCHM: BSW Scheduler Module.
+*/
+#elif defined(SCHM_STOP_SEC_CODE)
+	#undef SCHM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef SCHM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef SCHM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef SCHM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef SCHM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef SCHM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef SCHM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef SCHM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef SCHM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef SCHM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef SCHM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef SCHM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_CODE_SLOW)
+	#undef SCHM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(SCHM_STOP_SEC_CODE_LIB)
+	#undef SCHM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	CANSM: CAN State Manager.
+*/
+#elif defined(CANSM_STOP_SEC_CODE)
+	#undef CANSM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CANSM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef CANSM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef CANSM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef CANSM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef CANSM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANSM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef CANSM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef CANSM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef CANSM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef CANSM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CANSM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_CODE_SLOW)
+	#undef CANSM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(CANSM_STOP_SEC_CODE_LIB)
+	#undef CANSM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	LINSM: LIN State Manager.
+*/
+#elif defined(LINSM_STOP_SEC_CODE)
+	#undef LINSM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef LINSM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef LINSM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef LINSM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef LINSM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef LINSM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef LINSM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef LINSM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef LINSM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef LINSM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef LINSM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef LINSM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_CODE_SLOW)
+	#undef LINSM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(LINSM_STOP_SEC_CODE_LIB)
+	#undef LINSM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	FRSM: FlexRay State Manager.
+*/
+#elif defined(FRSM_STOP_SEC_CODE)
+	#undef FRSM_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef FRSM_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef FRSM_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef FRSM_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef FRSM_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef FRSM_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRSM_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef FRSM_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef FRSM_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef FRSM_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef FRSM_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef FRSM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_CODE_SLOW)
+	#undef FRSM_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(FRSM_STOP_SEC_CODE_LIB)
+	#undef FRSM_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+
+/*
+**	CRC: CRC Routines.
+*/
+#elif defined(CRC_STOP_SEC_CODE)
+	#undef CRC_STOP_SEC_CODE
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_NOINIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_NOINIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_NOINIT_8BIT)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_NOINIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_NOINIT_16BIT)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_NOINIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_NOINIT_32BIT)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_NOINIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_FAST_BOOLEAN)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_FAST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_FAST_8BIT)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_FAST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_FAST_16BIT)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_FAST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_FAST_32BIT)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_FAST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_FAST_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_FAST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_INTERNAL_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_INTERNAL_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_INTERNAL_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_INTERNAL_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_INTERNAL_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_INTERNAL_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_INTERNAL_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_BOOLEAN)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_8BIT)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_16BIT)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_32BIT)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_VAR_UNSPECIFIED)
+	#pragma dataseg=default
+	#undef CRC_STOP_SEC_VAR_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_CONST_BOOLEAN)
+	#pragma constseg=default
+	#undef CRC_STOP_SEC_CONST_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_CONST_8BIT)
+	#pragma constseg=default
+	#undef CRC_STOP_SEC_CONST_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_CONST_16BIT)
+	#pragma constseg=default
+	#undef CRC_STOP_SEC_CONST_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_CONST_32BIT)
+	#pragma constseg=default
+	#undef CRC_STOP_SEC_CONST_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_CONST_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CRC_STOP_SEC_CONST_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_CONFIG_DATA_BOOLEAN)
+	#pragma constseg=default
+	#undef CRC_STOP_SEC_CONFIG_DATA_BOOLEAN
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_CONFIG_DATA_8BIT)
+	#pragma constseg=default
+	#undef CRC_STOP_SEC_CONFIG_DATA_8BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_CONFIG_DATA_16BIT)
+	#pragma constseg=default
+	#undef CRC_STOP_SEC_CONFIG_DATA_16BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_CONFIG_DATA_32BIT)
+	#pragma constseg=default
+	#undef CRC_STOP_SEC_CONFIG_DATA_32BIT
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+	#pragma constseg=default
+	#undef CRC_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_CODE_SLOW)
+	#undef CRC_STOP_SEC_CODE_SLOW
+	#undef MEMMAP_ERROR
+#elif defined(CRC_STOP_SEC_CODE_LIB)
+	#undef CRC_STOP_SEC_CODE_LIB
+	#undef MEMMAP_ERROR
+#endif
+
+
+/*
+**
+**  Error-Check.
+**
+*/
+#if defined(MEMMAP_ERROR)
+    #error No valid memory mapping symbol defined.
+#endif
+
+#endif	/* __MEMMAP_H */
