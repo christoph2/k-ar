@@ -1,8 +1,8 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2009 by Christoph Schueler <chris@konnex-tools.de,
- *                                      cpu12.gems@googlemail.com>
+ * (C) 2007-2010 by Christoph Schueler <github.com/Christoph2,
+ *                                     cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
  *
@@ -20,16 +20,17 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
+ *  s. FLOSS-EXCEPTION.txt
  */
 #if !defined(__DEM_INTERRID_H)
-#define	__DEM_INTERRID_H
+#define __DEM_INTERRID_H
 
 /* EEPROM-Abstraction. */
-#define	EA_E_PARAM_CONFIG       ((uint8)0x01)
-#define	EA_E_INVALID_BLOCK_NO   ((uint8)0x02)
+#define EA_E_PARAM_CONFIG       ((uint8)0x01)
+#define EA_E_INVALID_BLOCK_NO   ((uint8)0x02)
 
 /* MCU-Driver */
-    /* Production */
+/* Production */
 /* #define MCU_E_CLOCK_FAILURE     *** ASSIGNED BY DEM *** */
 
-#endif	/* __DEM_INTERRID_H */
+#endif  /* __DEM_INTERRID_H */

@@ -22,7 +22,7 @@
  *
  */
 #if !defined(__EEP_H)
-#define	__EEP_H
+#define __EEP_H
 
 #include "Std_Types.h"
 #include "Eep_Cfg.h"
@@ -35,8 +35,7 @@
 #define EEP_E_UNINIT        ((uint8)0x20)
 #define EEP_E_BUSY          ((uint8)0x21)
 #if 0
-#define EEP_E_COM_FAILURE       /* assigned externally */
+#define EEP_E_COM_FAILURE   /* assigned externally */
 #endif
 
-
-#endif	/* __EEP_H */
+#endif  /* __EEP_H */

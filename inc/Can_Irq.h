@@ -17,10 +17,10 @@
 
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software
-   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
+   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
    s. FLOSS-EXCEPTION.txt
-*/
+ */
 #if !defined(__CAN_IRQ_H)
 #define __CAN_IRQ_H
 
@@ -29,11 +29,9 @@ extern "C"
 {
 #endif  /* __cplusplus */
 
-
 #include "S12_Can.h"
 #include "Hw_Cfg.h"
-#include "ISR.h"
-
+#include "InstallISR/ISR.h"
 
 #if 0
 /*

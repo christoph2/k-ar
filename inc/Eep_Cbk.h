@@ -22,6 +22,6 @@
  *
  */
 #if !defined(__EEP_CBK_H)
-#define	__EEP_CBK_H
+#define __EEP_CBK_H
 
-#endif	/* __EEP_CBK_H */
+#endif  /* __EEP_CBK_H */

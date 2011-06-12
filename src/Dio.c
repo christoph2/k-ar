@@ -1,7 +1,8 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2009 by Christoph Schueler <chris@konnex-tools.de>
+ * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
  *
@@ -19,27 +20,47 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
+ * s. FLOSS-EXCEPTION.txt
  */
 #include "Dio.h"
-#if AR_VERSION_CHECK_INTERNAL_FAILS(DIO_4711_MEBI,3,1,0,1,0)
-    #error Wrong Version-Information of Include-File 'Dio.h' !
+#if AR_VERSION_CHECK_INTERNAL_FAILS(DIO, 3, 1, 0, 1, 0)
+    #error Version-Information-Mismatch of Include-File 'Dio.h' !
 #endif
 
+#if AR_DEV_ERROR_DETECT(DIO) == STD_ON
 #include "Det.h"
-#if AR_VERSION_CHECK_FAILS(DET,3,1)
-    #error Wrong Version-Information of Include-File 'Det.h' !
+#if AR_VERSION_CHECK_FAILS(DET, 3, 1)
+    #error Version-Information-Mismatch of Include-File 'Det.h' !
 #endif
+#endif /* AR_DEV_ERROR_DETECT */
 
-#include "S12_Mebi.h"
-#include "Hw_Cfg.h"
+#include "Mcal_Templates.h"
 
 /*
-**  DIO005: Interruptable read-modify-write sequences are not allowed.
+**  DIO005: Interruptable read-modify-write sequences are not allowed. - Must be satisfied by HW-Drivers.
 */
 
 /*
-**  todo: Tabellen-basierte Makros 'DIO_CHN(n)' statt 'BIT(n)'!!!
+   // 257 bytes of CODE  memory
+   //  44 bytes of CONST memory
+ */
+
+/*
+**  Local Types.
 */
+typedef struct tagDio_FunctionsType {
+    const Kdk_WritePort_Func            WritePort;
+    const Kdk_ReadPort_Func             ReadPort;
+    const Kdk_WriteChannel_Func         WriteChannel;
+    const Kdk_ReadChannel_Func          ReadChannel;
+    const Kdk_WriteChannelGroup_Func    WriteChannelGroup;
+    const Kdk_ReadChannelGroup_Func     ReadChannelGroup;
+} Dio_FunctionsType;
+
+typedef struct tagDio_PortMappingType {
+    uint8           FunctionIndex;
+    Kdk_PortType    HwPort;
+} Dio_PortMappingType;
 
 /*
 **  Local Variables.
@@ -47,33 +68,34 @@
 #define DIO_START_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
 
-#if 0
-#if AR_DEV_ERROR_DETECT(DIO_4711_MEBI)==STD_ON
-AR_IMPLEMENT_MODULE_STATE_VAR(DIO_4711_MEBI);
-#endif
+#if AR_DEV_ERROR_DETECT(DIO) == STD_ON
+AR_IMPLEMENT_MODULE_STATE_VAR(DIO);
 #endif
 
 #define DIO_STOP_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
-
 
 /*
 **  Local Constants.
 */
 #define DIO_START_SEC_CONST_8BIT
 #include "MemMap.h"
-static const uint8 Dio_Mebi_Ports[]=
-{
-    PORTA,
-    PORTB,
-    PORTE,
-    PORTK
-};
+
+DEFINE_DIO_PORT_TO_FUNCTIONS();
+
 #define DIO_STOP_SEC_CONST_8BIT
 #include "MemMap.h"
 
-/*     uint8 state=AR_GET_MODULE_STATE_VAR(DIO_4711_MEBI); */
+#define DIO_START_SEC_CONST_16BIT
+#include "MemMap.h"
 
+/* This placement isn't really architecture independent, but for now we only support 16Bit Micros. */
+DEFINE_DIO_FUNCTIONS();
+
+#define DIO_STOP_SEC_CONST_16BIT
+#include "MemMap.h"
+
+/*     uint8 state=AR_GET_MODULE_STATE_VAR(DIO_4711_MEBI); */
 
 /*
 **  Global Functions.
@@ -81,86 +103,79 @@ static const uint8 Dio_Mebi_Ports[]=
 #define DIO_START_SEC_CODE
 #include "MemMap.h"
 
-FUNC(Dio_LevelType,DIO_CODE) Dio_ReadChannel(Dio_ChannelType ChannelId)
+FUNC(Dio_LevelType, DIO_CODE) Dio_ReadChannel(Dio_ChannelType ChannelId)
 {
-    uint8 port=(uint8)ChannelId / (uint8)8;
-    uint8 channel=(uint8)ChannelId % (uint8)8;
+    uint8                       port   = (uint8)ChannelId / (uint8)8;
+    uint8                       bit    = (uint8)ChannelId % (uint8)8;
+    Dio_PortMappingType const * map;
 
-    if (ChannelId>=DIO_4711_MEBI_NUM_CHANNELS) {    /* todo: 'AR_ASSERT_LT()' */
-        Det_ReportError(DIO_4711_MEBI_MODULE_ID,DIO_4711_MEBI_INSTANCE_ID,
-            AR_SERVICE_DIO_READ_CHANNEL,DIO_E_PARAM_INVALID_CHANNEL_ID);
+    if (ChannelId >= DIO_NUM_CHANNELS) {    /* todo: 'AR_ASSERT_LT()' */
+        AR_RAISE_DEV_ERROR(DIO, READ_CHANNEL, DIO_E_PARAM_INVALID_CHANNEL_ID);
         return DIO_LOW;
     }
 
-//    return (((S12_REG8(&MEBI,Dio_Mebi_Ports[port]) & BIT(channel,uint8))>>channel)==0x01) ? DIO_HIGH : DIO_LOW;
-    return Utl_BitGet(S12_REG8(&MEBI,Dio_Mebi_Ports[port]),channel) ? DIO_HIGH : DIO_LOW;
+    map = &Dio_Ports_to_Functions[port];
+    return Dio_Functions[map->FunctionIndex].ReadChannel(map->HwPort, bit);
 }
 
-
-FUNC(void,DIO_CODE) Dio_WriteChannel(Dio_ChannelType ChannelId,Dio_LevelType Level)
+FUNC(void, DIO_CODE) Dio_WriteChannel(Dio_ChannelType ChannelId, Dio_LevelType Level)
 {
-    uint8 port=(uint8)ChannelId / (uint8)8;
-    uint8 channel=(uint8)ChannelId % (uint8)8;
-    uint8 value;
+    uint8                       port   = (uint8)ChannelId / (uint8)8;
+    uint8                       bit    = (uint8)ChannelId % (uint8)8;
+    Dio_PortMappingType const * map;
 
-    if (ChannelId>=DIO_4711_MEBI_NUM_CHANNELS) {
-        Det_ReportError(DIO_4711_MEBI_MODULE_ID,DIO_4711_MEBI_INSTANCE_ID,
-            AR_SERVICE_DIO_WRITE_CHANNEL,DIO_E_PARAM_INVALID_CHANNEL_ID);
+    if (ChannelId >= DIO_NUM_CHANNELS) {
+        AR_RAISE_DEV_ERROR(DIO, WRITE_CHANNEL, DIO_E_PARAM_INVALID_CHANNEL_ID);
     }
 
-    value=S12_REG8(&MEBI,Dio_Mebi_Ports[port]);
-    if (Level==DIO_HIGH) {
-        value=Utl_BitSet(value,channel);
-    } else {
-        value=Utl_BitReset(value,channel);
-    }
-    S12_REG8(&MEBI,Dio_Mebi_Ports[port])=value;
+    map = &Dio_Ports_to_Functions[port];
+    Dio_Functions[map->FunctionIndex].WriteChannel(map->HwPort, bit, Level);
 }
 
-
-FUNC(Dio_PortLevelType,DIO_CODE) Dio_ReadPort(Dio_PortType PortId)
+FUNC(Dio_PortLevelType, DIO_CODE) Dio_ReadPort(Dio_PortType PortId)
 {
-    if (PortId>=DIO_4711_MEBI_NUM_PORTS) {
-        Det_ReportError(DIO_4711_MEBI_MODULE_ID,DIO_4711_MEBI_INSTANCE_ID,
-            AR_SERVICE_DIO_READ_PORT,DIO_E_PARAM_INVALID_PORT_ID);
+    Dio_PortMappingType const * map;
+
+    if (PortId >= DIO_NUM_PORTS) {
+        AR_RAISE_DEV_ERROR(DIO, READ_PORT, DIO_E_PARAM_INVALID_PORT_ID);
         return (Dio_PortLevelType)0;
     }
 
-    return (Dio_PortLevelType)S12_REG8(&MEBI,Dio_Mebi_Ports[PortId]);
+    map = &Dio_Ports_to_Functions[PortId];
+    return Dio_Functions[map->FunctionIndex].ReadPort(map->HwPort);
 }
 
-
-FUNC(void,DIO_CODE) Dio_WritePort(Dio_PortType PortId,Dio_PortLevelType Level)
+FUNC(void, DIO_CODE) Dio_WritePort(Dio_PortType PortId, Dio_PortLevelType Level)
 {
-    if (PortId>=DIO_4711_MEBI_NUM_PORTS) {
-        Det_ReportError(DIO_4711_MEBI_MODULE_ID,DIO_4711_MEBI_INSTANCE_ID,
-            AR_SERVICE_DIO_WRITE_PORT,DIO_E_PARAM_INVALID_PORT_ID);
+    Dio_PortMappingType const * map;
+
+    if (PortId >= DIO_NUM_PORTS) {
+        AR_RAISE_DEV_ERROR(DIO, WRITE_PORT, DIO_E_PARAM_INVALID_PORT_ID);
     }
 
-    S12_REG8(&MEBI,Dio_Mebi_Ports[PortId])=(uint8)Level;
+    map = &Dio_Ports_to_Functions[PortId];
+    Dio_Functions[map->FunctionIndex].WritePort(map->HwPort, Level);
 }
 
-
-FUNC(Dio_PortLevelType,DIO_CODE) Dio_ReadChannelGroup(P2CONST(Dio_ChannelGroupType,AUTOMATIC,DIO_APLL_DATA) ChannelGroupIdPtr)
+FUNC(Dio_PortLevelType, DIO_CODE) Dio_ReadChannelGroup(P2CONST(Dio_ChannelGroupType, AUTOMATIC, DIO_APLL_DATA) ChannelGroupIdPtr)
 {
+    Dio_PortMappingType const * map;
+
     /* DIO_E_PARAM_INVALID_GROUP_ID */
+
+    map = &Dio_Ports_to_Functions[ChannelGroupIdPtr->port];
+    return Dio_Functions[map->FunctionIndex].ReadPort(map->HwPort);
 }
 
-
-FUNC(void,DIO_CODE) Dio_WriteChannelGroup(P2CONST(Dio_ChannelGroupType,AUTOMATIC,DIO_APPL_DATA) ChannelGroupIdPtr,
-    Dio_PortLevelType Level)
+FUNC(void, DIO_CODE) Dio_WriteChannelGroup(P2CONST(Dio_ChannelGroupType, AUTOMATIC, DIO_APPL_DATA) ChannelGroupIdPtr,
+                                           Dio_PortLevelType Level)
 {
+    Dio_PortMappingType const * map;
+
     /* DIO_E_PARAM_INVALID_GROUP_ID */
-/*
-    Port&=(~mask)<<offset    ???
-    Port|=(Level & mask)<<offset    ???
-*/
-}
 
-
-void Dio_GetVersionInfo(P2VAR(Std_VersionInfoType,AUTOMATIC,DIO_APPL_DATA) VersionInfo)
-{
-
+    map = &Dio_Ports_to_Functions[ChannelGroupIdPtr->port];
+    Dio_Functions[map->FunctionIndex].WritePort(map->HwPort, Level);
 }
 
 #define DIO_STOP_SEC_CODE

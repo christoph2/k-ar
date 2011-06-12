@@ -23,5 +23,4 @@
 #if !defined(__DIO_CBK_H)
 #define __DIO_CBK_H
 
-
 #endif /* __DIO_CBK_H */

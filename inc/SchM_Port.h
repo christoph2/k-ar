@@ -25,4 +25,3 @@
 
 #endif /* __SCHM_PORT_H */
 
-

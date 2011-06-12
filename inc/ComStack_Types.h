@@ -1,7 +1,7 @@
 /*
    k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
 
-   (C) 2007-2010 by Christoph Schueler <chris@konnex-tools.de,
+   (C) 2007-2010 by Christoph Schueler <github.com/Christoph2,
                                        cpu12.gems@googlemail.com>
 
    All Rights Reserved
@@ -17,10 +17,10 @@
 
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software
-   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
+   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
    s. FLOSS-EXCEPTION.txt
-*/
+ */
 #if !defined(__COMSTACK_TYPES_H)
 #define __COMSTACK_TYPES_H
 
@@ -44,8 +44,8 @@ typedef struct tagPduInfoType {
     /*
     ** Basic Information about PDUs of any Type.
     */
-    uint8 *SduDataPtr;  /* todo: replace with 'P2VAR(uint8,AUTOMATIC,AUTOSAR_COMSTACKDATA) SduDataPtr,'     */
-    PduLengthType SduLength;
+    uint8 *         SduDataPtr; /* todo: replace with 'P2VAR(uint8,AUTOMATIC,AUTOSAR_COMSTACKDATA) SduDataPtr,'     */
+    PduLengthType   SduLength;
 } PduInfoType;
 
 typedef enum tagBufReq_ReturnType {
@@ -67,10 +67,10 @@ typedef uint8 NotifResultType;
 **  > 0x78      -   Currently invalid, reserved for future usage.
 **
 */
-    /* 0x00,0x01 - General Return Codes.                */
+/* 0x00,0x01 - General Return Codes.                */
     #define NTFRSLT_OK                      ((uint8)0x00)
     #define NTFRSLT_E_NOT_OK                ((uint8)0x01)
-    /* 0x02-0x09 - Related to ISO 15765.                */
+/* 0x02-0x09 - Related to ISO 15765.                */
     #define NTFRSLT_E_TIMEOUT_A             ((uint8)0x02)
     #define NTFRSLT_E_TIMEOUT_BS            ((uint8)0x03)
     #define NTFRSLT_E_TIMEOUT_CR            ((uint8)0x04)
@@ -79,12 +79,11 @@ typedef uint8 NotifResultType;
     #define NTFRSLT_E_UNEXP_PDU             ((uint8)0x07)
     #define NTFRSLT_E_WFT_OVRN              ((uint8)0x08)
     #define NTFRSLT_E_NO_BUFFER             ((uint8)0x09)
-    /* Cancelation API.                                 */
+/* Cancelation API.                                 */
     #define NTFRSLT_E_CANCELATION_OK        ((uint8)0x0a)
     #define NTFRSLT_E_CANCELATION_NOT_OK    ((uint8)0x0b)
-    /*  0x0c-0x01e - Reserved values for future usage.  */
+/*  0x0c-0x01e - Reserved values for future usage.  */
 
-	
 typedef uint8 BusTrcvErrorType;
 /*
 **
@@ -99,8 +98,8 @@ typedef uint8 BusTrcvErrorType;
 */
     #define BUSTRCV_NO_ERROR                ((uint8)0x00)
     #define BUSTRCV_E_ERROR                 ((uint8)0x01)
-    /* 0x02-0x1e - Reserved values for future usage.    */
+/* 0x02-0x1e - Reserved values for future usage.    */
 
 typedef uint8 NetworkHandleType;
 
-#endif	/* __COMSTACK_TYPES_H */
+#endif  /* __COMSTACK_TYPES_H */

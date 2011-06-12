@@ -1,7 +1,8 @@
 /*
- * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
+ * k_dk - Driver Kit for k_os (Konnex Operating-System based on the
+ * OSEK/VDX-Standard).
  *
- * (C) 2007-2009 by Christoph Schueler <chris@konnex-tools.de,
+ * (C) 2007-2010 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -63,21 +64,19 @@
 /*
 **  Local Functions.
 */
-static FUNC(void,CANTRCV_CODE) CanTrcv_Init_Impl(void);
-static FUNC(Std_ReturnType,CANTRCV_CODE) CanTrcv_SetOpMode_Impl(CanIf_TransceiverModeType OpMode,uint8 CanNetwork);
-static FUNC(Std_ReturnType,CANTRCV_CODE) CanTrcv_GetOpMode_Impl(CanIf_TransceiverModeType *OpMode,uint8 CanNetwork);
-static FUNC(Std_ReturnType,CANTRCV_CODE) CanTrcv_GetBusWuReason_Impl(uint8 CanNetwork,CanIf_TrcvWakeupReasonType *Reason);
-static FUNC(void,CANTRCV_CODE) CanTrcv_GetVersionInfo_Impl(P2VAR(Std_VersionInfoType,AUTOMATIC,CANTRCV_APPL_DATA) Versioninfo);
-static FUNC(Std_ReturnType,CANTRCV_CODE) CanTrcv_SetWakeupMode_Impl(CanIf_TrcvWakeupModeType TrcvWakeupMode,uint8 CanNetwork);
-static FUNC(void,CANTRCV_CODE) CanTrcv_MainFunction_Impl(void);
-static FUNC(Std_ReturnType,CANTRCV_CODE) CanTrcv_CB_WakeupByBus_Impl(uint8 CanNetwork);
-
+static FUNC(void, CANTRCV_CODE) CanTrcv_Init_Impl(void);
+static FUNC(Std_ReturnType, CANTRCV_CODE) CanTrcv_SetOpMode_Impl(CanIf_TransceiverModeType OpMode, uint8 CanNetwork);
+static FUNC(Std_ReturnType, CANTRCV_CODE) CanTrcv_GetOpMode_Impl(CanIf_TransceiverModeType * OpMode, uint8 CanNetwork);
+static FUNC(Std_ReturnType, CANTRCV_CODE) CanTrcv_GetBusWuReason_Impl(uint8 CanNetwork, CanIf_TrcvWakeupReasonType * Reason);
+static FUNC(void, CANTRCV_CODE) CanTrcv_GetVersionInfo_Impl(P2VAR(Std_VersionInfoType, AUTOMATIC, CANTRCV_APPL_DATA) Versioninfo);
+static FUNC(Std_ReturnType, CANTRCV_CODE) CanTrcv_SetWakeupMode_Impl(CanIf_TrcvWakeupModeType TrcvWakeupMode, uint8 CanNetwork);
+static FUNC(void, CANTRCV_CODE) CanTrcv_MainFunction_Impl(void);
+static FUNC(Std_ReturnType, CANTRCV_CODE) CanTrcv_CB_WakeupByBus_Impl(uint8 CanNetwork);
 
 /*
 **  Local Constants.
 */
-CONST(CanTrcv_PublicIfType,CANTRCV_CONST_UNSPECIFIED) MyCanTrcv_PublicIf=
-{
+CONST(CanTrcv_PublicIfType, CANTRCV_CONST_UNSPECIFIED) MyCanTrcv_PublicIf = {
     CanTrcv_Init_Impl,
     CanTrcv_SetOpMode_Impl,
     CanTrcv_GetOpMode_Impl,
@@ -88,48 +87,42 @@ CONST(CanTrcv_PublicIfType,CANTRCV_CONST_UNSPECIFIED) MyCanTrcv_PublicIf=
     CanTrcv_CB_WakeupByBus_Impl
 };
 
-
-FUNC(void,CANTRCV_CODE) CanTrcv_Init_Impl(void)
+FUNC(void, CANTRCV_CODE) CanTrcv_Init_Impl(void)
 {
 
 }
 
-
-FUNC(Std_ReturnType,CANTRCV_CODE) CanTrcv_SetOpMode_Impl(CanIf_TransceiverModeType OpMode,uint8 CanNetwork)
+FUNC(Std_ReturnType, CANTRCV_CODE) CanTrcv_SetOpMode_Impl(CanIf_TransceiverModeType OpMode, uint8 CanNetwork)
 {
 
 }
 
-
-FUNC(Std_ReturnType,CANTRCV_CODE) CanTrcv_GetOpMode_Impl(CanIf_TransceiverModeType *OpMode,uint8 CanNetwork)
+FUNC(Std_ReturnType, CANTRCV_CODE) CanTrcv_GetOpMode_Impl(CanIf_TransceiverModeType * OpMode, uint8 CanNetwork)
 {
 
 }
 
-
-FUNC(Std_ReturnType,CANTRCV_CODE) CanTrcv_GetBusWuReason_Impl(uint8 CanNetwork,CanIf_TrcvWakeupReasonType *Reason)
+FUNC(Std_ReturnType, CANTRCV_CODE) CanTrcv_GetBusWuReason_Impl(uint8 CanNetwork, CanIf_TrcvWakeupReasonType * Reason)
 {
 
 }
 
 #define CANTRCV_4711_PCA82C250_CODE
 
-#define foo_name(mod) void GLUE2(mod,_GetVersionInfo) ##(Std_VersionInfoType *Versioninfo)    \
+#define foo_name(mod) void GLUE2(mod, _GetVersionInfo) ## (Std_VersionInfoType * Versioninfo)    \
     AR_VERSION_INFO_FUNCTION_MACRO(mod)
-
 
 /*         GLUE2(mod,_GetVersionInfo) ##(Versioninfo);                         \    */
 
 #define AR_VERSION_INFO_FUNCTION_MACRO(mod)                                 \
     {                                                                       \
-        Versioninfo->vendorID=(uint16)GLUE2(mod,_VENDOR_ID);                \
-        Versioninfo->moduleID=(uint16)GLUE2(mod,_MODULE_ID);                \
-        Versioninfo->instanceID=(uint8)GLUE2(mod,_INSTANCE_ID);             \
-        Versioninfo->sw_major_version=(uint8)GLUE2(mod,_SW_MAJOR_VERSION);  \
-        Versioninfo->sw_minor_version=(uint8)GLUE2(mod,_SW_MINOR_VERSION);  \
-        Versioninfo->sw_patch_version=(uint8)GLUE2(mod,_SW_PATCH_VERSION);  \
+        Versioninfo->vendorID          = (uint16)GLUE2(mod, _VENDOR_ID);                \
+        Versioninfo->moduleID          = (uint16)GLUE2(mod, _MODULE_ID);                \
+        Versioninfo->instanceID        = (uint8)GLUE2(mod, _INSTANCE_ID);             \
+        Versioninfo->sw_major_version  = (uint8)GLUE2(mod, _SW_MAJOR_VERSION);  \
+        Versioninfo->sw_minor_version  = (uint8)GLUE2(mod, _SW_MINOR_VERSION);  \
+        Versioninfo->sw_patch_version  = (uint8)GLUE2(mod, _SW_PATCH_VERSION);  \
     }
-
 
 #if 0
 AR_VERSION_INFO_FUNCTION_DECL(CANTRCV_4711_PCA82C250);
@@ -137,19 +130,19 @@ AR_VERSION_INFO_FUNCTION_IMPL(CANTRCV_4711_PCA82C250);
 #endif
 
 #if 0
-#define AR_VERSION_INFO_FUNCTION_MACRO(v);
-#define AR_VERSION_INFO_FUNCTION_MACRO(CANTRCV_4711_PCA82C250);
+#define AR_VERSION_INFO_FUNCTION_MACRO(v)                       ;
+#define AR_VERSION_INFO_FUNCTION_MACRO(CANTRCV_4711_PCA82C250)  ;
 AR_VERSION_INFO_FUNCTION_MACRO(CANTRCV_4711_PCA82C250);
 #endif
 
-void CANTRCV_4711_PCA82C250_GetVersionInfo(Std_VersionInfoType *Versioninfo);
+void CANTRCV_4711_PCA82C250_GetVersionInfo(Std_VersionInfoType * Versioninfo);
 
 foo_name(CANTRCV_4711_PCA82C250);
 
 /*
 **  todo: Makros für die Implementation der VersionInfo-Funktion bzw. des Makros!!!
 */
-FUNC(void,CANTRCV_CODE) CanTrcv_GetVersionInfo_Impl(P2VAR(Std_VersionInfoType,AUTOMATIC,CANTRCV_APPL_DATA) Versioninfo)
+FUNC(void, CANTRCV_CODE) CanTrcv_GetVersionInfo_Impl(P2VAR(Std_VersionInfoType, AUTOMATIC, CANTRCV_APPL_DATA) Versioninfo)
 {
 /*    CANTRCV_4711_PCA82C250_GetVersionInfo(Versioninfo);   */
 
@@ -158,20 +151,17 @@ FUNC(void,CANTRCV_CODE) CanTrcv_GetVersionInfo_Impl(P2VAR(Std_VersionInfoType,AU
     CANTRCV_4711_PCA82C250_GetVersionInfo(Versioninfo);
 }
 
-
-FUNC(Std_ReturnType,CANTRCV_CODE) CanTrcv_SetWakeupMode_Impl(CanIf_TrcvWakeupModeType TrcvWakeupMode,uint8 CanNetwork)
+FUNC(Std_ReturnType, CANTRCV_CODE) CanTrcv_SetWakeupMode_Impl(CanIf_TrcvWakeupModeType TrcvWakeupMode, uint8 CanNetwork)
 {
 
 }
 
-
-FUNC(void,CANTRCV_CODE) CanTrcv_MainFunction_Impl(void)
+FUNC(void, CANTRCV_CODE) CanTrcv_MainFunction_Impl(void)
 {
 
 }
 
-
-FUNC(Std_ReturnType,CANTRCV_CODE) CanTrcv_CB_WakeupByBus_Impl(uint8 CanNetwork)
+FUNC(Std_ReturnType, CANTRCV_CODE) CanTrcv_CB_WakeupByBus_Impl(uint8 CanNetwork)
 {
 
 }

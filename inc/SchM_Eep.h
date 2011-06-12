@@ -22,7 +22,6 @@
  *
  */
 #if !defined(_SCHM_EEP_H)
-#define	__SCHM_EEP_H
+#define __SCHM_EEP_H
 
-
-#endif	/* __SCHM_EEP_H */
+#endif  /* __SCHM_EEP_H */

@@ -1,8 +1,8 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2010 by Christoph Schueler <chris@konnex-tools.de,
- *                                      cpu12.gems@googlemail.com>
+ * (C) 2007-2010 by Christoph Schueler <github.com/Christoph2,
+ *                                     cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
  *
@@ -20,13 +20,13 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
+ *  s. FLOSS-EXCEPTION.txt
  */
 #if !defined(__DEM_H)
-#define	__DEM_H
+#define __DEM_H
 
 #include "K_Ar.h"
 #include "Dem_IntErrId.h"
-
 
 /*
 **  Published Information.
@@ -48,4 +48,4 @@
 #define DEM_DEV_ERROR_DETECT    STD_ON
 #define DEM_VERSION_INFO_API    STD_ON
 
-#endif	/* __DEM_H */
+#endif  /* __DEM_H */

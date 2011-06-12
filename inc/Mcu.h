@@ -1,7 +1,8 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2009 by Christoph Schueler <chris@konnex-tools.de>
+ * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ *                                     cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
  *
@@ -19,6 +20,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
+ *  s. FLOSS-EXCEPTION.txt
  */
 
 #if !defined(__MCU_H)
@@ -27,7 +29,6 @@
 #include "Std_Types.h"
 #include "EcuM.h"
 #include "Mcu_Cfg.h"
-
 
 /*
 **  Published Information.
@@ -43,7 +44,6 @@
 #define MCU_SW_PATCH_VERSION                0
 #define MCU_VENDOR_API_INFIX
 
-
 /*
 **  Service-IDs.
 */
@@ -58,20 +58,18 @@
 #define AR_SERVICE_MCU_SET_MODE             ((uint8)0x08)
 #define AR_SERVICE_MCU_GET_VERSION_INFO     ((uint8)0x09)
 
-
 /*
 **  Module Errors.
 */
-#define MCU_E_PARAM_CONFIG	            ((uint8)0x0a)
-#define MCU_E_PARAM_CLOCK	            ((uint8)0x0b)
-#define MCU_E_PARAM_MODE	            ((uint8)0x0c)
-#define MCU_E_PARAM_RAMSECTION	            ((uint8)0x0d)
-#define MCU_E_PLL_NOT_LOCKED	            ((uint8)0x0e)
-#define MCU_E_UNINIT		            ((uint8)0x0f)
+#define MCU_E_PARAM_CONFIG                  ((uint8)0x0a)
+#define MCU_E_PARAM_CLOCK                   ((uint8)0x0b)
+#define MCU_E_PARAM_MODE                    ((uint8)0x0c)
+#define MCU_E_PARAM_RAMSECTION              ((uint8)0x0d)
+#define MCU_E_PLL_NOT_LOCKED                ((uint8)0x0e)
+#define MCU_E_UNINIT                        ((uint8)0x0f)
 #if 0
-#define MCU_E_CLOCK_FAILURE	            ((uint8)0x??)	/* Assigned by DEM */
+#define MCU_E_CLOCK_FAILURE                 ((uint8)0x ? ?) /* Assigned by DEM */
 #endif
-
 
 /*
 **  Global Types.
@@ -118,7 +116,7 @@ typedef struct tagMcu_ConfigType {
 
 
 
-    */
+     */
 } Mcu_ConfigType;
 
 typedef enum tagMcu_PllStatusType {
@@ -137,23 +135,29 @@ typedef enum tagMcu_ResetType {
     /* Support at least for 'MCU_POWER_ON_RESET' and 'MCU_RESET_UNDEFINED'. */
 } Mcu_ResetType;
 
-typedef uint8 Mcu_RawResetType;
-typedef uint8 Mcu_ModeType;
-typedef uint8 Mcu_RamSectionType;
-
+typedef uint8   Mcu_RawResetType;
+typedef uint8   Mcu_ModeType;
+typedef uint8   Mcu_RamSectionType;
 
 /*
 **  Global Functions.
 */
-FUNC(void,MCU_CODE) Mcu_Init(P2CONST(Mcu_ConfigType,AUTOMATIC,MCU_APPL_DATA) ConfigPtr);
-FUNC(Std_ReturnType,MCU_CODE) Mcu_InitRamSection(Mcu_RamSectionType RamSection);
-FUNC(Std_ReturnType,MCU_CODE) Mcu_InitClock(Mcu_ClockType ClockSetting);
-FUNC(void,MCU_CODE) Mcu_DistributePllClock(void);
-FUNC(Mcu_PllStatusType,MCU_CODE) Mcu_GetPllStatus(void);
-FUNC(Mcu_ResetType,MCU_CODE) Mcu_GetResetReason(void);
-FUNC(Mcu_RawResetType,MCU_CODE) Mcu_GetResetRawValue(void);
-FUNC(void,MCU_CODE) Mcu_PerformReset(void);
-FUNC(void,MCU_CODE) Mcu_SetMode(Mcu_ModeType McuMode);
-FUNC(void,MCU_CODE) Mcu_GetVersionInfo(P2VAR(Std_VersionInfoType,AUTOMATIC,MCU_APPL_DATA) versioninfo);
+FUNC(void, MCU_CODE) Mcu_Init(P2CONST(Mcu_ConfigType, AUTOMATIC, MCU_APPL_DATA) ConfigPtr);
+FUNC(Std_ReturnType, MCU_CODE) Mcu_InitRamSection(Mcu_RamSectionType RamSection);
+FUNC(Std_ReturnType, MCU_CODE) Mcu_InitClock(Mcu_ClockType ClockSetting);
+FUNC(void, MCU_CODE) Mcu_DistributePllClock(void);
+FUNC(Mcu_PllStatusType, MCU_CODE) Mcu_GetPllStatus(void);
+FUNC(Mcu_ResetType, MCU_CODE) Mcu_GetResetReason(void);
+FUNC(Mcu_RawResetType, MCU_CODE) Mcu_GetResetRawValue(void);
+FUNC(void, MCU_CODE) Mcu_PerformReset(void);
+FUNC(void, MCU_CODE) Mcu_SetMode(Mcu_ModeType McuMode);
+
+
+/*
+**  Global Function-like Macros.
+*/
+#if MCU_GET_VERSION_INFO_API == STD_ON
+#define Mcu_GetVersionInfo(vp) AR_GET_VERSION_INFO(MCU, vp)
+#endif /* MCU_GET_VERSION_INFO_API */
 
 #endif /* __MCU_H */

@@ -23,6 +23,5 @@
 #if !defined(__SCHM_DIO_H)
 #define __SCHM_DIO_H
 
-
 #endif /* __SCHM_DIO_H */
 

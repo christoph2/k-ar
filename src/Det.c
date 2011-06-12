@@ -1,7 +1,8 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2009 by Christoph Schueler <chris@konnex-tools.de>
+ * (C) 2007-2010 by Christoph Schueler <github.com/Christoph2,
+ *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
  *
@@ -34,7 +35,6 @@
 #include "Det.h"
 #include "Hw_Cfg.h"
 
-
 /*
 **  Local Types.
 */
@@ -43,14 +43,13 @@
 **  Error-Type for recording, communicating... development errors.
 */
 typedef struct tagDet_ErrorType {
-    uint16 ModuleId;
-    uint8 InstanceId;
-    uint8 ApiId;
-    uint8 ErrorId;
+    uint16  ModuleId;
+    uint8   InstanceId;
+    uint8   ApiId;
+    uint8   ErrorId;
 } Det_ErrorType;
 
-
-#define NO_OF_ERRORS_TO_RECORD  ((uint16)0x10u)
+#define NO_OF_ERRORS_TO_RECORD ((uint16)0x10u)
 
 /*
 **  Local Variables.
@@ -63,14 +62,13 @@ static Det_ErrorType ErrorBuffer[NO_OF_ERRORS_TO_RECORD];
 #define DET_STOP_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
 
-
 /*
 **  Global Functions.
 */
 #define DET_START_SEC_CODE
 #include "MemMap.h"
 
-FUNC(void,DET_CODE) Det_Init(void)
+FUNC(void, DET_CODE) Det_Init(void)
 {
 /*
 **
@@ -79,8 +77,7 @@ FUNC(void,DET_CODE) Det_Init(void)
 */
 }
 
-
-FUNC(void,DET_CODE) Det_ReportError(uint16 ModuleId,uint8 InstanceId,uint8 ApiId,uint8 ErrorId)
+FUNC(void, DET_CODE) Det_ReportError(uint16 ModuleId, uint8 InstanceId, uint8 ApiId, uint8 ErrorId)
 {
     CPU_BREAKPOINT();
 /*
@@ -93,8 +90,7 @@ FUNC(void,DET_CODE) Det_ReportError(uint16 ModuleId,uint8 InstanceId,uint8 ApiId
 */
 }
 
-
-FUNC(void,DET_CODE) Det_Start(void)
+FUNC(void, DET_CODE) Det_Start(void)
 {
 /*
 **
@@ -105,8 +101,7 @@ FUNC(void,DET_CODE) Det_Start(void)
 */
 }
 
-
-FUNC(void,DET_CODE) Det_GetVersionInfo(Std_VersionInfoType *versioninfo)
+FUNC(void, DET_CODE) Det_GetVersionInfo(Std_VersionInfoType * versioninfo)
 {
 
 }

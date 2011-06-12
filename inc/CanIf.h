@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2009 by Christoph Schueler <chris@konnex-tools.de,
+ * (C) 2007-2010 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -20,6 +20,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
+ * s. FLOSS-EXCEPTION.txt
  */
 #if !defined(__CAN_IF_H)
 #define __CAN_IF_H
@@ -29,7 +30,6 @@ extern "C"
 {
 #endif  /* __cplusplus */
 
-
 #include "ComStack_Types.h"
 #include "Can.h"
 
@@ -38,21 +38,19 @@ extern "C"
 #include "CanIf_Types.h"
 #endif
 
-
 /*
 **  Published Information.
 */
-#define CANIF_VENDOR_ID           AR_VENDOR_ID
-#define CANIF_MODULE_ID           AR_MODULE_ID_CANIF
-#define CANIF_INSTANCE_ID         0
-#define CANIF_AR_MAJOR_VERSION    3
-#define CANIF_AR_MINOR_VERSION    1
-#define CANIF_AR_PATCH_VERSION    0
-#define CANIF_SW_MAJOR_VERSION    1
-#define CANIF_SW_MINOR_VERSION    0
-#define CANIF_SW_PATCH_VERSION    0
+#define CANIF_VENDOR_ID                             AR_VENDOR_ID
+#define CANIF_MODULE_ID                             AR_MODULE_ID_CANIF
+#define CANIF_INSTANCE_ID                           0
+#define CANIF_AR_MAJOR_VERSION                      3
+#define CANIF_AR_MINOR_VERSION                      1
+#define CANIF_AR_PATCH_VERSION                      0
+#define CANIF_SW_MAJOR_VERSION                      1
+#define CANIF_SW_MINOR_VERSION                      0
+#define CANIF_SW_PATCH_VERSION                      0
 #define CANIF_VENDOR_API_INFIX
-
 
 /*
 **  Service-IDs.
@@ -80,7 +78,6 @@ extern "C"
 #define AR_SERVICE_CANIF_CANCELTXCONFIRMATION       ((uint8)0x15)
 #define AR_SERVICE_CANIF_CONTROLLERBUSOFF           ((uint8)0x16)
 
-
 /*
 **  Global Types.
 */
@@ -107,7 +104,7 @@ typedef struct tagCanIf_ConfigType {
         - Data buffer for receive L-PDUs in case of polling mode.
         - Network towards each L-PDU belongs to.
         - Transmit L-PDU handle type.
-*/
+ */
 } CanIf_ConfigType;
 
 typedef struct tagCanIf_ControllerConfigType {
@@ -122,7 +119,7 @@ typedef struct tagCanIf_ControllerConfigType {
     The definition of CAN interface public parameters shall contain: s. o.
 
     Attention: Dynamic transmit L-PDUs are not part of this type definition.
-*/
+ */
 } CanIf_ControllerConfigType;
 
 typedef enum tagCanIf_ControllerModeType {
@@ -177,41 +174,44 @@ typedef enum tagCanIf_TrcvWakeupModeType {
     CANIF_TRCV_WU_CLEAR
 } CanIf_TrcvWakeupModeType;
 
-
 /*
 **  Global Functions.
 */
-FUNC(void,CANIF_CODE) CanIf_Init(P2CONST(CanIf_ConfigType,AUTOMATIC,CANIF_APPL_DATA) ConfigPtr);
-FUNC(void,CANIF_CODE) CanIf_InitController(uint8 Controller,uint8 ConfigurationIndex);
-FUNC(Std_ReturnType,CANIF_CODE) CanIf_SetControllerMode(uint8 Controller,CanIf_ControllerModeType ControllerMode);
-FUNC(Std_ReturnType,CANIF_CODE) CanIf_GetControllerMode(uint8 Controller,
-    P2VAR(CanIf_ControllerModeType,AUTOMATIC,CANIF_APPL_DATA) ControllerModePtr);
-FUNC(Std_ReturnType,CANIF_CODE) CanIf_Transmit(PduIdType CanTxPduId,P2CONST(PduInfoType,AUTOMATIC,CANIF_APPL_DATA) PduInfoPtr);
-FUNC(Std_ReturnType,CANIF_CODE) CanIf_ReadRxPduData(PduIdType CanRxPduId,P2VAR(PduInfoType,AUTOMATIC,CANIF_APPL_DATA) PduInfoPtr);
-FUNC(CanIf_NotifStatusType,CANIF_CODE) CanIf_ReadTxNotifStatus(PduIdType CanTxPduId);
-FUNC(CanIf_NotifStatusType,CANIF_CODE) CanIf_ReadRxNotifStatus(PduIdType CanRxPduId);
-FUNC(Std_ReturnType,CANIF_CODE) CanIf_SetPduMode(uint8 Controller,CanIf_ChannelSetModeType PduModeRequest);
-FUNC(Std_ReturnType,CANIF_CODE) CanIf_GetPduMode(uint8 Controller,P2VAR(CanIf_PduGetModeType,AUTOMATIC,CANIF_APPL_DATA) PduModePtr);
+FUNC(void, CANIF_CODE) CanIf_Init(P2CONST(CanIf_ConfigType, AUTOMATIC, CANIF_APPL_DATA) ConfigPtr);
+FUNC(void, CANIF_CODE) CanIf_InitController(uint8 Controller, uint8 ConfigurationIndex);
+FUNC(Std_ReturnType, CANIF_CODE) CanIf_SetControllerMode(uint8 Controller, CanIf_ControllerModeType ControllerMode);
+FUNC(Std_ReturnType, CANIF_CODE) CanIf_GetControllerMode(uint8 Controller,
+                                                         P2VAR(CanIf_ControllerModeType, AUTOMATIC,
+                                                               CANIF_APPL_DATA) ControllerModePtr);
+FUNC(Std_ReturnType, CANIF_CODE) CanIf_Transmit(PduIdType CanTxPduId, P2CONST(PduInfoType, AUTOMATIC, CANIF_APPL_DATA) PduInfoPtr);
+FUNC(Std_ReturnType, CANIF_CODE) CanIf_ReadRxPduData(PduIdType CanRxPduId, P2VAR(PduInfoType, AUTOMATIC,
+                                                                                 CANIF_APPL_DATA) PduInfoPtr);
+FUNC(CanIf_NotifStatusType, CANIF_CODE) CanIf_ReadTxNotifStatus(PduIdType CanTxPduId);
+FUNC(CanIf_NotifStatusType, CANIF_CODE) CanIf_ReadRxNotifStatus(PduIdType CanRxPduId);
+FUNC(Std_ReturnType, CANIF_CODE) CanIf_SetPduMode(uint8 Controller, CanIf_ChannelSetModeType PduModeRequest);
+FUNC(Std_ReturnType, CANIF_CODE) CanIf_GetPduMode(uint8 Controller, P2VAR(CanIf_PduGetModeType, AUTOMATIC,
+                                                                          CANIF_APPL_DATA) PduModePtr);
 
-FUNC(void,CANIF_CODE) CanIf_GetVersionInfo(P2VAR(Std_VersionInfoType,AUTOMATIC,CANIF_APPL_DATA) VersionInfo);
+FUNC(void, CANIF_CODE) CanIf_GetVersionInfo(P2VAR(Std_VersionInfoType, AUTOMATIC, CANIF_APPL_DATA) VersionInfo);
 
-FUNC(void,CANIF_CODE) CanIf_SetDynamicTxId(PduIdType CanTxPduId,Can_IdType CanId);
-FUNC(Std_ReturnType,CANIF_CODE) CanIf_SetTransceiverMode(uint8 Transceiver,CanIf_TransceiverModeType TransceiverMode);
-FUNC(Std_ReturnType,CANIF_CODE) CanIf_GetTransceiverMode(uint8 Transceiver,
-    P2VAR(CanIf_TransceiverModeType,AUTOMATIC,CANIF_APPL_DATA) TransceiverModePtr);
-FUNC(Std_ReturnType,CANIF_CODE) CanIf_GetTrcvWakeupReason(uint8 Transceiver,
-    P2VAR(CanIf_TrcvWakeupReasonType,AUTOMATIC,CANIF_APPL_DATA) TrcvWuReasonPtr);
-FUNC(Std_ReturnType,CANIF_CODE) CanIf_SetTransceiverWakeupMode(uint8 Transceiver,CanIf_TrcvWakeupModeType TrcvWakeupMode);
+FUNC(void, CANIF_CODE) CanIf_SetDynamicTxId(PduIdType CanTxPduId, Can_IdType CanId);
+FUNC(Std_ReturnType, CANIF_CODE) CanIf_SetTransceiverMode(uint8 Transceiver, CanIf_TransceiverModeType TransceiverMode);
+FUNC(Std_ReturnType, CANIF_CODE) CanIf_GetTransceiverMode(uint8 Transceiver,
+                                                          P2VAR(CanIf_TransceiverModeType, AUTOMATIC,
+                                                                CANIF_APPL_DATA) TransceiverModePtr);
+FUNC(Std_ReturnType, CANIF_CODE) CanIf_GetTrcvWakeupReason(uint8 Transceiver,
+                                                           P2VAR(CanIf_TrcvWakeupReasonType, AUTOMATIC,
+                                                                 CANIF_APPL_DATA) TrcvWuReasonPtr);
+FUNC(Std_ReturnType, CANIF_CODE) CanIf_SetTransceiverWakeupMode(uint8 Transceiver, CanIf_TrcvWakeupModeType TrcvWakeupMode);
 #if 0
-FUNC(Std_ReturnType,CANIF_CODE) CanIf_CheckWakeup(EcuM_WakeupSourceType WakeupSource);
-FUNC(Std_ReturnType,CANIF_CODE) CanIf_CheckValidation(EcuM_WakeupSourceType WakeupSource);
+FUNC(Std_ReturnType, CANIF_CODE) CanIf_CheckWakeup(EcuM_WakeupSourceType WakeupSource);
+FUNC(Std_ReturnType, CANIF_CODE) CanIf_CheckValidation(EcuM_WakeupSourceType WakeupSource);
 #endif
-FUNC(void,CANIF_CODE) CanIf_TxConfirmation(PduIdType CanTxPduId);
-FUNC(void,CANIF_CODE) CanIf_RxIndication(uint8 Hrh,Can_IdType CanId,uint8 CanDlc,
-    P2CONST(uint8,AUTOMATIC,CANIF_APPL_DATA) CanSduPtr);
-FUNC(void,CANIF_CODE) CanIf_CancelTxConfirmation(P2CONST(Can_PduType,AUTOMATIC,CANIF_APPL_DATA) PduInfoPtr);
-FUNC(void,CANIF_CODE) CanIf_ControllerBusOff(uint8 Controller);
-
+FUNC(void, CANIF_CODE) CanIf_TxConfirmation(PduIdType CanTxPduId);
+FUNC(void, CANIF_CODE) CanIf_RxIndication(uint8 Hrh, Can_IdType CanId, uint8 CanDlc,
+                                          P2CONST(uint8, AUTOMATIC, CANIF_APPL_DATA) CanSduPtr);
+FUNC(void, CANIF_CODE) CanIf_CancelTxConfirmation(P2CONST(Can_PduType, AUTOMATIC, CANIF_APPL_DATA) PduInfoPtr);
+FUNC(void, CANIF_CODE) CanIf_ControllerBusOff(uint8 Controller);
 
 #if defined(__cplusplus)
 }

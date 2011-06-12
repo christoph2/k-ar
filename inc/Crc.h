@@ -1,7 +1,8 @@
 /*
- * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
+ * k_dk - Driver Kit for k_os (Konnex Operating-System based on the
+ * OSEK/VDX-Standard).
  *
- * (C) 2007-2009 by Christoph Schueler <chris@konnex-tools.de,
+ * (C) 2007-2010 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -20,6 +21,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
+ * s. FLOSS-EXCEPTION.txt
  */
 #if !defined(__CRC_H)
 #define __CRC_H
@@ -36,20 +38,19 @@ extern "C"
 /*
 **  Published Information.
 */
-#define CRC_VENDOR_ID           AR_VENDOR_ID
-#define CRC_MODULE_ID           AR_MODULE_ID_CRC
-#define CRC_AR_MAJOR_VERSION    3
-#define CRC_AR_MINOR_VERSION    1
-#define CRC_AR_PATCH_VERSION    0
-#define CRC_SW_MAJOR_VERSION    1
-#define CRC_SW_MINOR_VERSION    0
-#define CRC_SW_PATCH_VERSION    0
-#define CRC_INSTANCE_ID         0
+#define CRC_VENDOR_ID                   AR_VENDOR_ID
+#define CRC_MODULE_ID                   AR_MODULE_ID_CRC
+#define CRC_AR_MAJOR_VERSION            3
+#define CRC_AR_MINOR_VERSION            1
+#define CRC_AR_PATCH_VERSION            0
+#define CRC_SW_MAJOR_VERSION            1
+#define CRC_SW_MINOR_VERSION            0
+#define CRC_SW_PATCH_VERSION            0
+#define CRC_INSTANCE_ID                 0
 
-#define CRC_INITIAL_VALUE8      ((uint8)0xff)
-#define CRC_INITIAL_VALUE16     ((uint16)0xffffU)
-#define CRC_INITIAL_VALUE32     ((uint16)0xffffffffUL)
-
+#define CRC_INITIAL_VALUE8              ((uint8)0xff)
+#define CRC_INITIAL_VALUE16             ((uint16)0xffffU)
+#define CRC_INITIAL_VALUE32             ((uint16)0xffffffffUL)
 
 /*
 **  Service-IDs.
@@ -59,27 +60,33 @@ extern "C"
 #define AR_SERVICE_CRC_CALCULATE_CRC32  ((uint8)0x03)
 #define AR_SERVICE_CRC_GETVERSIONINFO   ((uint8)0x04)
 
+/*
+**  Global Types.
+*/
 
-FUNC(uint8,CRC_CODE) Crc_CalculateCRC8(
-        P2CONST(uint8,AUTOMATIC,CRC_APPL_DATA) Crc_DataPtr,
-        uint32 Crc_Length,
-        uint8 Crc_StartValue8
+/*
+**  Global Functions.
+*/
+FUNC(uint8, CRC_CODE) Crc_CalculateCRC8(
+    P2CONST(uint8, AUTOMATIC, CRC_APPL_DATA) Crc_DataPtr,
+    uint32 Crc_Length,
+    uint8 Crc_StartValue8
     );
 
-FUNC(uint16,CRC_CODE) Crc_CalculateCRC16(
-        P2CONST(uint8,AUTOMATIC,CRC_APPL_DATA) Crc_DataPtr,
-        uint32 Crc_Length,
-        uint8 Crc_StartValue16
+FUNC(uint16, CRC_CODE) Crc_CalculateCRC16(
+    P2CONST(uint8, AUTOMATIC, CRC_APPL_DATA) Crc_DataPtr,
+    uint32 Crc_Length,
+    uint8 Crc_StartValue16
     );
 
-FUNC(uint32,CRC_CODE) Crc_CalculateCRC32(
-        P2CONST(uint8,AUTOMATIC,CRC_APPL_DATA) Crc_DataPtr,
-        uint32 Crc_Length,
-        uint8 Crc_StartValue32
+FUNC(uint32, CRC_CODE) Crc_CalculateCRC32(
+    P2CONST(uint8, AUTOMATIC, CRC_APPL_DATA) Crc_DataPtr,
+    uint32 Crc_Length,
+    uint8 Crc_StartValue32
     );
 
-FUNC(void,CRC_CODE) Crc_GetVersionInfo(
-        P2VAR(Std_VersionInfoType,AUTOMATIC,CRC_APPL_DATA) Versioninfo
+FUNC(void, CRC_CODE) Crc_GetVersionInfo(
+    P2VAR(Std_VersionInfoType, AUTOMATIC, CRC_APPL_DATA) Versioninfo
     );
 
 #if defined(__cplusplus)

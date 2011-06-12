@@ -1,7 +1,8 @@
 /*
- * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
+ * k_dk - Driver Kit for k_os (Konnex Operating-System based on the
+ * OSEK/VDX-Standard).
  *
- * (C) 2007-2009 by Christoph Schueler <chris@konnex-tools.de,
+ * (C) 2007-2010 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -20,16 +21,17 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
+ * s. FLOSS-EXCEPTION.txt
  */
 #include "Crc.h"
-#if AR_VERSION_CHECK_INTERNAL_FAILS(CRC,3,1,0,1,0)
-    #error Wrong Version-Information of Include-File 'Crc.h' !
+#if AR_VERSION_CHECK_INTERNAL_FAILS(CRC, 3, 1, 0, 1, 0)
+    #error Version-Information-Mismatch of Include-File 'Crc.h' !
 #endif
 
 #if 0
 #include "Det.h"
-#if AR_VERSION_CHECK_FAILS(DET,3,1)
-    #error Wrong Version-Information of Include-File 'Det.h' !
+#if AR_VERSION_CHECK_FAILS(DET, 3, 1)
+    #error Version-Information-Mismatch of Include-File 'Det.h' !
 #endif
 #endif
 
@@ -40,11 +42,11 @@
 #endif
 
 #if !defined(CRC_16_MODE)
-    #define CRC_16_MODE  CRC_16_TABLE
+    #define CRC_16_MODE CRC_16_TABLE
 #endif
 
 #if !defined(CRC_32_MODE)
-    #define CRC_32_MODE  CRC_32_TABLE
+    #define CRC_32_MODE CRC_32_TABLE
 #endif
 
 /*
@@ -55,27 +57,27 @@
 **
 */
 
-    /*
-    **  Non offical AUTOSAR-Errata:
-    **  ---------------------------
-    **  Specification on CRC Routines V3.0.2 R3.1 Rev001, 7.2.1 8-bit CRC calculation ('CRC025'):
-    **
-    **                  wrong   right
-    **  -----------------------------
-    **  Initial value:  0h      FFh
-    **  XOR value:      0h      FFh
-    **  Check:          F4h     59h
-    **
-    **  s. [1]-7.4.1 Cyclic Redundancy Check.
-    **  see also Test-Suite '???.c', the Testcases are taken from [1]-7.4.1 h)./Table 1.
-    **
-    */
+/*
+**  Non offical AUTOSAR-Errata:
+**  ---------------------------
+**  Specification on CRC Routines V3.0.2 R3.1 Rev001, 7.2.1 8-bit CRC calculation ('CRC025'):
+**
+**                  wrong   right
+**  -----------------------------
+**  Initial value:  0h      FFh
+**  XOR value:      0h      FFh
+**  Check:          F4h     59h
+**
+**  s. [1]-7.4.1 Cyclic Redundancy Check.
+**  see also Test-Suite '???.c', the Testcases are taken from [1]-7.4.1 h)./Table 1.
+**
+*/
 
 void Crc_Test(void);
 
-uint32 Crc_Reflect(sint32 data,uint16 data_len);
+uint32 Crc_Reflect(sint32 data, uint16 data_len);
 
-static const char Crc_TestVector[]="123456789";
+static const char Crc_TestVector[] = "123456789";
 
 /*
 **  Local Defines.
@@ -88,8 +90,8 @@ static const char Crc_TestVector[]="123456789";
 ** 8-Bit-CRC: SAE-J1850 (0x1d).
 */
 
-#if (CRC_8_MODE==CRC_8_TABLE)
-static CONST(uint8,CRC_CONST_8BIT) Crc_Table8[]={
+#if (CRC_8_MODE == CRC_8_TABLE)
+static CONST(uint8, CRC_CONST_8BIT) Crc_Table8[] = {
     ((uint8)0x00), ((uint8)0x1d), ((uint8)0x3a), ((uint8)0x27), ((uint8)0x74),
     ((uint8)0x69), ((uint8)0x4e), ((uint8)0x53), ((uint8)0xe8), ((uint8)0xf5),
     ((uint8)0xd2), ((uint8)0xcf), ((uint8)0x9c), ((uint8)0x81), ((uint8)0xa6),
@@ -145,12 +147,11 @@ static CONST(uint8,CRC_CONST_8BIT) Crc_Table8[]={
 };
 #endif
 
-
 /*
 **  16-Bit-CRC: CCITT (0x1021).
 */
-#if (CRC_16_MODE==CRC_16_TABLE)
-static CONST(uint16,CRC_CONST_16BIT) Crc_Table16[] = {
+#if (CRC_16_MODE == CRC_16_TABLE)
+static CONST(uint16, CRC_CONST_16BIT) Crc_Table16[] = {
     0x0000U, 0x1021U, 0x2042U, 0x3063U, 0x4084U, 0x50a5U, 0x60c6U, 0x70e7U,
     0x8108U, 0x9129U, 0xa14aU, 0xb16bU, 0xc18cU, 0xd1adU, 0xe1ceU, 0xf1efU,
     0x1231U, 0x0210U, 0x3273U, 0x2252U, 0x52b5U, 0x4294U, 0x72f7U, 0x62d6U,
@@ -186,12 +187,11 @@ static CONST(uint16,CRC_CONST_16BIT) Crc_Table16[] = {
 };
 #endif
 
-
 /*
 **  32-Bit-CRC: IEEE 802.3/Ethernet (0x04c11db7).
 */
-#if (CRC_32_MODE==CRC_32_TABLE)
-static CONST(uint32,CRC_CONST_32BIT) Crc_Table32[] = {
+#if (CRC_32_MODE == CRC_32_TABLE)
+static CONST(uint32, CRC_CONST_32BIT) Crc_Table32[] = {
     0x00000000UL, 0x77073096UL, 0xee0e612cUL, 0x990951baUL, 0x076dc419UL,
     0x706af48fUL, 0xe963a535UL, 0x9e6495a3UL, 0x0edb8832UL, 0x79dcb8a4UL,
     0xe0d5e91eUL, 0x97d2d988UL, 0x09b64c2bUL, 0x7eb17cbdUL, 0xe7b82d07UL,
@@ -247,139 +247,53 @@ static CONST(uint32,CRC_CONST_32BIT) Crc_Table32[] = {
 };
 #endif
 
-
 /*
 **  Global Functions.
 */
 #define CRC_START_SEC_CODE
 #include "MemMap.h"
 
-FUNC(uint8,CRC_CODE) Crc_CalculateCRC8(
-        P2CONST(uint8,AUTOMATIC,CRC_APPL_DATA) Crc_DataPtr,
-        uint32 Crc_Length,
-        uint8 Crc_StartValue8)
+FUNC(uint8, CRC_CODE) Crc_CalculateCRC8(
+    P2CONST(uint8, AUTOMATIC, CRC_APPL_DATA) Crc_DataPtr,
+    uint32 Crc_Length,
+    uint8 Crc_StartValue8)
 {
-#if CRC_8_MODE==CRC_8_RUNTIME
-    uint16 idx;
+#if CRC_8_MODE == CRC_8_RUNTIME
+    uint16  idx;
     boolean bit;
-    uint8 c;
-    uint8 crc;
+    uint8   c;
+    uint8   crc;
 
-    crc=Crc_StartValue8;
+    crc = Crc_StartValue8;
 
     while (Crc_Length--) {
         c = *Crc_DataPtr++;
-        for (idx=((uint8)0x80);idx>((uint8)0x00); idx >>= 1) {
-            bit = (crc & (uint8)0x80)==(uint8)0x80;
-            if (c & idx) {
-                bit=!bit;
-            }
-            crc <<= 1;
-            if (bit) {
-                crc^=CRC_POLY_8;
-            }
-        }
-    }
-    return ~crc;
-#elif CRC_8_MODE==CRC_8_TABLE
-/*    uint8 idx;    */
-    uint16 idx; /* Im Debug-Mode schneller!!! */
-    uint8 crc;
 
-    crc=Crc_StartValue8;
+        for (idx = ((uint8)0x80); idx > ((uint8)0x00); idx >>= 1) {
+            bit = (crc & (uint8)0x80) == (uint8)0x80;
 
-    while (Crc_Length--) {
-        idx=((crc) ^ *Crc_DataPtr) & (uint16)0x00ffu;
-        crc=(Crc_Table8[idx] ^ (crc << 8));
-        Crc_DataPtr++;
-    }
-    return ~crc;
-#endif
-}
-
-
-FUNC(uint16,CRC_CODE) Crc_CalculateCRC16(
-        P2CONST(uint8,AUTOMATIC,CRC_APPL_DATA) Crc_DataPtr,
-        uint32 Crc_Length,
-        uint8 Crc_StartValue16
-)
-{
-#if CRC_16_MODE==CRC_16_RUNTIME
-    uint16 idx;
-    boolean bit;
-    uint8 c;
-    uint16 crc;
-
-    crc=Crc_StartValue16;
-
-    while (Crc_Length--) {
-        c = *Crc_DataPtr++;
-        for (idx=0x0080U;idx > 0x0000U; idx >>= 1) {
-            bit = (crc & 0x8000)==0x8000U;
             if (c & idx) {
                 bit = !bit;
             }
+
             crc <<= 1;
+
             if (bit) {
-                crc^=CRC_POLY_16;
+                crc ^= CRC_POLY_8;
             }
         }
     }
-    return crc;
-#elif CRC_16_MODE==CRC_16_TABLE
-    uint16 idx;
-    uint16 crc;
 
-    crc=Crc_StartValue16;
+    return ~crc;
+#elif CRC_8_MODE == CRC_8_TABLE
+    uint16  idx; /* check: faster? */    /* uint8 idx; */
+    uint8   crc;
 
-    while (Crc_Length--) {
-        idx = ((crc >> 8) ^ *Crc_DataPtr) & 0xff;
-        crc=(Crc_Table16[idx] ^ (crc << 8)) & 0xffffU;
-
-        Crc_DataPtr++;
-    }
-    return crc;
-#endif
-}
-
-
-FUNC(uint32,CRC_CODE) Crc_CalculateCRC32(
-        P2CONST(uint8,AUTOMATIC,CRC_APPL_DATA) Crc_DataPtr,
-        uint32 Crc_Length,
-        uint8 Crc_StartValue32
-)
-{
-#if CRC_32_MODE==CRC_32_RUNTIME
-    uint16 idx;
-    boolean bit;
-    uint8 c;
-    uint32 crc;
-
-    crc=Crc_StartValue32;
+    crc = Crc_StartValue8;
 
     while (Crc_Length--) {
-        c = *Crc_DataPtr++;
-        for (idx = 0x01; idx & 0xff; idx <<= 1) {
-            bit = (crc & 0x80000000UL)==0x80000000UL;
-            if (c & idx) {
-                bit = !bit;
-            }
-            crc <<= 1;
-            if (bit) {
-                crc^=CRC_POLY_32; /* crc ^= 0xEDB88320UL; */ /* crc ^= 0xDB710641UL; */
-            }
-        }
-    }
-    return ~Crc_Reflect(crc,32);
-#elif CRC_32_MODE==CRC_32_TABLE
-    uint16 idx;
-    uint32 crc;
-
-    crc=Crc_StartValue32;
-
-    while (Crc_Length--) {
-        idx = (crc ^ *Crc_DataPtr) & 0xff;
-        crc = (Crc_Table32[idx] ^ (crc >> 8)) & 0xffffffffUL;
+        idx    = ((crc) ^ *Crc_DataPtr) & (uint16)0x00ffu;
+        crc    = (Crc_Table8[idx] ^ (crc << 8));
         Crc_DataPtr++;
     }
 
@@ -387,113 +301,183 @@ FUNC(uint32,CRC_CODE) Crc_CalculateCRC32(
 #endif
 }
 
-
-FUNC(void,CRC_CODE) Crc_GetVersionInfo(
-        P2VAR(Std_VersionInfoType,AUTOMATIC,CRC_APPL_DATA) Versioninfo
-)
+FUNC(uint16, CRC_CODE) Crc_CalculateCRC16(
+    P2CONST(uint8, AUTOMATIC, CRC_APPL_DATA) Crc_DataPtr,
+    uint32 Crc_Length,
+    uint8 Crc_StartValue16
+    )
 {
-#if CRC_VERSION_INFO_API==STD_ON
-    Versioninfo->vendorID=(uint16)CRC_VENDOR_ID;
-    Versioninfo->moduleID=(uint16)CRC_MODULE_ID;
-    Versioninfo->instanceID=(uint8)CRC_INSTANCE_ID;
-    Versioninfo->sw_major_version=(uint8)CRC_SW_MAJOR_VERSION;
-    Versioninfo->sw_minor_version=(uint8)CRC_SW_MINOR_VERSION;
-    Versioninfo->sw_patch_version=(uint8)CRC_SW_PATCH_VERSION;
+#if CRC_16_MODE == CRC_16_RUNTIME
+    uint16  idx;
+    boolean bit;
+    uint8   c;
+    uint16  crc;
+
+    crc = Crc_StartValue16;
+
+    while (Crc_Length--) {
+        c = *Crc_DataPtr++;
+
+        for (idx = 0x0080U; idx > 0x0000U; idx >>= 1) {
+            bit = (crc & 0x8000) == 0x8000U;
+
+            if (c & idx) {
+                bit = !bit;
+            }
+
+            crc <<= 1;
+
+            if (bit) {
+                crc ^= CRC_POLY_16;
+            }
+        }
+    }
+
+    return crc;
+#elif CRC_16_MODE == CRC_16_TABLE
+    uint16  idx;
+    uint16  crc;
+
+    crc = Crc_StartValue16;
+
+    while (Crc_Length--) {
+        idx    = ((crc >> 8) ^ *Crc_DataPtr) & 0xff;
+        crc    = (Crc_Table16[idx] ^ (crc << 8)) & 0xffffU;
+
+        Crc_DataPtr++;
+    }
+
+    return crc;
+#endif
+}
+
+FUNC(uint32, CRC_CODE) Crc_CalculateCRC32(
+    P2CONST(uint8, AUTOMATIC, CRC_APPL_DATA) Crc_DataPtr,
+    uint32 Crc_Length,
+    uint8 Crc_StartValue32
+    )
+{
+#if CRC_32_MODE == CRC_32_RUNTIME
+    uint16  idx;
+    boolean bit;
+    uint8   c;
+    uint32  crc;
+
+    crc = Crc_StartValue32;
+
+    while (Crc_Length--) {
+        c = *Crc_DataPtr++;
+
+        for (idx = 0x01; idx &0xff; idx <<= 1) {
+            bit = (crc & 0x80000000UL) == 0x80000000UL;
+
+            if (c & idx) {
+                bit = !bit;
+            }
+
+            crc <<= 1;
+
+            if (bit) {
+                crc ^= CRC_POLY_32; /* crc ^= 0xEDB88320UL; */ /* crc ^= 0xDB710641UL; */
+            }
+        }
+    }
+
+    return ~Crc_Reflect(crc, 32);
+#elif CRC_32_MODE == CRC_32_TABLE
+    uint16  idx;
+    uint32  crc;
+
+    crc = Crc_StartValue32;
+
+    while (Crc_Length--) {
+        idx    = (crc ^ *Crc_DataPtr) & 0xff;
+        crc    = (Crc_Table32[idx] ^ (crc >> 8)) & 0xffffffffUL;
+        Crc_DataPtr++;
+    }
+
+    return ~crc;
+#endif
+}
+
+FUNC(void, CRC_CODE) Crc_GetVersionInfo(
+    P2VAR(Std_VersionInfoType, AUTOMATIC, CRC_APPL_DATA) Versioninfo
+    )
+{
+#if CRC_VERSION_INFO_API == STD_ON
+    Versioninfo->vendorID          = (uint16)CRC_VENDOR_ID;
+    Versioninfo->moduleID          = (uint16)CRC_MODULE_ID;
+    Versioninfo->instanceID        = (uint8)CRC_INSTANCE_ID;
+    Versioninfo->sw_major_version  = (uint8)CRC_SW_MAJOR_VERSION;
+    Versioninfo->sw_minor_version  = (uint8)CRC_SW_MINOR_VERSION;
+    Versioninfo->sw_patch_version  = (uint8)CRC_SW_PATCH_VERSION;
 #else
     UNREFERENCED_PARAMETER(Versioninfo);
 #endif
 }
 
-#if CRC_32_MODE==CRC_32_RUNTIME
-uint32 Crc_Reflect(sint32 data,uint16 data_len)
+#if CRC_32_MODE == CRC_32_RUNTIME
+uint32 Crc_Reflect(sint32 data, uint16 data_len)
 {
-    uint16 i;
-    sint32 ret;
+    uint16  i;
+    sint32  ret;
 
     ret = data & 0x01;
-    for (i = 1; i < data_len; i++)
-    {
+
+    for (i = 1; i < data_len; i++) {
         data >>= 1;
-        ret = (ret << 1) | (data & 0x01);
+        ret    = (ret << 1) | (data & 0x01);
     }
+
     return ret;
 }
+
 #endif
+
+static const uint8  SAE_T0[4] = {0x00, 0x00, 0x00, 0x00};
+static const uint8  SAE_T1[4] = {0xff, 0xff, 0xff, 0xff};
 
 #if 0
-#include <stdio.h>
-#include <stdlib.h>
-#include <inttypes.h>
-#define CRC32POLYREV 0xEDB88320 /* CRC-32 Polynom, umgekehrte Bitfolge */
-
-int datastream[] = {1,0,0,0,1,1,0,0}; /* ASCII-"1", LSB zuerst */
-int databits = 8;
-uint32_t crc32_rev = 0xffffffff; /* Schieberegister, Startwert (111...) */
-
-int main(void)
-{
-    int i;
-    for (i = 0; i < databits; ++i)
-        if ((crc32_rev & 1) != datastream[i])
-             crc32_rev = (crc32_rev >> 1) ^ CRC32POLYREV;
-        else
-             crc32_rev >>= 1;
-    printf("0x%08X\n", crc32_rev ^ 0xffffffff); /* inverses Ergebnis, MSB zuerst */
-    return EXIT_SUCCESS;
-}
-#endif
-
-/*
-**
-**  AUTOSAR is wikipediaesque at this point - don't believe/thrust every b*llsh*t,
-**  use the primary source (SAE-J1850)!
-**
-*/
-
-
-static const uint8 SAE_T0[4]={0x00,0x00,0x00,0x00};
-static const uint8 SAE_T1[4]={0xff,0xff,0xff,0xff};
-
 /*
 **
 **  Test-Vectors taken from: [1]-7.4.1 h)./Table 1.
 **
 */
 typedef struct tagSAEJ1850_TestVectorType {
-    uint8 len;
-    uint8 expected_result;
-    uint8 data[9];
+    uint8   len;
+    uint8   expected_result;
+    uint8   data[9];
 } SAEJ1850_TestVectorType;
 
-static const SAEJ1850_TestVectorType SAEJ1850_TestVectors[]=
-{
-    {(uint8)0x04,(uint8)0x59,{(uint8)0x00,(uint8)0x00,(uint8)0x00,(uint8)0x00}},
-    {(uint8)0x03,(uint8)0x37,{(uint8)0xf1,(uint8)0x01,(uint8)0x83}},
-    {(uint8)0x04,(uint8)0x79,{(uint8)0x0f,(uint8)0xaa,(uint8)0x00,(uint8)0x55}},
-    {(uint8)0x04,(uint8)0xb8,{(uint8)0x00,(uint8)0xff,(uint8)0x55,(uint8)0x11}},
-    {(uint8)0x09,(uint8)0xcb,{(uint8)0x33,(uint8)0x22,(uint8)0x55,(uint8)0xaa}},
-    {(uint8)0xbb,(uint8)0xcc,{(uint8)0xdd,(uint8)0xee,(uint8)0xff}},
-    {(uint8)0x03,(uint8)0x8c,{(uint8)0x92,(uint8)0x6b,(uint8)0x55}},
-    {(uint8)0x04,(uint8)0x74,{(uint8)0xff,(uint8)0xff,(uint8)0xff,(uint8)0xff}},
+static const SAEJ1850_TestVectorType SAEJ1850_TestVectors[] = {
+    {(uint8)0x04, (uint8)0x59, {(uint8)0x00, (uint8)0x00, (uint8)0x00, (uint8)0x00}},
+    {(uint8)0x03, (uint8)0x37, {(uint8)0xf1, (uint8)0x01, (uint8)0x83}},
+    {(uint8)0x04, (uint8)0x79, {(uint8)0x0f, (uint8)0xaa, (uint8)0x00, (uint8)0x55}},
+    {(uint8)0x04, (uint8)0xb8, {(uint8)0x00, (uint8)0xff, (uint8)0x55, (uint8)0x11}},
+    {(uint8)0x09, (uint8)0xcb, {(uint8)0x33, (uint8)0x22, (uint8)0x55, (uint8)0xaa}},
+    {(uint8)0xbb, (uint8)0xcc, {(uint8)0xdd, (uint8)0xee, (uint8)0xff}},
+    {(uint8)0x03, (uint8)0x8c, {(uint8)0x92, (uint8)0x6b, (uint8)0x55}},
+    {(uint8)0x04, (uint8)0x74, {(uint8)0xff, (uint8)0xff, (uint8)0xff, (uint8)0xff}},
 };
-
 
 void Crc_Test(void)
 {
-    uint32 res32;
-    uint16 res16;
-    uint8 res8;
+    uint32  res32;
+    uint16  res16;
+    uint8   res8;
 
-    res8=Crc_CalculateCRC8(SAE_T0,4,CRC_INITIAL_VALUE8);
-    res8=Crc_CalculateCRC8(SAE_T1,4,CRC_INITIAL_VALUE8);
-    res8=Crc_CalculateCRC8(SAE_T1,4,CRC_INITIAL_VALUE8);
-    res8=Crc_CalculateCRC8(Crc_TestVector,9,CRC_INITIAL_VALUE8);
-    res8=Crc_CalculateCRC8(Crc_TestVector,9,CRC_INITIAL_VALUE8);
+    res8   = Crc_CalculateCRC8(SAE_T0, 4, CRC_INITIAL_VALUE8);
+    res8   = Crc_CalculateCRC8(SAE_T1, 4, CRC_INITIAL_VALUE8);
+    res8   = Crc_CalculateCRC8(SAE_T1, 4, CRC_INITIAL_VALUE8);
+    res8   = Crc_CalculateCRC8(Crc_TestVector, 9, CRC_INITIAL_VALUE8);
+    res8   = Crc_CalculateCRC8(Crc_TestVector, 9, CRC_INITIAL_VALUE8);
 
-    res16=Crc_CalculateCRC16(Crc_TestVector,9,CRC_INITIAL_VALUE16);
+    res16 = Crc_CalculateCRC16(Crc_TestVector, 9, CRC_INITIAL_VALUE16);
 
-    res32=Crc_CalculateCRC32(Crc_TestVector,9,CRC_INITIAL_VALUE32);
+    res32 = Crc_CalculateCRC32(Crc_TestVector, 9, CRC_INITIAL_VALUE32);
 }
+
+#endif
 
 #define CRC_STOP_SEC_CODE
 #include "MemMap.h"

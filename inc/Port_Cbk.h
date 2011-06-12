@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2009 by Christoph Schueler <chris@konnex-tools.de>
+ * (C) 2007-2010 by Christoph Schueler <chris@konnex-tools.de>
  *
  * All Rights Reserved
  *
@@ -23,6 +23,13 @@
 #if !defined(__PORT_CBK_H)
 #define __PORT_CBK_H
 
-#endif /* __PORT_CBK_H */
+#if defined(__cplusplus)
+extern "C" {
+#endif  /* __cplusplus */
 
+#if defined(__cplusplus)
+}       /* extern "C" */
+#endif  /* __cplusplus */
+
+#endif /* __PORT_CBK_H */
 

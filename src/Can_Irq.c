@@ -38,24 +38,20 @@ ISR1(CAN0TxVector)
     Can_HandleIrqTx(CAN0);
 }
 
-
 ISR1(CAN0RxVector)
 {
     Can_HandleIrqRx(CAN0);
 }
-
 
 ISR1(CAN0ErrorVector)
 {
     Can_HandleIrqErr(CAN0);
 }
 
-
 ISR1(CAN0WakupVector)
 {
     Can_HandleIrqWup(CAN0);
 }
-
 
 /*
 **  CAN-Controller #1
@@ -65,24 +61,20 @@ ISR1(CAN1TxVector)
     Can_HandleIrqTx(CAN1);
 }
 
-
 ISR1(CAN1RxVector)
 {
     Can_HandleIrqRx(CAN1);
 }
-
 
 ISR1(CAN1ErrorVector)
 {
     Can_HandleIrqErr(CAN1);
 }
 
-
 ISR1(CAN1WakupVector)
 {
     Can_HandleIrqWup(CAN1);
 }
-
 
 /*
 **  CAN-Controller #2
@@ -92,24 +84,20 @@ ISR1(CAN2TxVector)
     Can_HandleIrqTx(CAN2);
 }
 
-
 ISR1(CAN2RxVector)
 {
     Can_HandleIrqRx(CAN2);
 }
-
 
 ISR1(CAN2ErrorVector)
 {
     Can_HandleIrqErr(CAN2);
 }
 
-
 ISR1(CAN2WakupVector)
 {
     Can_HandleIrqWup(CAN2);
 }
-
 
 /*
 **  CAN-Controller #3
@@ -119,24 +107,20 @@ ISR1(CAN3TxVector)
     Can_HandleIrqTx(CAN3);
 }
 
-
 ISR1(CAN3RxVector)
 {
     Can_HandleIrqRx(CAN3);
 }
-
 
 ISR1(CAN3ErrorVector)
 {
     Can_HandleIrqErr(CAN3);
 }
 
-
 ISR1(CAN3WakupVector)
 {
     Can_HandleIrqWup(CAN3);
 }
-
 
 /*
 **  CAN-Controller #4
@@ -146,18 +130,15 @@ ISR1(CAN4TxVector)
     Can_HandleIrqTx(CAN4);
 }
 
-
 ISR1(CAN4RxVector)
 {
     Can_HandleIrqRx(CAN4);
 }
 
-
 ISR1(CAN4ErrorVector)
 {
     Can_HandleIrqErr(CAN4);
 }
-
 
 ISR1(CAN4WakupVector)
 {

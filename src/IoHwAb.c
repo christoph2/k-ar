@@ -26,5 +26,3 @@
 #include "Dem.h"
 #include "Det.h"
 
-
-
