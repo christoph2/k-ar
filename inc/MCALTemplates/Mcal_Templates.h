@@ -39,6 +39,16 @@ extern "C"
 {
 #endif  /* __cplusplus */
 
+#if CPU_FAMILY == CPU12_HC12
+    /* hc12 */
+    #define KAR_MCAL_TEMPLATE_PATH  "MCALTemplates/hc12"
+#elif CPU_FAMILY == CPU12_S12
+    /** s12 */
+    #define KAR_MCAL_TEMPLATE_PATH  "MCALTemplates/s12"
+#elif CPU_FAMILY == CPU12_S12X
+    #error CPU12X not supported yet!
+#endif
+
 /*
 ** todo: Must be configurable, we don't want to link unused Modules!!!
 */
