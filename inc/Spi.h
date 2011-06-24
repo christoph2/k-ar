@@ -27,7 +27,7 @@
 
 #include "K_Ar.h"
 #include "Std_Types.h"
-#include "Mcal_Defines.h"
+#include "MCALTemplates/Mcal_Defines.h"
 
 #include "Dio.h"   /* needed for Chipselect functionality. */
 #if 0
@@ -190,6 +190,7 @@ typedef enum tagSpi_AsyncModeType {
     SPI_INTERRUPT_MODE
 } Spi_AsyncModeType;
 
+
 /*
 **  Global Functions.
 */
@@ -208,8 +209,6 @@ FUNC(Spi_StatusType, SPI_CODE) Spi_GetStatus(void);
 FUNC(Spi_JobResultType, SPI_CODE) Spi_GetJobResult(Spi_JobType Job);
 FUNC(Spi_SeqResultType, SPI_CODE) Spi_GetSequenceResult(Spi_SequenceType Sequence);
 
-/* void Spi_GetVersionInfo(Std_VersionInfoType *versioninfo); */
-
 FUNC(Std_ReturnType, SPI_CODE) Spi_SyncTransmit(Spi_SequenceType Sequence);
 FUNC(Spi_StatusType, SPI_CODE) Spi_GetHWUnitStatus(Spi_HWUnitType HWUnit);
 FUNC(void, SPI_CODE) Spi_Cancel(Spi_SequenceType SequenceType);
@@ -217,6 +216,13 @@ FUNC(Std_ReturnType, SPI_CODE) Spi_SetAsyncMode(Spi_AsyncModeType Mode);
 
 FUNC(void, SPI_CODE) Spi_MainFunction_Handling(void);
 FUNC(void, SPI_CODE) Spi_MainFunction_Driving(void);
+
+/*
+**  Global Function-like Macros.
+*/
+#if SPI_GET_VERSION_INFO_API == STD_ON
+#define Spi_GetVersionInfo(vp) AR_GET_VERSION_INFO(SPI, vp)
+#endif /* SPI_GET_VERSION_INFO_API */
 
 #include "Spi_Cfg.h"
 

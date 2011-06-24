@@ -28,7 +28,7 @@
 #include "K_Ar.h"
 #include "EcuM.h"
 #include "Std_Types.h"
-#include "Mcal_Defines.h"
+#include "MCALTemplates/Mcal_Defines.h"
 #include "Port_Cfg.h"
 
 #if 0

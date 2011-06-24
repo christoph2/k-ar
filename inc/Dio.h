@@ -27,7 +27,7 @@
 
 #include "K_Ar.h"
 #include "Std_Types.h"
-#include "Mcal_Defines.h"
+#include "MCALTemplates/Mcal_Defines.h"
 #include "Dio_Cfg.h"
 
 #if defined(__cplusplus)
