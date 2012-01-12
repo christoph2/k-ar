@@ -2,7 +2,7 @@
  * k_dk - Driver Kit for k_os (Konnex Operating-System based on the
  * OSEK/VDX-Standard).
  *
- * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -35,13 +35,17 @@
 #endif
 #endif /* PWM_DEV_ERROR_DETECT */
 
+#include "MCALTemplates/Mcal_Templates.h"
 
-static uint16 Pwm_CalculateAbsoluteDutyCycle(uint16 AbsolutePeriodTime,uint16 RelativeDutyCycle);
+static uint16 Pwm_CalculateAbsoluteDutyCycle(uint16 AbsolutePeriodTime, uint16 RelativeDutyCycle);
+
+
+VAR(uint16, static) TestMe;
 
 #define PWM_START_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
 
-static Pwm_ConfigType const * Pwm_Config;   /* todo: Makro!!! */
+KAR_DEFINE_LOCAL_CONFIG_VAR(PWM, Pwm);
 
 #if AR_DEV_ERROR_DETECT(PWM) == STD_ON
 AR_IMPLEMENT_MODULE_STATE_VAR(Pwm);
@@ -50,34 +54,32 @@ AR_IMPLEMENT_MODULE_STATE_VAR(Pwm);
 #define PWM_STOP_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
 
-
 #define GPT_START_SEC_CODE
 #include "MemMap.h"
 
 /*
 **  Local Function-like Macros.
 */
-#define PWM_ASSERT_VALID_CHANNEL(chn, fkt)                      \
-    _BEGIN_BLOCK                                                \
-        if ((chn) > PWM_MAX_CHANNEL) {                          \
-            AR_RAISE_DEV_ERROR(PWM, fkt, PWM_E_PARAM_CHANNEL);  \
-            return;                                             \
-        }                                                       \
+#define PWM_ASSERT_VALID_CHANNEL(chn, fkt)                 \
+    _BEGIN_BLOCK                                           \
+    if ((chn) > PWM_MAX_CHANNEL) {                         \
+        AR_RAISE_DEV_ERROR(PWM, fkt, PWM_E_PARAM_CHANNEL); \
+        return;                                            \
+    }                                                      \
     _END_BLOCK
 
-#define PWM_ASSERT_VALID_CHANNEL_RETURN(chn, fkt, value)        \
-    _BEGIN_BLOCK                                                \
-        if ((chn) > PWM_MAX_CHANNEL) {                          \
-            AR_RAISE_DEV_ERROR(PWM, fkt, PWM_E_PARAM_CHANNEL);  \
-            return (value);                                     \
-        }                                                       \
+#define PWM_ASSERT_VALID_CHANNEL_RETURN(chn, fkt, value)   \
+    _BEGIN_BLOCK                                           \
+    if ((chn) > PWM_MAX_CHANNEL) {                         \
+        AR_RAISE_DEV_ERROR(PWM, fkt, PWM_E_PARAM_CHANNEL); \
+        return (value);                                    \
+    }                                                      \
     _END_BLOCK
-
 
 /*
 **  Global Functions.
 */
-FUNC(void,PWM_CODE) Pwm_Init(P2CONST(Pwm_ConfigType, AUTOMATIC, PWM_APPL_DATA) ConfigPtr)
+FUNC(void, PWM_CODE) Pwm_Init(P2CONST(Pwm_ConfigType, AUTOMATIC, PWM_APPL_DATA) ConfigPtr)
 {
 #if PWM_DEV_ERROR_DETECT == STD_ON
 
@@ -93,19 +95,17 @@ FUNC(void,PWM_CODE) Pwm_Init(P2CONST(Pwm_ConfigType, AUTOMATIC, PWM_APPL_DATA) C
 
     AR_MODULE_INITIALIZE(Pwm);
 #endif /* PWM_DEV_ERROR_DETECT */
-    /*!PWM052! Disable all Notifications. */
-    /*!PWM093!  The users of the Pwm module shall not call the function during a running operation. */
+       /*!PWM052! Disable all Notifications. */
+       /*!PWM093!  The users of the Pwm module shall not call the function during a running operation. */
     AR_SAVE_CONFIG_PTR(Pwm);
 
-////////////// MCAL_Template
-    S12Pwm_Init(ConfigPtr->Pwm_HardwareSpecificConfigPtr);
-////////////////////////////
+    KAR_IMPLEMENT_PWM_INIT(ConfigPtr);
 }
 
-
-FUNC(void,PWM_CODE) Pwm_DeInit(void)
+FUNC(void, PWM_CODE) Pwm_DeInit(void)
 {
 #if PWM_DEV_ERROR_DETECT == STD_ON
+
     if (!AR_MODULE_IS_INITIALIZED(Pwm)) {
         AR_RAISE_DEV_ERROR(PWM, DEINIT, PWM_E_UNINIT);
         return;
@@ -113,101 +113,93 @@ FUNC(void,PWM_CODE) Pwm_DeInit(void)
 
     AR_MODULE_UNINITIALIZE(Pwm);
 #endif /* PWM_DEV_ERROR_DETECT */
-
-////////////// MCAL_Template
-    HC12Pwm_DeInit();
-////////////////////////////
+    KAR_IMPLEMENT_PWM_DEINIT();
 }
 
-
 #if PWM_SET_DUTY_CYCLE == STD_ON
-FUNC(void,PWM_CODE) Pwm_SetDutyCycle(Pwm_ChannelType ChannelNumber,uint16 DutyCycle)
+FUNC(void, PWM_CODE) Pwm_SetDutyCycle(Pwm_ChannelType ChannelNumber, uint16 DutyCycle)
 {
 #if PWM_DEV_ERROR_DETECT == STD_ON
-    AR_ASSERT_MODULE_IS_INITIALIZED(Pwm,PWM,SETDUTYCYCLE);
+    AR_ASSERT_MODULE_IS_INITIALIZED(Pwm, PWM, SETDUTYCYCLE);
 
-    PWM_ASSERT_VALID_CHANNEL(ChannelNumber,SETDUTYCYCLE);
+    PWM_ASSERT_VALID_CHANNEL(ChannelNumber, SETDUTYCYCLE);
 #endif /* PWM_DEV_ERROR_DETECT */
 
-    // PWM_MAX_CHANNEL
-////////////// MCAL_Template
-
-////////////////////////////
+    /* PWM_MAX_CHANNEL */
+/* //////////// MCAL_Template */
+    KAR_IMPLEMENT_PWM_SETDUTYCYCLE(ChannelNumber, DutyCycle);
+/* ////////////////////////// */
 }
 #endif /* PWM_SET_DUTY_CYCLE */
 
-
 #if PWM_SET_PERIOD_AND_DUTY == STD_ON
-FUNC(void,PWM_CODE) Pwm_SetPeriodAndDuty(Pwm_ChannelType ChannelNumber,Pwm_PeriodType Period,uint16 DutyCycle)
+FUNC(void, PWM_CODE) Pwm_SetPeriodAndDuty(Pwm_ChannelType ChannelNumber, Pwm_PeriodType Period, uint16 DutyCycle)
 {
 #if PWM_DEV_ERROR_DETECT == STD_ON
-    AR_ASSERT_MODULE_IS_INITIALIZED(Pwm,PWM,SETPERIODANDDUTY);
+    AR_ASSERT_MODULE_IS_INITIALIZED(Pwm, PWM, SETPERIODANDDUTY);
 
-    PWM_ASSERT_VALID_CHANNEL(ChannelNumber,SETPERIODANDDUTY);
+    PWM_ASSERT_VALID_CHANNEL(ChannelNumber, SETPERIODANDDUTY);
 
-    // PWM_E_PERIOD_UNCHANGEABLE
+    /* PWM_E_PERIOD_UNCHANGEABLE */
 
 #endif /* PWM_DEV_ERROR_DETECT */
-////////////// MCAL_Template
-
-////////////////////////////
+/* //////////// MCAL_Template */
+    KAR_IMPLEMENT_PWM_SETPERIODANDDUTY(ChannelNumber, Period, DutyCycle);
+/* ////////////////////////// */
 }
 #endif /* PWM_SET_PERIOD_AND_DUTY */
 
-
 #if PWM_SET_OUTPUT_TO_IDLE == STD_ON
-FUNC(void,PWM_CODE) Pwm_SetOutputToIdle(Pwm_ChannelType ChannelNumber)
+FUNC(void, PWM_CODE) Pwm_SetOutputToIdle(Pwm_ChannelType ChannelNumber)
 {
 #if PWM_DEV_ERROR_DETECT == STD_ON
-    AR_ASSERT_MODULE_IS_INITIALIZED(Pwm,PWM,SETOUTPUTTOIDLE);
+    AR_ASSERT_MODULE_IS_INITIALIZED(Pwm, PWM, SETOUTPUTTOIDLE);
 
-    PWM_ASSERT_VALID_CHANNEL(ChannelNumber,SETOUTPUTTOIDLE);
+    PWM_ASSERT_VALID_CHANNEL(ChannelNumber, SETOUTPUTTOIDLE);
 #endif /* PWM_DEV_ERROR_DETECT */
-////////////// MCAL_Template
-
-////////////////////////////
+/* //////////// MCAL_Template */
+    KAR_IMPLEMENT_PWM_SETOUPUTOIDLE(ChannelNumber);
+/* ////////////////////////// */
 }
 #endif /* PWM_SET_OUTPUT_TO_IDLE */
 
-
 #if PWM_GET_OUTPUT_STATE == STD_ON
-FUNC(Pwm_OutputStateType,PWM_CODE) Pwm_GetOutputState(Pwm_ChannelType ChannelNumber)
+FUNC(Pwm_OutputStateType, PWM_CODE) Pwm_GetOutputState(Pwm_ChannelType ChannelNumber)
 {
 #if PWM_DEV_ERROR_DETECT == STD_ON
-    AR_ASSERT_MODULE_IS_INITIALIZED_RETURN(Pwm,PWM,GETOUTPUTSTATE,PWM_LOW);
+    AR_ASSERT_MODULE_IS_INITIALIZED_RETURN(Pwm, PWM, GETOUTPUTSTATE, PWM_LOW);
 
-    PWM_ASSERT_VALID_CHANNEL_RETURN(ChannelNumber,GETOUTPUTSTATE,PWM_LOW);
+    PWM_ASSERT_VALID_CHANNEL_RETURN(ChannelNumber, GETOUTPUTSTATE, PWM_LOW);
 
 #endif /* PWM_DEV_ERROR_DETECT */
-////////////// MCAL_Template
-
-////////////////////////////
+/* //////////// MCAL_Template */
+    KAR_IMPLEMENT_PWM_GETOUTPUTSTATE(ChannelNumber);
+/* ////////////////////////// */
 }
 #endif /* PWM_GET_OUTPUT_STATE */
 
-
 #if PWM_NOTIFICATION_SUPPORTED == STD_ON
-FUNC(void,PWM_CODE) Pwm_DisableNotification(Pwm_ChannelType ChannelNumber)
+FUNC(void, PWM_CODE) Pwm_DisableNotification(Pwm_ChannelType ChannelNumber)
 {
 #if PWM_DEV_ERROR_DETECT == STD_ON
-    AR_ASSERT_MODULE_IS_INITIALIZED(Pwm,PWM,DISABLENOTIFICATION);
+    AR_ASSERT_MODULE_IS_INITIALIZED(Pwm, PWM, DISABLENOTIFICATION);
 
-    PWM_ASSERT_VALID_CHANNEL(ChannelNumber,DISABLENOTIFICATION);
-
+    PWM_ASSERT_VALID_CHANNEL(ChannelNumber, DISABLENOTIFICATION);
 #endif /* PWM_DEV_ERROR_DETECT */
+    KAR_IMPLEMENT_PWM_DISABLENOTIFICATION(ChannelNumber);
 }
 
-
-FUNC(void,PWM_CODE) Pwm_EnableNotification(Pwm_ChannelType ChannelNumber,Pwm_EdgeNotificationType Notification)
+FUNC(void, PWM_CODE) Pwm_EnableNotification(Pwm_ChannelType ChannelNumber, Pwm_EdgeNotificationType Notification)
 {
 #if PWM_DEV_ERROR_DETECT == STD_ON
-    AR_ASSERT_MODULE_IS_INITIALIZED(Pwm,PWM,ENABLENOTIFICATION);
+    AR_ASSERT_MODULE_IS_INITIALIZED(Pwm, PWM, ENABLENOTIFICATION);
 
-    PWM_ASSERT_VALID_CHANNEL(ChannelNumber,ENABLENOTIFICATION);
+    PWM_ASSERT_VALID_CHANNEL(ChannelNumber, ENABLENOTIFICATION);
 
-#endif /* PWM_DEV_ERROR_DETECT */
+#endif  /* PWM_DEV_ERROR_DETECT */
+    KAR_IMPLEMENT_PWM_ENABLENOTIFICATION(ChannelNumber, Notification);
 }
-#endif /* PWM_NOTIFICATION_SUPPORTED */
+#endif  /* PWM_NOTIFICATION_SUPPORTED */
 
 /*
 **  Local Functions.

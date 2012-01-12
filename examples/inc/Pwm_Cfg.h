@@ -20,36 +20,21 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * s. FLOSS-EXCEPTION.txt
  */
-#if !defined(__MCAL_TEMPLATES_H)
-#define __MCAL_TEMPLATES_H
+#if !defined(__PWM__CFG_H)
+#define __PWM_CFG_H
+
+#define PWM_MAX_CHANNEL             ((uint8)4)
+
+#define PWM_DEV_ERROR_DETECT        STD_ON
+#define PWM_GET_VERSION_INFO_API    STD_ON
+
+#define PWM_SET_DUTY_CYCLE          STD_ON
+#define PWM_SET_PERIOD_AND_DUTY     STD_ON
+#define PWM_SET_OUTPUT_TO_IDLE      STD_ON
+#define PWM_GET_OUTPUT_STATE        STD_ON
+#define PWM_NOTIFICATION_SUPPORTED  STD_ON
+
+#endif /* __PWM_CFG_H */
 
 
-#if defined(__cplusplus)
-extern "C"
-{
-#endif  /* __cplusplus */
-
-#if defined(KAR_DUMMY_TARGET)
-    /* dummy target */
-    #define KAR_MCAL_TEMPLATE_PATH  "MCALTemplates/dummy/Mcal_Templates_dummy.h"
-#else
-    #if CPU_FAMILY == CPU12_HC12
-        /* hc12 */
-        #define KAR_MCAL_TEMPLATE_PATH  "MCALTemplates/hc12/MCAL_Templates_hc12.h"
-    #elif CPU_FAMILY == CPU12_S12
-        /** s12 */
-        #define KAR_MCAL_TEMPLATE_PATH  "MCALTemplates/s12/MCAL_Templates_s12.h"
-    #elif CPU_FAMILY == CPU12_S12X
-        #error CPU12X not supported yet!
-    #endif
-#endif
-
-#include KAR_MCAL_TEMPLATE_PATH
-
-#if defined(__cplusplus)
-}
-#endif  /* __cplusplus */
-
-#endif  /* __MCAL_TEMPLATES_H */

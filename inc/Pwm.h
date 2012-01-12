@@ -2,7 +2,7 @@
  * k_dk - Driver Kit for k_os (Konnex Operating-System based on the
  * OSEK/VDX-Standard).
  *
- * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -33,24 +33,23 @@ extern "C"
 
 #include "K_Ar.h"
 #include "Std_Types.h"
+#include "MCALTemplates/Mcal_Defines.h"
 #include "Pwm_Cfg.h"
 
-#include "mcu/s12/inc/S12_Pwm.h"
-//#include "HC12_Pwm.h"
+/* #include "mcu/s12/inc/S12_Pwm.h" */
 
 /*
 **  Published Information.
 */
-#define PWM_VENDOR_ID                           AR_VENDOR_ID
-#define PWM_MODULE_ID                           AR_MODULE_ID_PWM
-#define PWM_AR_MAJOR_VERSION                    3
-#define PWM_AR_MINOR_VERSION                    1
-#define PWM_AR_PATCH_VERSION                    0
-#define PWM_SW_MAJOR_VERSION                    1
-#define PWM_SW_MINOR_VERSION                    0
-#define PWM_SW_PATCH_VERSION                    0
-#define PWM_INSTANCE_ID                         0
-
+#define PWM_VENDOR_ID                       AR_VENDOR_ID
+#define PWM_MODULE_ID                       AR_MODULE_ID_PWM
+#define PWM_AR_MAJOR_VERSION                3
+#define PWM_AR_MINOR_VERSION                1
+#define PWM_AR_PATCH_VERSION                0
+#define PWM_SW_MAJOR_VERSION                1
+#define PWM_SW_MINOR_VERSION                0
+#define PWM_SW_PATCH_VERSION                0
+#define PWM_INSTANCE_ID                     0
 
 /*
 **  Service-IDs.
@@ -65,7 +64,6 @@ extern "C"
 #define AR_SERVICE_PWM_ENABLENOTIFICATION   ((uint8)0x07)
 #define AR_SERVICE_PWM_GETVERSIONINFO       ((uint8)0x08)
 
-
 /*
 **  Module-Errors.
 */
@@ -74,7 +72,6 @@ extern "C"
 #define PWM_E_PARAM_CHANNEL                 ((uint8)0x12)
 #define PWM_E_PERIOD_UNCHANGEABLE           ((uint8)0x13)
 #define PWM_E_ALREADY_INITIALIZED           ((uint8)0x14)
-
 
 /*
 **  Global Types.
@@ -96,7 +93,7 @@ typedef enum tagPwm_ChannelClassType {
 typedef struct tagPwm_ConfigType {
     /* The contents of the initialization data structure are hardware specific. */
 
-    S12Pwm_ConfigType const * const Pwm_HardwareSpecificConfigPtr; // todo: MCAL_Templates!!!
+    KAR_DEFINE_HARDWARE_SPECIFIC_CONFIG_PTR(Pwm);
 } Pwm_ConfigType;
 
 /* Definition of the type of edge notification of a PWM channel. */
@@ -112,31 +109,28 @@ typedef enum tagPwm_OutputStateType {
     PWM_LOW
 } Pwm_OutputStateType;
 
-
 /*
 **  Global Functions.
 */
 
-FUNC(void,PWM_CODE) Pwm_Init(P2CONST(Pwm_ConfigType, AUTOMATIC, PWM_APPL_DATA) ConfigPtr);
-FUNC(void,PWM_CODE) Pwm_DeInit(void);
-FUNC(void,PWM_CODE) Pwm_SetDutyCycle(Pwm_ChannelType ChannelNumber,uint16 DutyCycle);
-FUNC(void,PWM_CODE) Pwm_SetPeriodAndDuty(Pwm_ChannelType ChannelNumber,Pwm_PeriodType Period,uint16 DutyCycle);
-FUNC(void,PWM_CODE) Pwm_SetOutputToIdle(Pwm_ChannelType ChannelNumber);
-FUNC(Pwm_OutputStateType,PWM_CODE) Pwm_GetOutputState(Pwm_ChannelType ChannelNumber);
-FUNC(void,PWM_CODE) Pwm_DisableNotification(Pwm_ChannelType ChannelNumber);
-FUNC(void,PWM_CODE) Pwm_EnableNotification(Pwm_ChannelType ChannelNumber,Pwm_EdgeNotificationType Notification);
-
+FUNC(void, PWM_CODE) Pwm_Init(P2CONST(Pwm_ConfigType, AUTOMATIC, PWM_APPL_DATA) ConfigPtr);
+FUNC(void, PWM_CODE) Pwm_DeInit(void);
+FUNC(void, PWM_CODE) Pwm_SetDutyCycle(Pwm_ChannelType ChannelNumber, uint16 DutyCycle);
+FUNC(void, PWM_CODE) Pwm_SetPeriodAndDuty(Pwm_ChannelType ChannelNumber, Pwm_PeriodType Period, uint16 DutyCycle);
+FUNC(void, PWM_CODE) Pwm_SetOutputToIdle(Pwm_ChannelType ChannelNumber);
+FUNC(Pwm_OutputStateType, PWM_CODE) Pwm_GetOutputState(Pwm_ChannelType ChannelNumber);
+FUNC(void, PWM_CODE) Pwm_DisableNotification(Pwm_ChannelType ChannelNumber);
+FUNC(void, PWM_CODE) Pwm_EnableNotification(Pwm_ChannelType ChannelNumber, Pwm_EdgeNotificationType Notification);
 
 /*
 **  Global Function-like Macros.
 */
 #if PWM_GET_VERSION_INFO_API == STD_ON
-#define Icu_GetVersionInfo(vp) AR_GET_VERSION_INFO(PWM, vp)
+#define Pwm_GetVersionInfo(vp) AR_GET_VERSION_INFO(PWM, vp)
 #endif /* PWM_GET_VERSION_INFO_API */
 
 #if defined(__cplusplus)
 }
 #endif  /* __cplusplus */
-
 
 #endif  /* __PWM_H */
