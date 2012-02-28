@@ -1,7 +1,8 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2009 by Christoph Schueler <chris@konnex-tools.de>
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
+ *                                     cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
  *
@@ -19,14 +20,14 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
+ *  s. FLOSS-EXCEPTION.txt
  */
 
 #if !defined (__MCU_CFG_H)
 #define __MCU_CFG_H
 
-#include "Mcu.h"
-#define xxx_VERSION_INFO_API
-
+#define MCU_DEV_ERROR_DETECT        STD_ON
+#define MCU_GET_VERSION_INFO_API    STD_ON
 
 #endif /* __MCU_CFG_H */
 

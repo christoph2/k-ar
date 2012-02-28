@@ -1,7 +1,9 @@
 /*
- * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
+ * k_dk - Driver Kit for k_os (Konnex Operating-System based on the
+ * OSEK/VDX-Standard).
  *
- * (C) 2007-2009 by Christoph Schueler <chris@konnex-tools.de>
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
+ *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
  *
@@ -23,10 +25,8 @@
 #if !defined(__DIO__CFG_H)
 #define __DIO_CFG_H
 
-#include "Dio.h"
-#define DioVersionInfoApi
+#define DIO_GET_VERSION_INFO_API    STD_ON
 
-#define DiDevErrorDetect    /* Detection of Development Errors. */
 
 #if 0
 /*

@@ -2,7 +2,7 @@
  * k_dk - Driver Kit for k_os (Konnex Operating-System based on the
  * OSEK/VDX-Standard).
  *
- * (C) 2007-2010 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -21,6 +21,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
+ * s. FLOSS-EXCEPTION.txt
  */
 
 /*
@@ -109,19 +110,19 @@ FUNC(Std_ReturnType, CANTRCV_CODE) CanTrcv_GetBusWuReason_Impl(uint8 CanNetwork,
 
 #define CANTRCV_4711_PCA82C250_CODE
 
-#define foo_name(mod) void GLUE2(mod, _GetVersionInfo) ## (Std_VersionInfoType * Versioninfo)    \
+#define foo_name(mod) void GLUE2(mod, _GetVersionInfo) ## (Std_VersionInfoType * Versioninfo) \
     AR_VERSION_INFO_FUNCTION_MACRO(mod)
 
 /*         GLUE2(mod,_GetVersionInfo) ##(Versioninfo);                         \    */
 
-#define AR_VERSION_INFO_FUNCTION_MACRO(mod)                                 \
-    {                                                                       \
-        Versioninfo->vendorID          = (uint16)GLUE2(mod, _VENDOR_ID);                \
-        Versioninfo->moduleID          = (uint16)GLUE2(mod, _MODULE_ID);                \
-        Versioninfo->instanceID        = (uint8)GLUE2(mod, _INSTANCE_ID);             \
-        Versioninfo->sw_major_version  = (uint8)GLUE2(mod, _SW_MAJOR_VERSION);  \
-        Versioninfo->sw_minor_version  = (uint8)GLUE2(mod, _SW_MINOR_VERSION);  \
-        Versioninfo->sw_patch_version  = (uint8)GLUE2(mod, _SW_PATCH_VERSION);  \
+#define AR_VERSION_INFO_FUNCTION_MACRO(mod)                                    \
+    {                                                                          \
+        Versioninfo->vendorID          = (uint16)GLUE2(mod, _VENDOR_ID);       \
+        Versioninfo->moduleID          = (uint16)GLUE2(mod, _MODULE_ID);       \
+        Versioninfo->instanceID        = (uint8)GLUE2(mod, _INSTANCE_ID);      \
+        Versioninfo->sw_major_version  = (uint8)GLUE2(mod, _SW_MAJOR_VERSION); \
+        Versioninfo->sw_minor_version  = (uint8)GLUE2(mod, _SW_MINOR_VERSION); \
+        Versioninfo->sw_patch_version  = (uint8)GLUE2(mod, _SW_PATCH_VERSION); \
     }
 
 #if 0
@@ -136,6 +137,7 @@ AR_VERSION_INFO_FUNCTION_MACRO(CANTRCV_4711_PCA82C250);
 #endif
 
 void CANTRCV_4711_PCA82C250_GetVersionInfo(Std_VersionInfoType * Versioninfo);
+
 
 foo_name(CANTRCV_4711_PCA82C250);
 

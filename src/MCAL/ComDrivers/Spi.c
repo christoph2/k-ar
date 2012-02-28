@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -44,7 +44,7 @@
 #endif
 #endif
 
-#include "Mcal_Templates.h"
+#include "MCALTemplates/Mcal_Templates.h"
 
 /* In terms of RDBMSs Sequences/Jobs/Channels should be the result of some normalisation. */
 /*
@@ -123,8 +123,13 @@ static FUNC(void, SPI_CODE) Spi_DoSyncChannel(Spi_ChannelType Channel);
 #define SPI_START_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
 
-static Spi_StatusType           Spi_DriverState[SPI_NUM_DRIVERS];
-static Spi_ConfigType const *   Spi_ConfigPtr;
+static Spi_StatusType Spi_DriverState[SPI_NUM_DRIVERS];
+
+KAR_DEFINE_LOCAL_CONFIG_VAR(SPI, Spi);
+
+#if AR_DEV_ERROR_DETECT(SPI) == STD_ON
+AR_IMPLEMENT_MODULE_STATE_VAR(Spi);
+#endif
 
 #if (SPI_LEVEL_DELIVERED == 1) || (SPI_LEVEL_DELIVERED == 2)
 static Spi_AsyncModeType Spi_AsyncMode = SPI_POLLING_MODE;
@@ -156,14 +161,40 @@ FUNC(void, SPI_CODE) Spi_SetAllDriversState(Spi_StatusType State)
 
 FUNC(void, SPI_CODE) Spi_Init(P2CONST(Spi_ConfigType, AUTOMATIC, SPI_APPL_DATA) ConfigPtr)
 {
-    Spi_ConfigPtr = ConfigPtr;
+#if SPI_DEV_ERROR_DETECT == STD_ON
+
+    if (AR_MODULE_IS_INITIALIZED(Spi)) {
+        AR_RAISE_DEV_ERROR(SPI, INIT, SPI_E_ALREADY_INITIALIZED);
+        return;
+    }
+
+    if (ConfigPtr == NULL) {
+        AR_RAISE_DEV_ERROR(SPI, INIT, SPI_E_PARAM_CONFIG);
+        return;
+    }
+
+    AR_MODULE_INITIALIZE(Spi);
+#endif /* SPI_DEV_ERROR_DETECT */
+    AR_SAVE_CONFIG_PTR(Spi);
+
+    /* Spi_ConfigPtr = ConfigPtr; */
     Spi_SetAllDriversState(SPI_IDLE);
-    IMPLEMENT_SPI_INIT();
+    KAR_IMPLEMENT_SPI_INIT();
 
 }
 
 FUNC(Std_ReturnType, SPI_CODE) Spi_Uninit(void)
 {
+#if SPI_DEV_ERROR_DETECT == STD_ON
+
+    if (!AR_MODULE_IS_INITIALIZED(Spi)) {
+        AR_RAISE_DEV_ERROR(SPI, DEINIT, SPI_E_UNINIT);
+        return;
+    }
+
+    AR_MODULE_UNINITIALIZE(Spi);
+#endif /* SPI_DEV_ERROR_DETECT */
+
     Spi_SetAllDriversState(SPI_UNINIT);
 
     return E_OK;
@@ -184,7 +215,7 @@ FUNC(Std_ReturnType, SPI_CODE) Spi_AsyncTransmit(Spi_SequenceType Sequence)
 #if (SPI_LEVEL_DELIVERED == 0) || (SPI_LEVEL_DELIVERED == 2)
 FUNC(Std_ReturnType, SPI_CODE) Spi_SyncTransmit(Spi_SequenceType Sequence)
 {
-    Spi_SequenceConfigType const * const    Ptr2Sequence = &Spi_ConfigPtr->Sequences[Sequence];
+    Spi_SequenceConfigType const * const    Ptr2Sequence = &Spi_Config->Sequences[Sequence];
     Spi_JobType                             Job;
 
     for (Job = (Spi_JobType)0; Job < Ptr2Sequence->NumberOfJobs; ++Job) {
@@ -255,7 +286,7 @@ FUNC(Std_ReturnType, SPI_CODE) Spi_SetAsyncMode(Spi_AsyncModeType Mode)
 #if (SPI_LEVEL_DELIVERED == 0) || (SPI_LEVEL_DELIVERED == 2)
 FUNC(void, SPI_CODE) Spi_DoSyncJob(Spi_JobType Job)
 {
-    Spi_JobConfigType const * const Ptr2Job = &Spi_ConfigPtr->Jobs[Job];
+    Spi_JobConfigType const * const Ptr2Job = &Spi_Config->Jobs[Job];
     Spi_ChannelType                 Channel;
 
     for (Channel = (Spi_ChannelType)0; Channel < Ptr2Job->NumberOfChannels; ++Channel) {
@@ -265,7 +296,7 @@ FUNC(void, SPI_CODE) Spi_DoSyncJob(Spi_JobType Job)
 
 FUNC(void, SPI_CODE) Spi_DoSyncChannel(Spi_ChannelType Channel)
 {
-    Spi_ChannelConfigType const * const Ptr2Channel = &Spi_ConfigPtr->Channels[Channel];
+    Spi_ChannelConfigType const * const Ptr2Channel = &Spi_Config->Channels[Channel];
 
 }
 #endif

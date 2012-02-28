@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -34,7 +34,7 @@
 #endif
 #endif /* AR_DEV_ERROR_DETECT */
 
-#include "Mcal_Templates.h"
+#include "MCALTemplates/Mcal_Templates.h"
 
 /*
 **  DIO005: Interruptable read-modify-write sequences are not allowed. - Must be satisfied by HW-Drivers.

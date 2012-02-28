@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -28,6 +28,7 @@
 #include "K_Ar.h"
 #include "Std_Types.h"
 #include "MCALTemplates/Mcal_Defines.h"
+#include "Spi_Cfg.h"
 
 #include "Dio.h"   /* needed for Chipselect functionality. */
 #if 0
@@ -73,7 +74,7 @@
 /*
 **  Module Errors.
 */
-#define SPI_E_PARAM_                            ((uint8)0x0a)
+#define SPI_E_PARAM_CONFIG                      ((uint8)0x0a)
 #define SPI_E_PARAM_JOB                         ((uint8)0x0b)
 #define SPI_E_PARAM_SEQ                         ((uint8)0x0c)
 #define SPI_E_PARAM_LENGTH                      ((uint8)0x0d)
@@ -189,7 +190,6 @@ typedef enum tagSpi_AsyncModeType {
     SPI_POLLING_MODE,
     SPI_INTERRUPT_MODE
 } Spi_AsyncModeType;
-
 
 /*
 **  Global Functions.

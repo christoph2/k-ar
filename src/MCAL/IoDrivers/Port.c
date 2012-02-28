@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -33,7 +33,7 @@
     #error Version-Information-Mismatch of Include-File 'Det.h' !
 #endif
 
-#include "Mcal_Templates.h"
+#include "MCALTemplates/Mcal_Templates.h"
 
 /*
 **  Local Types.
@@ -83,7 +83,7 @@ AR_IMPLEMENT_MODULE_STATE_VAR(PORT);
 #define PORT_START_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
 
-P2CONST(Port_ConfigType, STATIC, PORT_VAR)  Port_ConfigurationPtr;
+P2CONST(Port_ConfigType, STATIC, PORT_VAR)  Port_Config;
 
 #define PORT_STOP_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
@@ -99,19 +99,20 @@ FUNC(void, PORT_CODE) Port_Init(P2CONST(Port_ConfigType, AUTOMATIC, PORT_APPL_DA
 #if AR_DEV_ERROR_DETECT(PORT) == STD_ON
     AR_MODULE_INITIALIZE(PORT);
 #endif
-    Port_ConfigurationPtr = ConfigPtr;
+    /* Port_ConfigurationPtr = ConfigPtr; */
+    AR_SAVE_CONFIG_PTR(Port);
 
-    IMPLEMENT_PORT_INIT();
+    KAR_IMPLEMENT_PORT_INIT();
 }
 
 /* todo: Variante, die 'E_NOT_OK' zurückliefert!!! */
 /* todo: 'INITIALIZED' (Rechtschreibung!?) */
-#define AR_ASSERT_MODULE_INITIALZATION(mod, service)                         \
-    _BEGIN_BLOCK                                                            \
-    if (!AR_MODULE_IS_INITIALIZED(mod)) {                               \
-        Det_ReportError(GLUE2(mod, _MODULE_ID), GLUE2(mod, _INSTANCE_ID),  \
-                        service, GLUE2(mod, _E_UNINIT));                              \
-    }                                                                   \
+#define AR_ASSERT_MODULE_INITIALZATION(mod, service)                      \
+    _BEGIN_BLOCK                                                          \
+    if (!AR_MODULE_IS_INITIALIZED(mod)) {                                 \
+        Det_ReportError(GLUE2(mod, _MODULE_ID), GLUE2(mod, _INSTANCE_ID), \
+                        service, GLUE2(mod, _E_UNINIT));                  \
+    }                                                                     \
     _END_BLOCK
 
 FUNC(void, PORT_CODE) Port_SetPinDirection(Port_PinType Pin, Port_PinDirectionType Direction)
@@ -152,9 +153,8 @@ FUNC(void, PORT_CODE) Port_RefreshPortDirection(void)
 **  PORT061: The function 'Port_RefreshPortDirection' shall exclude those port pins
 **  from refreshing that are configured as 'port pin direction changeable during runtime'.
 */
-    IMPLEMENT_PORT_REFRESH_DIRECTION();
+    KAR_IMPLEMENT_PORT_REFRESH_DIRECTION();
 }
-
 
 FUNC(void, PORT_CODE) Port_SetPinMode(Port_PinType Pin, Port_PinModeType Mode)
 {
@@ -165,7 +165,7 @@ FUNC(void, PORT_CODE) Port_SetPinMode(Port_PinType Pin, Port_PinModeType Mode)
     }
 
 #endif
-    IMPLEMENT_PORT_SET_MODE();
+    KAR_IMPLEMENT_PORT_SET_MODE();
 }
 
 #define PORT_STOP_SEC_CODE

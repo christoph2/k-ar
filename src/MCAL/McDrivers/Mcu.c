@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                     cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -49,6 +49,18 @@
 #include "mcu/s12/inc/S12_Crg.h"
 #include "mcu/s12/inc/S12_Mmc.h"
 
+#define MCU_START_SEC_VAR_UNSPECIFIED
+#include "MemMap.h"
+
+KAR_DEFINE_LOCAL_CONFIG_VAR(MCU, Mcu);
+
+#if AR_DEV_ERROR_DETECT(MCU) == STD_ON
+AR_IMPLEMENT_MODULE_STATE_VAR(Mcu);
+#endif
+
+#define MCU_STOP_SEC_VAR_UNSPECIFIED
+#include "MemMap.h"
+
 /*
 **  Global Functions.
 */
@@ -57,53 +69,53 @@
 
 FUNC(void, MCU_CODE) Mcu_Init(P2CONST(Mcu_ConfigType, AUTOMATIC, MCU_APPL_DATA) ConfigPtr)
 {
-////////////// MCAL_Template
-
-////////////////////////////
+/* //////////// MCAL_Template */
     S12Mmc_Init();
     /*
     ** Hier gehöhrt auf alle Fälle die Timer-Initialisierung hin (ECT), da sich der Timer in GPT und ICU splittet.
     */
     /* enable XIRQ. */
+/* ////////////////////////// */
 
+    AR_SAVE_CONFIG_PTR(Mcu);
 }
 
 FUNC(Std_ReturnType, MCU_CODE) Mcu_InitRamSection(Mcu_RamSectionType RamSection)
 {
     /* nothing for now (this feature requires customized startup-up code). */
-////////////// MCAL_Template
+/* //////////// MCAL_Template */
 
-////////////////////////////
+/* ////////////////////////// */
 }
 
 FUNC(Std_ReturnType, MCU_CODE) Mcu_InitClock(Mcu_ClockType ClockSetting)
 {
-////////////// MCAL_Template
+/* //////////// MCAL_Template */
 
-////////////////////////////
+/* ////////////////////////// */
 }
 
 FUNC(void, MCU_CODE) Mcu_DistributePllClock(void)
 {
-////////////// MCAL_Template
+/* //////////// MCAL_Template */
 
-////////////////////////////
+/* ////////////////////////// */
 }
 
 FUNC(Mcu_PllStatusType, MCU_CODE) Mcu_GetPllStatus(void)
 {
-////////////// MCAL_Template
+/* //////////// MCAL_Template */
 
-////////////////////////////
+/* ////////////////////////// */
     return S12Crg_PLLLocked() ? MCU_PLL_LOCKED : MCU_PLL_UNLOCKED;
 }
 
 FUNC(Mcu_ResetType, MCU_CODE) Mcu_GetResetReason(void)
 {
     /* Hinweis: der DUMMY-ISR-entry könnte den Sachverhalt aufzeichen, das ein unexpected Interrupt ausgetreten ist!!! */
-////////////// MCAL_Template
+/* //////////// MCAL_Template */
 
-////////////////////////////
+/* ////////////////////////// */
 }
 
 FUNC(Mcu_RawResetType, MCU_CODE) Mcu_GetResetRawValue(void)
@@ -114,18 +126,17 @@ FUNC(Mcu_RawResetType, MCU_CODE) Mcu_GetResetRawValue(void)
 FUNC(void, MCU_CODE) Mcu_PerformReset(void)
 {
     S12Crg_ResetMCU();
-////////////// MCAL_Template
+/* //////////// MCAL_Template */
 
-////////////////////////////
+/* ////////////////////////// */
 }
 
 FUNC(void, MCU_CODE) Mcu_SetMode(Mcu_ModeType McuMode)
 {
-////////////// MCAL_Template
+/* //////////// MCAL_Template */
 
-////////////////////////////
+/* ////////////////////////// */
 }
-
 
 #define MCU_STOP_SEC_CODE
 #include "MemMap.h"

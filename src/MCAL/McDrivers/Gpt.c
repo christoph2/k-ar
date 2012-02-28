@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -34,11 +34,11 @@
 #endif
 #endif /* GPT_DEV_ERROR_DETECT */
 
-#include "Mcal_Templates.h"
+#include "MCALTemplates/Mcal_Templates.h"
 
 #include "Utl.h"
 
-#define GPT_MAX_CHANNEL ((uint8)12)        /* todo: nach "Mcal_Templates.h"!!! */
+#define GPT_MAX_CHANNEL ((uint8)12)         /* todo: nach "Mcal_Templates.h"!!! */
                                             /* (außerßem nur konfigurierte Channels berücksichtigen)!!! */
 
 /*
@@ -67,7 +67,7 @@ typedef enum tagGpt_TimerStateType {
 AR_IMPLEMENT_MODULE_STATE_VAR(Gpt);
 #endif
 
-static Gpt_ConfigType const * Gpt_Config;   /* todo: Makro!!! */
+KAR_DEFINE_LOCAL_CONFIG_VAR(GPT, Gpt);
 
 static Gpt_TimerStateType   Gpt_TimerState[GPT_MAX_CHANNEL];
 static boolean              Gpt_Notification[GPT_MAX_CHANNEL];

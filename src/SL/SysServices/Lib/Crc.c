@@ -77,6 +77,7 @@ void Crc_Test(void);
 
 uint32 Crc_Reflect(sint32 data, uint16 data_len);
 
+
 static const char Crc_TestVector[] = "123456789";
 
 /*
@@ -432,6 +433,7 @@ uint32 Crc_Reflect(sint32 data, uint16 data_len)
     return ret;
 }
 
+
 #endif
 
 static const uint8  SAE_T0[4] = {0x00, 0x00, 0x00, 0x00};
@@ -476,6 +478,7 @@ void Crc_Test(void)
 
     res32 = Crc_CalculateCRC32(Crc_TestVector, 9, CRC_INITIAL_VALUE32);
 }
+
 
 #endif
 

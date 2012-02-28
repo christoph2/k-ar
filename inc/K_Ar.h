@@ -2,7 +2,7 @@
  * k_dk - Driver Kit for k_os (Konnex Operating-System based on the
  * OSEK/VDX-Standard).
  *
- * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -70,7 +70,7 @@ typedef enum tagBSW_State {
 */
 #define AR_DEV_ERROR_DETECT(mod) GLUE2(mod, _DEV_ERROR_DETECT)
 
-#define AR_RAISE_DEV_ERROR(mod, api, error)   \
+#define AR_RAISE_DEV_ERROR(mod, api, error) \
     Det_ReportError(mod ## _MODULE_ID, mod ## _INSTANCE_ID, AR_SERVICE_ ## mod ## _ ## api, error)
 
 #define AR_IMPLEMENT_MODULE_STATE_VAR(mod) \
@@ -79,45 +79,46 @@ typedef enum tagBSW_State {
 #define AR_GET_MODULE_STATE_VAR(mod) \
     GLUE2(mod, _State)
 
-#define AR_MODULE_INITIALIZE(mod)   \
+#define AR_MODULE_INITIALIZE(mod) \
     AR_GET_MODULE_STATE_VAR(mod) = BSW_READY
 
-#define AR_MODULE_UNINITIALIZE(mod)   \
+#define AR_MODULE_UNINITIALIZE(mod) \
     AR_GET_MODULE_STATE_VAR(mod) = BSW_UNINIT
 
-#define AR_MODULE_IS_INITIALIZED(mod)   \
+#define AR_MODULE_IS_INITIALIZED(mod) \
     ((AR_GET_MODULE_STATE_VAR(mod) == BSW_READY) ? TRUE : FALSE)
 
-#define AR_ASSERT_MODULE_IS_INITIALIZED(ml,mu,fkt)              \
-    _BEGIN_BLOCK                                                \
-        if (!AR_MODULE_IS_INITIALIZED(ml)) {                    \
-            AR_RAISE_DEV_ERROR(mu, fkt, mu ## _E_UNINIT);       \
-            return;                                             \
-        }                                                       \
+#define AR_ASSERT_MODULE_IS_INITIALIZED(ml, mu, fkt)  \
+    _BEGIN_BLOCK                                      \
+    if (!AR_MODULE_IS_INITIALIZED(ml)) {              \
+        AR_RAISE_DEV_ERROR(mu, fkt, mu ## _E_UNINIT); \
+        return;                                       \
+    }                                                 \
     _END_BLOCK
 
-
-#define AR_ASSERT_MODULE_IS_INITIALIZED_RETURN(ml,mu,fkt,value) \
-    _BEGIN_BLOCK                                                \
-        if (!AR_MODULE_IS_INITIALIZED(ml)) {                    \
-            AR_RAISE_DEV_ERROR(mu, fkt, mu ## _E_UNINIT);       \
-            return value;                                       \
-        }                                                       \
+#define AR_ASSERT_MODULE_IS_INITIALIZED_RETURN(ml, mu, fkt, value) \
+    _BEGIN_BLOCK                                                   \
+    if (!AR_MODULE_IS_INITIALIZED(ml)) {                           \
+        AR_RAISE_DEV_ERROR(mu, fkt, mu ## _E_UNINIT);              \
+        return value;                                              \
+    }                                                              \
     _END_BLOCK
 
-#define AR_SAVE_CONFIG_PTR(mod) mod ## _Config = ConfigPtr
-#define AR_GET_CONFIG_PTR(mod) mod ## _Config
+#define KAR_DEFINE_LOCAL_CONFIG_VAR(u, l)   P2CONST(l ## _ConfigType, STATIC, u ## _VAR)  l ## _Config
 
-#define AR_VERSION_INFO_FUNCTION_DECL(mod)                                      \
-    FUNC(void, GLUE2(mod, _CODE)) GLUE2(mod, _GetVersionInfo) (                        \
-        P2VAR(Std_VersionInfoType, AUTOMATIC, GLUE2(mod, _APPL_DATA)) Versioninfo  \
+#define AR_SAVE_CONFIG_PTR(mod)             mod ## _Config = ConfigPtr
+#define AR_GET_CONFIG_PTR(mod)              mod ## _Config
+
+#define AR_VERSION_INFO_FUNCTION_DECL(mod)                                        \
+    FUNC(void, GLUE2(mod, _CODE)) GLUE2(mod, _GetVersionInfo) (                   \
+        P2VAR(Std_VersionInfoType, AUTOMATIC, GLUE2(mod, _APPL_DATA)) Versioninfo \
         )
 
-#define AR_GET_VERSION_INFO(mod, vp)         \
-    _BEGIN_BLOCK                                        \
-        (vp)->vendorID     = mod ## _VENDOR_ID;                \
-    (vp)->moduleID         = mod ## _MODULE_ID;                \
-    (vp)->instanceID       = mod ## _INSTANCE_ID;            \
+#define AR_GET_VERSION_INFO(mod, vp)                   \
+    _BEGIN_BLOCK                                       \
+        (vp)->vendorID     = mod ## _VENDOR_ID;        \
+    (vp)->moduleID         = mod ## _MODULE_ID;        \
+    (vp)->instanceID       = mod ## _INSTANCE_ID;      \
     (vp)->sw_major_version = mod ## _SW_MAJOR_VERSION; \
     (vp)->sw_minor_version = mod ## _SW_MINOR_VERSION; \
     (vp)->sw_patch_version = mod ## _SW_PATCH_VERSION; \
@@ -129,21 +130,21 @@ typedef enum tagBSW_State {
 #define AR_VERSION_CHECK_FAILS(mod, ma, mi) \
     (!((ma) == mod ## _AR_MAJOR_VERSION && (mi) == mod ## _AR_MINOR_VERSION))
 
-#define AR_VERSION_CHECK_INTERNAL_FAILS(mod, arma, armi, arpa, ma, mi)                                               \
-    (!((arma) == mod ## _AR_MAJOR_VERSION && (armi) == mod ## _AR_MINOR_VERSION && (arpa) == mod ## _AR_PATCH_VERSION &&    \
+#define AR_VERSION_CHECK_INTERNAL_FAILS(mod, arma, armi, arpa, ma, mi)                                                   \
+    (!((arma) == mod ## _AR_MAJOR_VERSION && (armi) == mod ## _AR_MINOR_VERSION && (arpa) == mod ## _AR_PATCH_VERSION && \
        (ma) == mod ## _SW_MAJOR_VERSION && (mi) == mod ## _SW_MINOR_VERSION))
 
-#define AR_VERSION_INFO_FUNCTION_IMPL(mod)                                      \
-    FUNC(void, GLUE2(mod, _CODE)) GLUE2(mod, _GetVersionInfo) (                        \
-        P2VAR(Std_VersionInfoType, AUTOMATIC, GLUE2(mod, _APPL_DATA)) Versioninfo  \
-        )                                                                               \
-    {                                                                               \
-        Versioninfo->vendorID          = (uint16)GLUE2(mod, _VENDOR_ID);                        \
-        Versioninfo->moduleID          = (uint16)GLUE2(mod, _MODULE_ID);                        \
-        Versioninfo->instanceID        = (uint8)GLUE2(mod, _INSTANCE_ID);                     \
-        Versioninfo->sw_major_version  = (uint8)GLUE2(mod, _SW_MAJOR_VERSION);          \
-        Versioninfo->sw_minor_version  = (uint8)GLUE2(mod, _SW_MINOR_VERSION);          \
-        Versioninfo->sw_patch_version  = (uint8)GLUE2(mod, _SW_PATCH_VERSION);          \
+#define AR_VERSION_INFO_FUNCTION_IMPL(mod)                                        \
+    FUNC(void, GLUE2(mod, _CODE)) GLUE2(mod, _GetVersionInfo) (                   \
+        P2VAR(Std_VersionInfoType, AUTOMATIC, GLUE2(mod, _APPL_DATA)) Versioninfo \
+        )                                                                         \
+    {                                                                             \
+        Versioninfo->vendorID          = (uint16)GLUE2(mod, _VENDOR_ID);          \
+        Versioninfo->moduleID          = (uint16)GLUE2(mod, _MODULE_ID);          \
+        Versioninfo->instanceID        = (uint8)GLUE2(mod, _INSTANCE_ID);         \
+        Versioninfo->sw_major_version  = (uint8)GLUE2(mod, _SW_MAJOR_VERSION);    \
+        Versioninfo->sw_minor_version  = (uint8)GLUE2(mod, _SW_MINOR_VERSION);    \
+        Versioninfo->sw_patch_version  = (uint8)GLUE2(mod, _SW_PATCH_VERSION);    \
     }
 
 #if defined(__cplusplus)

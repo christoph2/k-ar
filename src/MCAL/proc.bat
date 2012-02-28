@@ -1,7 +1,13 @@
 @echo off
+cd ComDrivers
+call proc
+cd ..
 cd IoDrivers
 call proc
 cd ..
 cd McDrivers
+call proc
+cd ..
+cd MemDrivers
 call proc
 cd ..

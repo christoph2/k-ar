@@ -2,7 +2,7 @@
  * k_dk - Driver Kit for k_os (Konnex Operating-System based on the
  * OSEK/VDX-Standard).
  *
- * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -42,11 +42,13 @@
 #endif
 #endif /* RAMTST_DEV_ERROR_DETECT */
 
-// Implementation must be according to IEC61508-3!!!
+#include "BIST/inc/Kdk_RamTest.h"
+
+/* Implementation must be according to IEC61508-3!!! */
 
 /*
 
-*/
+ */
 
 /*
     A.5.1   - RAM test "checkerboard" (or "march).
@@ -73,74 +75,94 @@
     Aim: To detect all bit failures.
 
 
-*/
+ */
 
 /*
     MainFunction()  - Seite 15
     =============
-    * inherently knows:
+ * inherently knows:
         - which algorithm it is using;
         - which memory blocks must be tested for this algorithm;
         - start and end address of each block;
         - number of cells to test at each call.
-    * Remembers:
+ * Remembers:
         - which block it is in;
         - which address to start at the next call;
         - status of the test;
         - overall test result;
         - test result for each block.
-*/
+ */
 
-// Req!RamTst060: if non destructive RAM test is choosen, the RAM test module shall
-// save the RAM area to be tested before the module modifies it. The RAM test module
-// shall execute the complete procedure (saving, changing, restoring) without interruption.
+/* Req!RamTst060: if non destructive RAM test is choosen, the RAM test module shall */
+/* save the RAM area to be tested before the module modifies it. The RAM test module */
+/* shall execute the complete procedure (saving, changing, restoring) without interruption. */
 
 /*
     void RamTst_Completed_Notification(void);
     void RamTst_Error_Notification(void);
-*/
+ */
 
 #if 0
-    S. 282 March Test Notation.
-    S. 306 Algorithmen-Beschreibung (S. 315 Augmented March tests)
-    -------------------------------
+S .282 March Test Notation.
+S .306 Algorithmen - Beschreibung(S .315 Augmented March tests)
+------------------------------ -
 
-    MARCH C-
-    --------
+MARCH C -
+--------
 
-    MATS+ march test algorithm:
-    ---------------------------
-M0: { March element up or down (w0) }
-    for cell := 0  to n -1 /* or any other order. */ do
+MATS + march test algorithm :
+-------------------------- -
+M0 : { March element up or down(w0) }
+
+for cell : = 0  to n - 1   /* or any other order. */
+
+             do {
     begin
-        write 0 to A[cell];
-    end;
+                     write 0 to A[cell];
+}
 
-M1: { March element up (r0,w1) }
-    for cell := 0 to n - 1 do
-    begin
-        read A[cell]; { Expected value == 0}
-        write 1 to A[cell];
-    end;
+end;
 
-M2: { March element down (r1,w0) }
-    for cell := n -1 down to 0 do
+M1: { March element up(r0, w1) }
+
+for cell : = 0 to n - 1
+
+             do {
     begin
-        read A[cell]; { Expected value == 1}
-        write 0 to A[cell];
-    end;
+    read A[cell];
+}
+
+{ Expected value == 0}
+write 1 to A[cell];
+
+end;
+
+M2: { March element down(r1, w0) }
+
+for cell : = n - 1 down to 0
+
+             do {
+    begin
+    read A[cell];
+}
+
+{ Expected value == 1}
+write 0 to A[cell];
+
+end;
 #endif
-
 
 #define RAMTST_START_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
 
 RamTst_TestResultType RamTst_TestResult[RAMTST_TOTAL_NUMBER_OF_BLOCKS];
 
+#if AR_DEV_ERROR_DETECT(RAMTST) == STD_ON
+AR_IMPLEMENT_MODULE_STATE_VAR(RamTst);
+#endif
+
 #define RAMTST_STOP_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
-
-
 
 #if 0
 #define RAMTST_E_STATUS_FAILURE 0x01
@@ -149,8 +171,7 @@ RamTst_TestResultType RamTst_TestResult[RAMTST_TOTAL_NUMBER_OF_BLOCKS];
 #define RAMTST_E_RAM_FAILURE    <ASSIGNED BY DEM>
 #endif
 
-// !Req!RamTst089: The Function RamTst_Init() shall be called first before calling any other...
-
+/* !Req!RamTst089: The Function RamTst_Init() shall be called first before calling any other... */
 
 #define RAMTST_START_SEC_CODE
 #include "MemMap.h"
@@ -158,152 +179,206 @@ RamTst_TestResultType RamTst_TestResult[RAMTST_TOTAL_NUMBER_OF_BLOCKS];
 **  Global Functions.
 */
 
-
-FUNC(void,RAMTST_CODE) RamTst_Init(void)
+FUNC(void, RAMTST_CODE) RamTst_Init(void)
 {
 #if RAMTST_DEV_ERROR_DETECT == STD_ON
 
+    AR_MODULE_INITIALIZE(RamTst);
 #endif /* RAMTST_DEV_ERROR_DETECT */
-
 }
 
-
-FUNC(void,RAMTST_CODE) RamTst_DeInit(void)
+FUNC(void, RAMTST_CODE) RamTst_DeInit(void)
 {
 #if RAMTST_DEV_ERROR_DETECT == STD_ON
 
+    if (!AR_MODULE_IS_INITIALIZED(RamTst)) {
+        AR_RAISE_DEV_ERROR(RAMTST, DEINIT, RAMTST_E_UNINIT);
+        return;
+    }
+
+    AR_MODULE_UNINITIALIZE(RamTst);
 #endif /* RAMTST_DEV_ERROR_DETECT */
 }
 
 #if RAMTST_STOP_API == STD_ON
-FUNC(void,RAMTST_CODE) RamTst_Stop(void)
+FUNC(void, RAMTST_CODE) RamTst_Stop(void)
 {
 #if RAMTST_DEV_ERROR_DETECT == STD_ON
 
-#endif /* RAMTST_DEV_ERROR_DETECT */
-}
-#endif /* RAMTST_STOP_API */
+    if (!AR_MODULE_IS_INITIALIZED(RamTst)) {
+        AR_RAISE_DEV_ERROR(RAMTST, STOP, RAMTST_E_UNINIT);
+        return;
+    }
 
+#endif  /* RAMTST_DEV_ERROR_DETECT */
+}
+#endif  /* RAMTST_STOP_API */
 
 #if RAMTST_ALLOW_API == STD_ON
-FUNC(void,RAMTST_CODE) RamTst_Allow(void)
+FUNC(void, RAMTST_CODE) RamTst_Allow(void)
 {
 #if RAMTST_DEV_ERROR_DETECT == STD_ON
 
-#endif /* RAMTST_DEV_ERROR_DETECT */
-}
-#endif /* RAMTST_ALLOW_API */
+    if (!AR_MODULE_IS_INITIALIZED(RamTst)) {
+        AR_RAISE_DEV_ERROR(RAMTST, ALLOW, RAMTST_E_UNINIT);
+        return;
+    }
 
+#endif  /* RAMTST_DEV_ERROR_DETECT */
+}
+#endif  /* RAMTST_ALLOW_API */
 
 #if RAMTST_SUSPEND_API == STD_ON
-FUNC(void,RAMTST_CODE) RamTst_Suspend(void)
+FUNC(void, RAMTST_CODE) RamTst_Suspend(void)
 {
 #if RAMTST_DEV_ERROR_DETECT == STD_ON
 
-#endif /* RAMTST_DEV_ERROR_DETECT */
-}
-#endif /* RAMTST_SUSPEND_API */
+    if (!AR_MODULE_IS_INITIALIZED(RamTst)) {
+        AR_RAISE_DEV_ERROR(RAMTST, SUSPEND, RAMTST_E_UNINIT);
+        return;
+    }
 
+#endif  /* RAMTST_DEV_ERROR_DETECT */
+}
+#endif  /* RAMTST_SUSPEND_API */
 
 #if RAMTST_RESUME_API == STD_ON
-FUNC(void,RAMTST_CODE) RamTst_Resume(void)
+FUNC(void, RAMTST_CODE) RamTst_Resume(void)
 {
 #if RAMTST_DEV_ERROR_DETECT == STD_ON
 
-#endif /* RAMTST_DEV_ERROR_DETECT */
-}
-#endif /* RAMTST_RESUME_API */
+    if (!AR_MODULE_IS_INITIALIZED(RamTst)) {
+        AR_RAISE_DEV_ERROR(RAMTST, RESUME, RAMTST_E_UNINIT);
+        return;
+    }
 
+#endif  /* RAMTST_DEV_ERROR_DETECT */
+}
+#endif  /* RAMTST_RESUME_API */
 
 #if RAMTST_GET_EXECUTION_STATUS_API == STD_ON
-FUNC(RamTst_ExecutionStatusType,RAMTST_CODE) RamTst_GetExecutionStatus(void)
+FUNC(RamTst_ExecutionStatusType, RAMTST_CODE) RamTst_GetExecutionStatus(void)
 {
 #if RAMTST_DEV_ERROR_DETECT == STD_ON
 
-#endif /* RAMTST_DEV_ERROR_DETECT */
+    if (!AR_MODULE_IS_INITIALIZED(RamTst)) {
+        AR_RAISE_DEV_ERROR(RAMTST, GETEXECUTIONSTATUS, RAMTST_E_UNINIT);
+        return RAMTST_EXECUTION_UNINIT;
+    }
+
+#endif  /* RAMTST_DEV_ERROR_DETECT */
 }
-#endif /* RAMTST_GET_EXECUTION_STATUS_API */
-
-
+#endif  /* RAMTST_GET_EXECUTION_STATUS_API */
 
 #if RAMTST_GET_TEST_RESULT_API == STD_ON
-FUNC(RamTst_TestResultType,RAMTST_CODE) RamTst_GetTestResult(void)
+FUNC(RamTst_TestResultType, RAMTST_CODE) RamTst_GetTestResult(void)
 {
 #if RAMTST_DEV_ERROR_DETECT == STD_ON
 
-#endif /* RAMTST_DEV_ERROR_DETECT */
-}
-#endif /* RAMTST_GET_TEST_RESULT_API */
+    if (!AR_MODULE_IS_INITIALIZED(RamTst)) {
+        AR_RAISE_DEV_ERROR(RAMTST, GETTESTRESULT, RAMTST_E_UNINIT);
+        return RAMTST_RESULT_NOT_TESTED;    /* ??? */
+    }
 
+#endif  /* RAMTST_DEV_ERROR_DETECT */
+}
+#endif  /* RAMTST_GET_TEST_RESULT_API */
 
 #if RAMTST_GET_TEST_RESULT_PER_BLOCK_API == STD_ON
-FUNC(RamTst_TestResultType,RAMTST_CODE) RamTst_GetTestResultPerBlock(RamTst_NumberOfBlocksType BlockID)
+FUNC(RamTst_TestResultType, RAMTST_CODE) RamTst_GetTestResultPerBlock(RamTst_NumberOfBlocksType BlockID)
 {
 #if RAMTST_DEV_ERROR_DETECT == STD_ON
 
-#endif /* RAMTST_DEV_ERROR_DETECT */
-}
-#endif /* RAMTST_GET_TEST_RESULT_PER_BLOCK_API */
+    if (!AR_MODULE_IS_INITIALIZED(RamTst)) {
+        AR_RAISE_DEV_ERROR(RAMTST, GETTESTRESULTPERBLOCK, RAMTST_E_UNINIT);
+        return RAMTST_RESULT_NOT_TESTED;    /* ??? */
+    }
 
+#endif  /* RAMTST_DEV_ERROR_DETECT */
+}
+#endif  /* RAMTST_GET_TEST_RESULT_PER_BLOCK_API */
 
 #if RAMTST_GET_TEST_ALGORITHM_API == STD_ON
-FUNC(RamTst_AlgorithmType,RAMTST_CODE) RamTst_GetTestAlgorithm(void)
+FUNC(RamTst_AlgorithmType, RAMTST_CODE) RamTst_GetTestAlgorithm(void)
 {
 #if RAMTST_DEV_ERROR_DETECT == STD_ON
 
-#endif /* RAMTST_DEV_ERROR_DETECT */
-}
-#endif /* RAMTST_GET_TEST_ALGORITHM_API */
+    if (!AR_MODULE_IS_INITIALIZED(RamTst)) {
+        AR_RAISE_DEV_ERROR(RAMTST, GETTESTALGORITHM, RAMTST_E_UNINIT);
+        return RAMTST_ALGORITHM_UNDEFINED;  /* ??? */
+    }
 
+#endif  /* RAMTST_DEV_ERROR_DETECT */
+}
+#endif  /* RAMTST_GET_TEST_ALGORITHM_API */
 
 #if RAMTST_GET_NUMBER_OF_TESTED_CELLS_API == STD_ON
-FUNC(RamTst_NumberOfTestedCellsType,RAMTST_CODE) RamTst_GetNumberOfTestedCells(void)
+FUNC(RamTst_NumberOfTestedCellsType, RAMTST_CODE) RamTst_GetNumberOfTestedCells(void)
 {
 #if RAMTST_DEV_ERROR_DETECT == STD_ON
+
+    if (!AR_MODULE_IS_INITIALIZED(RamTst)) {
+        AR_RAISE_DEV_ERROR(RAMTST, CHANGENUMBEROFTESTEDCELLS, RAMTST_E_UNINIT);
+        return (RamTst_NumberOfTestedCellsType)0;   /* ??? */
+    }
 
 #endif /* RAMTST_DEV_ERROR_DETECT */
 }
 #endif
 
-
 #if RAMTST_CHANGE_TEST_ALGORITHM_API == STD_ON
-FUNC(void,RAMTST_CODE) RamTst_ChangeTestAlgorithm(RamTst_AlgorithmType NewTestAlgorithm)
+FUNC(void, RAMTST_CODE) RamTst_ChangeTestAlgorithm(RamTst_AlgorithmType NewTestAlgorithm)
 {
 #if RAMTST_DEV_ERROR_DETECT == STD_ON
 
-#endif /* RAMTST_DEV_ERROR_DETECT */
-}
-#endif /* RAMTST_CHANGE_TEST_ALGORITHM_API */
+    if (!AR_MODULE_IS_INITIALIZED(RamTst)) {
+        AR_RAISE_DEV_ERROR(RAMTST, CHANGETESTALGORITHM, RAMTST_E_UNINIT);
+        return;
+    }
 
+#endif  /* RAMTST_DEV_ERROR_DETECT */
+}
+#endif  /* RAMTST_CHANGE_TEST_ALGORITHM_API */
 
 #if RAMTST_CHANGE_NUMBER_OF_TESTED_CELLS_API == STD_ON
-FUNC(void,RAMTST_CODE) RamTst_ChangeNumberOfTestedCells(RamTst_NumberOfTestedCellsType NewNumberOfTestedCells)
+FUNC(void, RAMTST_CODE) RamTst_ChangeNumberOfTestedCells(RamTst_NumberOfTestedCellsType NewNumberOfTestedCells)
 {
 #if RAMTST_DEV_ERROR_DETECT == STD_ON
 
-#endif /* RAMTST_DEV_ERROR_DETECT */
-}
-#endif /* RAMTST_CHANGE_NUMBER_OF_TESTED_CELLS_API */
+    if (!AR_MODULE_IS_INITIALIZED(RamTst)) {
+        AR_RAISE_DEV_ERROR(RAMTST, GETNUMBEROFTESTEDCELLS, RAMTST_E_UNINIT);
+        return;
+    }
 
+#endif  /* RAMTST_DEV_ERROR_DETECT */
+}
+#endif  /* RAMTST_CHANGE_NUMBER_OF_TESTED_CELLS_API */
 
 #if RAMTST_CHANGE_MAX_NUMBER_OF_TESTED_CELLS_API == STD_ON
-FUNC(void,RAMTST_CODE) RamTst_ChangeMaxNumberOfTestedCells(RamTst_NumberOfTestedCellsType NewNumberOfTestedCells)
+FUNC(void, RAMTST_CODE) RamTst_ChangeMaxNumberOfTestedCells(RamTst_NumberOfTestedCellsType NewNumberOfTestedCells)
 {
 #if RAMTST_DEV_ERROR_DETECT == STD_ON
 
-#endif /* RAMTST_DEV_ERROR_DETECT */
+    if (!AR_MODULE_IS_INITIALIZED(RamTst)) {
+        AR_RAISE_DEV_ERROR(RAMTST, CHANGEMAXNUMBEROFTESTEDCELLS, RAMTST_E_UNINIT);
+        return;
+    }
+
+#endif  /* RAMTST_DEV_ERROR_DETECT */
 }
-#endif /* RAMTST_CHANGE_MAX_NUMBER_OF_TESTED_CELLS_API */
+#endif  /* RAMTST_CHANGE_MAX_NUMBER_OF_TESTED_CELLS_API */
 
-
-FUNC(void,RAMTST_CODE) RamTst_MainFunction(void)
+FUNC(void, RAMTST_CODE) RamTst_MainFunction(void)
 {
 #if RAMTST_DEV_ERROR_DETECT == STD_ON
 
+    if (!AR_MODULE_IS_INITIALIZED(RamTst)) {
+        AR_RAISE_DEV_ERROR(RAMTST, MAINFUNCTION, RAMTST_E_UNINIT);
+        return;
+    }
+
 #endif /* RAMTST_DEV_ERROR_DETECT */
 }
-
-
 
 #define RAMTST_STOP_SEC_CODE
 #include "MemMap.h"

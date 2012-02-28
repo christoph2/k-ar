@@ -40,8 +40,6 @@
 static uint16 Pwm_CalculateAbsoluteDutyCycle(uint16 AbsolutePeriodTime, uint16 RelativeDutyCycle);
 
 
-VAR(uint16, static) TestMe;
-
 #define PWM_START_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
 
@@ -208,7 +206,7 @@ FUNC(void, PWM_CODE) Pwm_EnableNotification(Pwm_ChannelType ChannelNumber, Pwm_E
 /*
 ** Scale duty-cycle to [0x0000 .. 0x8000]
 */
-uint16 Pwm_CalculateAbsoluteDutyCycle(uint16 AbsolutePeriodTime, uint16 RelativeDutyCycle)
+static uint16 Pwm_CalculateAbsoluteDutyCycle(uint16 AbsolutePeriodTime, uint16 RelativeDutyCycle)
 {
     return (uint16)(HIWORD(((uint32)(AbsolutePeriodTime) * (RelativeDutyCycle)))) << 1;
 }

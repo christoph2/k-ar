@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -77,7 +77,6 @@ extern "C"
 #define GPT_E_PARAM_VALUE                   ((uint8)0x15)
 #define GPT_E_PARAM_CONFIG                  ((uint8)0x15)
 #define GPT_E_PARAM_MODE                    ((uint8)0x1f)
-
 
 /*
 **  Global Types.

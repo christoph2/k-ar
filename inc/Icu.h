@@ -2,7 +2,7 @@
  * k_dk - Driver Kit for k_os (Konnex Operating-System based on the
  * OSEK/VDX-Standard).
  *
- * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -123,7 +123,6 @@ typedef enum tagIcu_InputStateType {
     ICU_IDLE
 } Icu_InputStateType;
 
-
 /* Definition of the measurement mode type */
 typedef enum tagIcu_MeasurementModeType {
     /* Mode for detecting edges */
@@ -164,50 +163,44 @@ typedef enum tagIcu_TimestampBufferType {
     ICU_CIRCULAR_BUFFER
 } Icu_TimestampBufferType;
 
-
-// IcuEdgeCounterMeasurement
+/* IcuEdgeCounterMeasurement */
 typedef struct tagIcu_EdgeCounterMeasurementType {
     uint8 dummy;
 } Icu_EdgeCounterMeasurementType;
 
-
-// IcuSignalEdgeDetection
+/* IcuSignalEdgeDetection */
 typedef struct tagIcu_SignalEdgeDetectionType {
-    void (*IcuSignalNotification)(void);
+    void (* IcuSignalNotification)(void);
 } Icu_SignalEdgeDetectionType;
 
-
-// IcuSignalMeasurement
+/* IcuSignalMeasurement */
 typedef struct tagIcu_SignalMeasurementType {
     Icu_SignalMeasurementPropertyType IcuSignalMeasurementProperty;
 } Icu_SignalMeasurementType;
 
-
-// IcuTimestampMeasurement
+/* IcuTimestampMeasurement */
 typedef struct tagIcu_TimestampMeasurementType {
     Icu_TimestampBufferType IcuTimestampMeasurementProperty;
-    void (*IcuTimestampNotification)(void);
+    void (* IcuTimestampNotification)(void);
 } Icu_TimestampMeasurementType;
-
 
 /* per Channel Configuration. */
 typedef struct tagIcu_ChannelConfigType {
-    Icu_ActivationType IcuDefaultStartEdge;
+    Icu_ActivationType      IcuDefaultStartEdge;
     Icu_MeasurementModeType IcuMeasurementMode;
     union {
-        Icu_EdgeCounterMeasurementType const * const IcuEdgeCounterMeasurement;
-        Icu_SignalEdgeDetectionType const * const IcuSignalEdgeDetection;
-        Icu_SignalMeasurementType const * const IcuSignalMeasurement;
-        Icu_TimestampMeasurementType const * const IcuTimestampMeasurement;
-    } IcuMeasurementConfig;
+        Icu_EdgeCounterMeasurementType const * const    IcuEdgeCounterMeasurement;
+        Icu_SignalEdgeDetectionType const * const       IcuSignalEdgeDetection;
+        Icu_SignalMeasurementType const * const         IcuSignalMeasurement;
+        Icu_TimestampMeasurementType const * const      IcuTimestampMeasurement;
+    }       IcuMeasurementConfig;
     boolean IcuWakeupCapability;
 } Icu_ChannelConfigType;
 
-
 /* This type contains initialization data. */
 typedef struct tagIcu_ConfigType {
-    uint8 IcuMaxChannel;    /* Number of Channels. */
-    Icu_ChannelConfigType *IcuChannelConfig;
+    uint8                   IcuMaxChannel; /* Number of Channels. */
+    Icu_ChannelConfigType * IcuChannelConfig;
 /*
     Hardware and implementation dependent structure.
     The contents of the initialization data structure are microcontroller specific.
@@ -226,8 +219,9 @@ FUNC(void, ICU_CODE) Icu_SetActivationCondition(Icu_ChannelType Channel, Icu_Act
 FUNC(void, ICU_CODE) Icu_DisableNotification(Icu_ChannelType Channel);
 FUNC(void, ICU_CODE) Icu_EnableNotification(Icu_ChannelType Channel);
 FUNC(Icu_InputStateType, ICU_CODE) Icu_GetInputState(Icu_ChannelType Channel);
-FUNC(void, ICU_CODE) Icu_StartTimestamp(Icu_ChannelType Channel,P2VAR(Icu_ValueType, AUTOMATIC,
-ICU_APPL_DATA) BufferPtr, uint16 BufferSize, uint16 NotifyInterval);
+FUNC(void, ICU_CODE) Icu_StartTimestamp(Icu_ChannelType Channel, P2VAR(Icu_ValueType, AUTOMATIC,
+                                                                       ICU_APPL_DATA) BufferPtr, uint16 BufferSize,
+                                        uint16 NotifyInterval);
 FUNC(void, ICU_CODE) Icu_StopTimestamp(Icu_ChannelType Channel);
 FUNC(Icu_IndexType, ICU_CODE) Icu_GetTimestampIndex(Icu_ChannelType Channel);
 FUNC(void, ICU_CODE) Icu_ResetEdgeCount(Icu_ChannelType Channel);
@@ -247,8 +241,10 @@ FUNC(void, ICU_CODE) Icu_EnableEdgeDetection(Icu_ChannelType Channel);
 #endif
 
 #if defined(UNIT_TESTING)
-Icu_IndexType GetTimestampIndex();
-Icu_ModeType GetModuleMode(void);
+Icu_IndexType   GetTimestampIndex();
+Icu_ModeType    GetModuleMode(void);
+
+
 GetInputState(Icu_ChannelType Channel);
 #endif /* UNIT_TESTING */
 
@@ -262,6 +258,5 @@ GetInputState(Icu_ChannelType Channel);
 #if defined(__cplusplus)
 }
 #endif  /* __cplusplus */
-
 
 #endif  /* __ICU_H */

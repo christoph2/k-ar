@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -30,12 +30,6 @@
 #include "Std_Types.h"
 #include "MCALTemplates/Mcal_Defines.h"
 #include "Port_Cfg.h"
-
-#if 0
-#if defined(xxx_VERSION_INFO_API)
-xxx_GetVersionInfo(...)
-#endif /* xxx_VERSION_INFO_API */
-#endif
 
 /*
 **  Published Information.
@@ -127,7 +121,6 @@ typedef enum tagPort_PinDirectionType {
 
 typedef uint8 Port_PinModeType;
 
-
 /*
 **  Global Functions.
 */
@@ -136,13 +129,11 @@ FUNC(void, PORT_CODE) Port_SetPinDirection(Port_PinType Pin, Port_PinDirectionTy
 FUNC(void, PORT_CODE) Port_RefreshPortDirection(void);
 FUNC(void, PORT_CODE) Port_SetPinMode(Port_PinType Pin, Port_PinModeType Mode);
 
-
 /*
 **  Global Function-like Macros.
 */
 #if PORT_GET_VERSION_INFO_API == STD_ON
 #define Port_GetVersionInfo(vp) AR_GET_VERSION_INFO(PORT, vp)
-#endif /* PORT_GET_VERSION_INFO_API */
+#endif  /* PORT_GET_VERSION_INFO_API */
 
-
-#endif /* __PORT_H */
+#endif  /* __PORT_H */

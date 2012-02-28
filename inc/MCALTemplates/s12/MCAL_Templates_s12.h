@@ -142,7 +142,7 @@ extern "C"
 #define KAR_IMPLEMENT_PWM_SETOUPUTOIDLE(chn)                S12Pwm_SetOutputToIdle((chn))
 #define KAR_IMPLEMENT_PWM_GETOUTPUTSTATE(chn)               S12Pwm_GetOutputState((chn))
 #define KAR_IMPLEMENT_PWM_DISABLENOTIFICATION(chn)
-#define KAR_IMPLEMENT_PWM_ENABLENOTIFICATION(chn, not)
+#define KAR_IMPLEMENT_PWM_ENABLENOTIFICATION(chn, notif)
 
 /*
 **  SPI.

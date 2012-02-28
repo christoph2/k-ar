@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                     cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -28,6 +28,7 @@
 
 #include "Std_Types.h"
 #include "EcuM.h"
+#include "MCALTemplates/Mcal_Defines.h"
 #include "Mcu_Cfg.h"
 
 /*
@@ -152,12 +153,11 @@ FUNC(Mcu_RawResetType, MCU_CODE) Mcu_GetResetRawValue(void);
 FUNC(void, MCU_CODE) Mcu_PerformReset(void);
 FUNC(void, MCU_CODE) Mcu_SetMode(Mcu_ModeType McuMode);
 
-
 /*
 **  Global Function-like Macros.
 */
 #if MCU_GET_VERSION_INFO_API == STD_ON
 #define Mcu_GetVersionInfo(vp) AR_GET_VERSION_INFO(MCU, vp)
-#endif /* MCU_GET_VERSION_INFO_API */
+#endif  /* MCU_GET_VERSION_INFO_API */
 
-#endif /* __MCU_H */
+#endif  /* __MCU_H */

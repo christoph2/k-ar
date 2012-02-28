@@ -112,13 +112,13 @@ typedef struct tagCan_ConfigType {
 
 #define CAN_THREE_SAMPLES_PER_BIT STD_ON
 
-#define S12CAN_MAKE_BTR0(sjw, bpr)                                   \
-    (((uint8)(sjw) - (uint8)0x01) & (uint8)0x03) << (uint8)0x06) |  \
+#define S12CAN_MAKE_BTR0(sjw, bpr)                                 \
+    (((uint8)(sjw) - (uint8)0x01) & (uint8)0x03) << (uint8)0x06) | \
     (((uint8)(bpr) - (uint8)0x01) & (uint8)0x3f)
 
-#define S12CAN_MAKE_BTR1(tsmp, ps, seg1, seg2)                         \
-    (((tsmp) == STD_ON) ? (uint8)0x80 : (uint8)0x00) |                \
-    ((((uint8)(seg2)  - (uint8)1) & (uint8)0x07) << (uint8)0x04) |  \
+#define S12CAN_MAKE_BTR1(tsmp, ps, seg1, seg2)                     \
+    (((tsmp) == STD_ON) ? (uint8)0x80 : (uint8)0x00) |             \
+    ((((uint8)(seg2)  - (uint8)1) & (uint8)0x07) << (uint8)0x04) | \
     (((uint8)(seg1) + (uint8)(ps)   - (uint8)1) & (uint8)0x0f)
 
 #if 0
@@ -260,3 +260,4 @@ extern const Can_PublicIfType Can_PublicIf;
 #endif  /* __cplusplus */
 
 #endif  /* __CAN_H */
+

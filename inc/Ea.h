@@ -42,4 +42,5 @@ Std_ReturnType      Ea_InvalidateBlock(uint16 BlockNumber);
 void                Ea_GetVersionInfo(Std_VersionInfotype * VersionInfoPtr);
 Std_ReturnType      Ea_EraseImmediateBlock(uint16 BlockNumber);
 
+
 #endif  /* __EA_H */
