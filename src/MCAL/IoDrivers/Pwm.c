@@ -37,7 +37,7 @@
 
 #include "MCALTemplates/Mcal_Templates.h"
 
-static uint16 Pwm_CalculateAbsoluteDutyCycle(uint16 AbsolutePeriodTime, uint16 RelativeDutyCycle);
+static FUNC(uint16, PWM_CODE) Pwm_CalculateAbsoluteDutyCycle(uint16 AbsolutePeriodTime, uint16 RelativeDutyCycle);
 
 
 #define PWM_START_SEC_VAR_UNSPECIFIED
@@ -206,7 +206,7 @@ FUNC(void, PWM_CODE) Pwm_EnableNotification(Pwm_ChannelType ChannelNumber, Pwm_E
 /*
 ** Scale duty-cycle to [0x0000 .. 0x8000]
 */
-static uint16 Pwm_CalculateAbsoluteDutyCycle(uint16 AbsolutePeriodTime, uint16 RelativeDutyCycle)
+static FUNC(uint16, PWM_CODE) Pwm_CalculateAbsoluteDutyCycle(uint16 AbsolutePeriodTime, uint16 RelativeDutyCycle)
 {
     return (uint16)(HIWORD(((uint32)(AbsolutePeriodTime) * (RelativeDutyCycle)))) << 1;
 }

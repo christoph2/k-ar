@@ -95,8 +95,6 @@ DEFINE_DIO_FUNCTIONS();
 #define DIO_STOP_SEC_CONST_16BIT
 #include "MemMap.h"
 
-/*     uint8 state=AR_GET_MODULE_STATE_VAR(DIO_4711_MEBI); */
-
 /*
 **  Global Functions.
 */
@@ -105,9 +103,9 @@ DEFINE_DIO_FUNCTIONS();
 
 FUNC(Dio_LevelType, DIO_CODE) Dio_ReadChannel(Dio_ChannelType ChannelId)
 {
-    uint8                       port   = (uint8)ChannelId / (uint8)8;
-    uint8                       bit    = (uint8)ChannelId % (uint8)8;
-    Dio_PortMappingType const * map;
+    VAR(uint8, AUTOMATIC)       port   = (uint8)ChannelId / (uint8)8;
+    VAR(uint8, AUTOMATIC)       bit    = (uint8)ChannelId % (uint8)8;
+    P2CONST(Dio_PortMappingType, AUTOMATIC, ADC_APPL_DATA) map;
 
     if (ChannelId >= DIO_NUM_CHANNELS) {    /* todo: 'AR_ASSERT_LT()' */
         AR_RAISE_DEV_ERROR(DIO, READ_CHANNEL, DIO_E_PARAM_INVALID_CHANNEL_ID);
@@ -120,9 +118,9 @@ FUNC(Dio_LevelType, DIO_CODE) Dio_ReadChannel(Dio_ChannelType ChannelId)
 
 FUNC(void, DIO_CODE) Dio_WriteChannel(Dio_ChannelType ChannelId, Dio_LevelType Level)
 {
-    uint8                       port   = (uint8)ChannelId / (uint8)8;
-    uint8                       bit    = (uint8)ChannelId % (uint8)8;
-    Dio_PortMappingType const * map;
+    VAR(uint8, AUTOMATIC)       port   = (uint8)ChannelId / (uint8)8;
+    VAR(uint8, AUTOMATIC)       bit    = (uint8)ChannelId % (uint8)8;
+    P2CONST(Dio_PortMappingType, AUTOMATIC, ADC_APPL_DATA) map;
 
     if (ChannelId >= DIO_NUM_CHANNELS) {
         AR_RAISE_DEV_ERROR(DIO, WRITE_CHANNEL, DIO_E_PARAM_INVALID_CHANNEL_ID);
@@ -134,7 +132,7 @@ FUNC(void, DIO_CODE) Dio_WriteChannel(Dio_ChannelType ChannelId, Dio_LevelType L
 
 FUNC(Dio_PortLevelType, DIO_CODE) Dio_ReadPort(Dio_PortType PortId)
 {
-    Dio_PortMappingType const * map;
+    P2CONST(Dio_PortMappingType, AUTOMATIC, ADC_APPL_DATA) map;
 
     if (PortId >= DIO_NUM_PORTS) {
         AR_RAISE_DEV_ERROR(DIO, READ_PORT, DIO_E_PARAM_INVALID_PORT_ID);
@@ -147,7 +145,7 @@ FUNC(Dio_PortLevelType, DIO_CODE) Dio_ReadPort(Dio_PortType PortId)
 
 FUNC(void, DIO_CODE) Dio_WritePort(Dio_PortType PortId, Dio_PortLevelType Level)
 {
-    Dio_PortMappingType const * map;
+    P2CONST(Dio_PortMappingType, AUTOMATIC, ADC_APPL_DATA) map;
 
     if (PortId >= DIO_NUM_PORTS) {
         AR_RAISE_DEV_ERROR(DIO, WRITE_PORT, DIO_E_PARAM_INVALID_PORT_ID);
@@ -159,7 +157,7 @@ FUNC(void, DIO_CODE) Dio_WritePort(Dio_PortType PortId, Dio_PortLevelType Level)
 
 FUNC(Dio_PortLevelType, DIO_CODE) Dio_ReadChannelGroup(P2CONST(Dio_ChannelGroupType, AUTOMATIC, DIO_APLL_DATA) ChannelGroupIdPtr)
 {
-    Dio_PortMappingType const * map;
+    P2CONST(Dio_PortMappingType, AUTOMATIC, ADC_APPL_DATA) map;
 
     /* DIO_E_PARAM_INVALID_GROUP_ID */
 
@@ -170,7 +168,7 @@ FUNC(Dio_PortLevelType, DIO_CODE) Dio_ReadChannelGroup(P2CONST(Dio_ChannelGroupT
 FUNC(void, DIO_CODE) Dio_WriteChannelGroup(P2CONST(Dio_ChannelGroupType, AUTOMATIC, DIO_APPL_DATA) ChannelGroupIdPtr,
                                            Dio_PortLevelType Level)
 {
-    Dio_PortMappingType const * map;
+    P2CONST(Dio_PortMappingType, AUTOMATIC, ADC_APPL_DATA) map;
 
     /* DIO_E_PARAM_INVALID_GROUP_ID */
 

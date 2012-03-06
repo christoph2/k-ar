@@ -71,16 +71,13 @@ AR_IMPLEMENT_MODULE_STATE_VAR(Icu);
 
 KAR_DEFINE_LOCAL_CONFIG_VAR(ICU, Icu);
 
-static Icu_IndexType Icu_TimeStampIndex[ICU_MAX_CHANNEL];
-
-static Icu_ModeType Icu_ModuleMode;
-
-static Icu_InputStateType Icu_InputState[ICU_MAX_CHANNEL];
-
-static boolean Icu_Notification[ICU_MAX_CHANNEL];
+VAR(Icu_IndexType, STATIC)      Icu_TimeStampIndex[ICU_MAX_CHANNEL];
+VAR(Icu_ModeType, STATIC)       Icu_ModuleMode;
+VAR(Icu_InputStateType, STATIC) Icu_InputState[ICU_MAX_CHANNEL];
+VAR(boolean, STATIC)            Icu_Notification[ICU_MAX_CHANNEL];
 
 #if defined(ICU_TIMESTAMP_API)  /* NEIN: gehöhrt zu Konfiguration!!! */
-static Icu_TimestampBufferType BufferType[ICU_MAX_CHANNEL];
+VAR(Icu_TimestampBufferType, STATIC)    BufferType[ICU_MAX_CHANNEL];
 #endif /* ICU_TIMESTAMP_API */
 
 #define ICU_STOP_SEC_VAR_UNSPECIFIED

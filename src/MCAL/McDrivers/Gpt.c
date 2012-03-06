@@ -69,8 +69,8 @@ AR_IMPLEMENT_MODULE_STATE_VAR(Gpt);
 
 KAR_DEFINE_LOCAL_CONFIG_VAR(GPT, Gpt);
 
-static Gpt_TimerStateType   Gpt_TimerState[GPT_MAX_CHANNEL];
-static boolean              Gpt_Notification[GPT_MAX_CHANNEL];
+VAR(Gpt_TimerStateType, STATIC) Gpt_TimerState[GPT_MAX_CHANNEL];
+VAR(boolean, STATIC)            Gpt_Notification[GPT_MAX_CHANNEL];
 
 #define DIO_STOP_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
