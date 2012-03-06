@@ -52,7 +52,7 @@ AR_IMPLEMENT_MODULE_STATE_VAR(Pwm);
 #define PWM_STOP_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
 
-#define GPT_START_SEC_CODE
+#define PWM_START_SEC_CODE
 #include "MemMap.h"
 
 /*

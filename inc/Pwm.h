@@ -36,7 +36,6 @@ extern "C"
 #include "MCALTemplates/Mcal_Defines.h"
 #include "Pwm_Cfg.h"
 
-/* #include "mcu/s12/inc/S12_Pwm.h" */
 
 /*
 **  Published Information.
