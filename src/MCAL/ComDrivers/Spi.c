@@ -186,10 +186,9 @@ FUNC(void, SPI_CODE) Spi_Init(P2CONST(Spi_ConfigType, AUTOMATIC, SPI_APPL_DATA) 
 FUNC(Std_ReturnType, SPI_CODE) Spi_Uninit(void)
 {
 #if SPI_DEV_ERROR_DETECT == STD_ON
-
     if (!AR_MODULE_IS_INITIALIZED(Spi)) {
-        AR_RAISE_DEV_ERROR(SPI, DEINIT, SPI_E_UNINIT);
-        return;
+        AR_RAISE_DEV_ERROR(SPI, UNINIT, SPI_E_UNINIT);
+        return E_NOT_OK;
     }
 
     AR_MODULE_UNINITIALIZE(Spi);
