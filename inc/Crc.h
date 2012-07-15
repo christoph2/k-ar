@@ -2,7 +2,7 @@
  * k_dk - Driver Kit for k_os (Konnex Operating-System based on the
  * OSEK/VDX-Standard).
  *
- * (C) 2007-2010 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -64,6 +64,7 @@ extern "C"
 **  Global Types.
 */
 
+
 /*
 **  Global Functions.
 */
@@ -85,12 +86,18 @@ FUNC(uint32, CRC_CODE) Crc_CalculateCRC32(
     uint8 Crc_StartValue32
     );
 
-FUNC(void, CRC_CODE) Crc_GetVersionInfo(
-    P2VAR(Std_VersionInfoType, AUTOMATIC, CRC_APPL_DATA) Versioninfo
-    );
+
+/*
+** Global Function-like Macros.
+*/
+#if CRC_GET_VERSION_INFO_API == STD_ON
+#define Crc_GetVersionInfo(vp) AR_GET_VERSION_INFO(Crc, vp)
+#endif /* CRC_GET_VERSION_INFO_API */
+
 
 #if defined(__cplusplus)
 }
 #endif  /* __cplusplus */
 
 #endif  /* __CRC_H */
+

@@ -2,7 +2,7 @@
  * k_dk - Driver Kit for k_os (Konnex Operating-System based on the
  * OSEK/VDX-Standard).
  *
- * (C) 2007-2010 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -401,21 +401,6 @@ FUNC(uint32, CRC_CODE) Crc_CalculateCRC32(
 #endif
 }
 
-FUNC(void, CRC_CODE) Crc_GetVersionInfo(
-    P2VAR(Std_VersionInfoType, AUTOMATIC, CRC_APPL_DATA) Versioninfo
-    )
-{
-#if CRC_VERSION_INFO_API == STD_ON
-    Versioninfo->vendorID          = (uint16)CRC_VENDOR_ID;
-    Versioninfo->moduleID          = (uint16)CRC_MODULE_ID;
-    Versioninfo->instanceID        = (uint8)CRC_INSTANCE_ID;
-    Versioninfo->sw_major_version  = (uint8)CRC_SW_MAJOR_VERSION;
-    Versioninfo->sw_minor_version  = (uint8)CRC_SW_MINOR_VERSION;
-    Versioninfo->sw_patch_version  = (uint8)CRC_SW_PATCH_VERSION;
-#else
-    UNREFERENCED_PARAMETER(Versioninfo);
-#endif
-}
 
 #if CRC_32_MODE == CRC_32_RUNTIME
 uint32 Crc_Reflect(sint32 data, uint16 data_len)
@@ -484,3 +469,4 @@ void Crc_Test(void)
 
 #define CRC_STOP_SEC_CODE
 #include "MemMap.h"
+
