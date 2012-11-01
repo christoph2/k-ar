@@ -32,21 +32,22 @@
 #define SPI_CHANNEL_BUFFERS_ALLOWED     2
 #define SPI_INTERRUPTIBLE_SEQ_ALLOWED   STD_ON
 
-#define EEP_CMD_CH      ((Spi_ChannelType)0)
-#define EEP_ADR_CH      ((Spi_ChannelType)1)
-#define EEP_DATA_CH     ((Spi_ChannelType)2)
+#define EEP_CMD_CH                      ((Spi_ChannelType)0)
+#define EEP_ADR_CH                      ((Spi_ChannelType)1)
+#define EEP_DATA_CH                     ((Spi_ChannelType)2)
 
-#define EEP_CMD_JOB     ((Spi_JobType)0)
-#define EEP_DATA_JOB    ((Spi_JobType)1)
+#define EEP_CMD_JOB                     ((Spi_JobType)0)
+#define EEP_DATA_JOB                    ((Spi_JobType)1)
 
-#define EEP_WRITE_SEQ   ((Spi_SequenceType)0)
-#define EEP_READ_SEQ    ((Spi_SequenceType)1)
+#define EEP_WRITE_SEQ                   ((Spi_SequenceType)0)
+#define EEP_READ_SEQ                    ((Spi_SequenceType)1)
 
-//extern const Spi_ConfigType Spi_Config;
+/* extern const Spi_ConfigType Spi_Config; */
 
-void EEP_vidEndOfStartWrJob(void);
-void EEP_vidEndOfWriteSeq(void);
-void EEP_vidEndOfReadSeq(void);
+void    EEP_vidEndOfStartWrJob(void);
+void    EEP_vidEndOfWriteSeq(void);
+void    EEP_vidEndOfReadSeq(void);
+
 
 #endif /* __SPI_CFG_H */
 

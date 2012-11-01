@@ -22,25 +22,31 @@
  *
  * s. FLOSS-EXCEPTION.txt
  */
+#if !defined __NVM_CFG_H
+#define __NVM_CFG_H
 
-#if !defined(__EA_CFG_H)
-#define __EA_CFG_H
+#include "NvM_Types.h"
 
-#include "MemIf_Types.h"
-#include "Eep.h"
+typedef uint16 NvM_CrcType;
 
-#define EA_DEV_ERROR_DETECT	    STD_ON
+#define NVM_API_CONFIG_CLASS              NVM_API_CONFIG_CLASS_3
+#define NVM_COMPILED_CONFIG_ID            0xbeef
+#define NVM_CRC_NUM_OF_BYTES              64
+#define NVM_DATASET_SELECTION_BITS        4
+#define NVM_REPEAT_MIRROR_OPERATIONS      3
+#define NVM_SIZE_IMMEDIATE_JOB_QUEUE      32
+#define NVM_SIZE_STANDARD_JOB_QUEUE       32
 
-#define EA_NVM_JOB_END_NOTIFICATION STD_ON
-#define EA_POLLING_MODE		    STD_ON
-#define EA_SET_MODE_SUPPORTED	    STD_ON
-#define EA_VIRTUAL_PAGE_SIZE	    ((uint8)8)
+#define NVM_DEV_ERROR_DETECT              STD_ON
+#define NVM_DRV_MODE_SWITCH               STD_ON
+#define NVM_DYNAMIC_CONFIGURATION         STD_ON
+#define NVM_JOB_PRIORITIZATION            STD_ON
+#define NVM_VERSION_INFO_API              STD_ON
+#define NVM_SET_RAM_BLOCK_STATUS_API      STD_ON
+#define NVM_POLLING_MODE                  STD_ON
 
+#define NVM_MULTI_BLOCK_CALLBACK          // callback
 
-/* TODO: Published Information!!! */
-//#define EA_BLOCK_OVERHEAD	    ???
-//#define EA_MAXIMUM_BLOCKING_TIME  ???
-//#define EA_PAGE_OVERHEAD	    ???
+extern const NvM_BlockDescriptor NvM_BlockConfiguration[];
 
-#endif  /* __EA_CFG_H  */
-
+#endif /* __NVM_CFG_H */

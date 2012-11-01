@@ -24,25 +24,23 @@
 #if !defined(__CAN_CFG_H)
 #define __CAN_CFG_H
 
-
-#define CAN_DEV_ERROR_DETECT                STD_ON
-#define CAN_HW_TRANSMIT_CANCELLATION        STD_ON
-#define CAN_INDEX                           ((uint8)0x00)       /* Specifies the InstanceId of this module instance. */
+#define CAN_DEV_ERROR_DETECT            STD_ON
+#define CAN_HW_TRANSMIT_CANCELLATION    STD_ON
+#define CAN_INDEX                       ((uint8)0x00)           /* Specifies the InstanceId of this module instance. */
                                                                 /* If only one instance is present it shall have the Id 0. */
-#define CAN_MAIN_FUNCTION_BUSOFF_PERIOD     ((float64)(0.01)    /* This parameter describes the period for cyclic call */
+#define CAN_MAIN_FUNCTION_BUSOFF_PERIOD ((float64)(0.01)        /* This parameter describes the period for cyclic call */
                                                                 /* to Can_MainFunction_Busoff. Unit is seconds. */
-#define CAN_MAIN_FUNCTION_READ_PERIOD       ((float64)(0.01)    /* This parameter describes the period for cyclic call */
+#define CAN_MAIN_FUNCTION_READ_PERIOD   ((float64)(0.01)        /* This parameter describes the period for cyclic call */
                                                                 /* to Can_MainFunction_Read. Unit is seconds. */
-#define CAN_MAIN_FUNCTION_WAKEUP_PERIOD     ((float64)(0.01)    /* This parameter describes the period for cyclic call */
+#define CAN_MAIN_FUNCTION_WAKEUP_PERIOD ((float64)(0.01)        /* This parameter describes the period for cyclic call */
                                                                 /* to Can_MainFunction_Wakeup. Unit is seconds. */
-#define CAN_MAIN_FUNCTION_WRITE_PERIOD      ((float64)(0.01)    /* This parameter describes the period for cyclic call */
+#define CAN_MAIN_FUNCTION_WRITE_PERIOD  ((float64)(0.01)        /* This parameter describes the period for cyclic call */
                                                                 /* to Can_MainFunction_Write. Unit is seconds. */
-#define CAN_MULTIPLEXED_TRANSMISSION        STD_ON
-#define CAN_TIMEOUT_DURATION                ((uint8)10)         /* Specifies the maximum number of loops for blocking function */
+#define CAN_MULTIPLEXED_TRANSMISSION    STD_ON
+#define CAN_TIMEOUT_DURATION            ((uint8)10)             /* Specifies the maximum number of loops for blocking function */
                                                                 /* until a timeout is raised in short term wait loops. */
                                                                 /* Bad naming - better: retry count */
-#define CAN_VERSION_INFO_API                STD_ON
-#define CAN_WAKEUP_SUPPORT                  STD_ON
-
+#define CAN_VERSION_INFO_API            STD_ON
+#define CAN_WAKEUP_SUPPORT              STD_ON
 
 #endif  /* __CAN_CFG_H */

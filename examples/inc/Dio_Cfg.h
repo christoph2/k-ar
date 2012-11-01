@@ -22,11 +22,10 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
  */
-#if !defined(__DIO__CFG_H)
+#if !defined(__DIO_CFG_H)
 #define __DIO_CFG_H
 
-#define DIO_GET_VERSION_INFO_API    STD_ON
-
+#define DIO_GET_VERSION_INFO_API STD_ON
 
 #if 0
 /*
@@ -35,28 +34,28 @@
 
 /* DIO Channels */
 #define MOTOR_START_STOP    (DIO_CHANNEL_A_5)
-#define	MOTOR_DIRECTION	    (DIO_CHANNEL_A_6)
+#define MOTOR_DIRECTION     (DIO_CHANNEL_A_6)
 
 /* DIO Ports */
-#define MOTOR_CTL_PORT	    (DIO_PORT_A)
-#define MUX_SEL_PORT	    (DIO_PORT_B)
+#define MOTOR_CTL_PORT      (DIO_PORT_A)
+#define MUX_SEL_PORT        (DIO_PORT_B)
 
 /* DIO Channel Group */
 #define MOTOR_CTL_GRP_PTR   (&DioConfigData[0])
-#define MUX_SEL_GRP_PTR	    (&DioConfigData[1])
+#define MUX_SEL_GRP_PTR     (&DioConfigData[1])
 
 /* Instatiation of DIO configuration data */
 /* (the filename should be 'Dio_Lcfg.c'.) */
-const Dio_ChannelGroupType DioConfigData[2]={
+const Dio_ChannelGroupType DioConfigData[2] = {
     {
-	.port=MOTOR_CTL_PORT,
-	.offset=5
-	.mask=0x60,
+        .port                      = MOTOR_CTL_PORT,
+        .offset                    = 5
+                             .mask = 0x60,
     },
     {
-	.port=MUX_SEL_PORT,
-	.offset=1,
-	.mask=0x1e,
+        .port      = MUX_SEL_PORT,
+        .offset    = 1,
+        .mask      = 0x1e,
     }
 };
 #endif

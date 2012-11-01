@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2009 by Christoph Schueler <chris@konnex-tools.de,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -20,8 +20,39 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
+ * s. FLOSS-EXCEPTION.txt
+ *
  */
 #if !defined(__EEP_CFG_H)
-#define	__EEP_CFG_H
+#define __EEP_CFG_H
 
-#endif	/* __EEP_CFG_H */
+#include "MemIf_Types.h"
+
+#define EEP_DEV_ERROR_DETECT        STD_ON        
+#define EEP_GET_VERSION_INFO_API    STD_ON
+
+#define EEP_BASE_ADDRESS	        ((Eep_AdressType)0x400U)
+#define EEP_DEFAULT_MODE	        MEMIF_MODE_FAST
+#define EEP_FAST_READ_BLOCK_SIZE    2
+#define EEP_FAST_WRITE_BLOCK_SIZE   2
+#define EEP_JOB_CALL_CYCLE	        0.005
+#define EEP_JOB_END_NOTOFICATION    STD_ON
+#define EEP_JOB_ERROR_NOTIFICATION  STD_ON
+#define EEP_NORMAL_READ_BLOCK_SIZE  2
+#define EEP_NORMAL_WRITE_BLOCK_SIZE 2
+#define EEP_SIZE		            ((Eep_LengthType)0x1000U)
+
+#if 0
+/* DEM Event Parameter Refs. */
+#define EEP_E_COMPARE_FAILED
+#define EEP_E_ERASE_FAILED
+#define EEP_READ_FAILED
+#define EEP_WRITE_FAILED
+#endif
+
+/* External Driver. */
+#if 0
+#define EEP_SPI_REFERENCE
+#endif
+
+#endif  /* __EEP_CFG_H */

@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2009 by Christoph Schueler <chris@konnex-tools.de,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -21,8 +21,16 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
  */
-#if !defined(__EA_LCFG_H)
-#define __EA_LCFG_H
+#if !defined(__GPT__CFG_H)
+#define __GPT_CFG_H
 
-#endif  /* __EA_LCFG_H */
+#define GPT_DEV_ERROR_DETECT                STD_ON
+#define GPT_GET_VERSION_INFO_API            STD_ON
+#define GPT_DEINIT_API                      STD_ON
+#define GPT_GET_TIME_ELAPSED_API            STD_ON
+#define GPT_GET_TIME_REMAINING_API          STD_ON
+#define GPT_ENABLE_DISABLE_NOTIFICATION_API STD_ON
+#define GPT_WAKEUP_FUNCTIONALITY_API        STD_ON
+
+#endif /* __GPT_CFG_H */
 

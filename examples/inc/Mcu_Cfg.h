@@ -23,7 +23,7 @@
  *  s. FLOSS-EXCEPTION.txt
  */
 
-#if !defined (__MCU_CFG_H)
+#if !defined(__MCU_CFG_H)
 #define __MCU_CFG_H
 
 #define MCU_DEV_ERROR_DETECT        STD_ON

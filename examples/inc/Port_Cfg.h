@@ -27,7 +27,7 @@
 
 #include "Port.h"
 
-#define PORT_GET_VERSION_INFO_API   STD_ON
+#define PORT_GET_VERSION_INFO_API STD_ON
 
 #endif /* __PORT_CFG_H */
 
