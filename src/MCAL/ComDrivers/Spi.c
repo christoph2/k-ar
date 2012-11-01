@@ -187,7 +187,7 @@ FUNC(Std_ReturnType, SPI_CODE) Spi_Uninit(void)
 {
 #if SPI_DEV_ERROR_DETECT == STD_ON
     if (!AR_MODULE_IS_INITIALIZED(Spi)) {
-        AR_RAISE_DEV_ERROR(SPI, UNINIT, SPI_E_UNINIT);
+        AR_RAISE_DEV_ERROR(SPI, DEINIT, SPI_E_UNINIT);
         return E_NOT_OK;
     }
 
