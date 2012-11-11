@@ -98,7 +98,7 @@ FUNC(void, GPT_CODE) Gpt_Init(P2CONST(Gpt_ConfigType, AUTOMATIC, GPT_APPL_DATA) 
     }
 
     /* todo: NULL-Pointer check for 'ConfigPtr' if Variant==PB, then raise 'GPT_E_PARAM_CONFIG'. */
-    if (ConfigPtr == NULL) {
+    if (ConfigPtr == NULL_PTR) {
         AR_RAISE_DEV_ERROR(GPT, INIT, GPT_E_PARAM_CONFIG);
         return;
     }
