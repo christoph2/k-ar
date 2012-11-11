@@ -34,9 +34,9 @@ extern "C"
 #include "MemIf_Cfg.h"
 
 /* TODO: Config!!! */
+#include "Ea.h"
 #if 0
 #include "Fee.h"
-#include "Eep.h"
 #endif
 
 /*
@@ -74,9 +74,13 @@ extern "C"
 #define MEMIF_E_PARAM_DEVICE                    ((uint8)0x01)
 
 /*
+**  Global Constants.
+*/
+#define MEMIF_BROADCAST_ID                      ((uint8)0xff)
+
+/*
 **  Global Functions.
 */
-
 FUNC(void, MEMIF_CODE) MemIf_SetMode(MemIf_ModeType Mode);
 
 FUNC(Std_ReturnType, MEMIF_CODE) MemIf_Read(uint8 DeviceIndex, uint16 BlockNumber, uint16 BlockOffset,
@@ -110,4 +114,3 @@ FUNC(Std_ReturnType, MEMIF_CODE) MemIf_EraseImmediateBlock(uint8 DeviceIndex, ui
 #endif  /* __cplusplus */
 
 #endif  /* __MEMIF_H */
-

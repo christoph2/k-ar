@@ -22,6 +22,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
  * s. FLOSS-EXCEPTION.txt
+ *
  */
 #include "Pwm.h"
 #if AR_VERSION_CHECK_INTERNAL_FAILS(PWM, 3, 1, 0, 1, 0)

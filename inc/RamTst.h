@@ -26,7 +26,6 @@
 #if !defined(__RAMTST_H)
 #define __RAMTST_H
 
-
 #if defined(__cplusplus)
 extern "C"
 {
@@ -49,7 +48,6 @@ extern "C"
 #define RAMTST_SW_PATCH_VERSION                         0
 #define RAMTST_INSTANCE_ID                              0
 
-
 /*
 **  Service-IDs.
 */
@@ -68,9 +66,7 @@ extern "C"
 #define AR_SERVICE_RAMTST_DEINIT                        ((uint8)0x0c)
 #define AR_SERVICE_RAMTST_SUSPEND                       ((uint8)0x0d)
 #define AR_SERVICE_RAMTST_RESUME                        ((uint8)0x0e)
-#define AR_SERVICE_RAMTST_CHANGEMAXNUMBEROFTESTEDCELLS  ((uint8)0x0f)    // ?
-
-
+#define AR_SERVICE_RAMTST_CHANGEMAXNUMBEROFTESTEDCELLS  ((uint8)0x0f)    /* ? */
 
 /*
 **  Module-Errors.
@@ -79,18 +75,15 @@ extern "C"
 #define RAMTST_E_OUT_OF_RANGE                           ((uint8)0x02)
 #define RAMTST_E_UNINIT                                 ((uint8)0x03)
 #if 0
-#define RAMTST_E_RAM_FAILURE    <ASSIGNED BY DEM>
+#define RAMTST_E_RAM_FAILURE                            <ASSIGNED BY DEM>
 #endif
-
-
 
 /*
 **  Global Types.
 */
 
-typedef uint16 RamTst_NumberOfBlocksType;
-typedef uint32 RamTst_NumberOfTestedCellsType;
-
+typedef uint16  RamTst_NumberOfBlocksType;
+typedef uint32  RamTst_NumberOfTestedCellsType;
 
 /* This is a value returned by the API service RamTst_GetTestAlgorithm(). */
 typedef enum tagRamTst_AlgorithmType {
@@ -103,21 +96,19 @@ typedef enum tagRamTst_AlgorithmType {
     RAMTST_ABRAHAM_TEST
 } RamTst_AlgorithmType;
 
-
 typedef struct tagRamTst_BlockParameterType {
-    uint16 RamTst_StartAddress; /* todo: Address-Type ('PlatformTypes.h') */
-    uint16 RamTst_EndAddress;
+    uint16  RamTst_StartAddress; /* todo: Address-Type ('PlatformTypes.h') */
+    uint16  RamTst_EndAddress;
 } RamTst_BlockParameterType;
-
 
 typedef struct tagRamTst_AlgorithmParameterType {
     RamTst_NumberOfBlocksType RamTst_NumberOfBlocks;
 
-    RamTst_NumberOfTestedCellsType RamTst_ExtNumberOfTestedCells;
-    RamTst_NumberOfTestedCellsType RamTst_MaxNumberOfTestedCells;  /* Initial Value of a RAM variable,
-                                                                can be change with 'RamTst_ChangeMaxNumberOfTestedCells'.  */
-    RamTst_NumberOfTestedCellsType RamTst_NumberOfTestedCells;  /* Initial Value of a RAM variable,
-                                                                can be change with 'RamTst_ChangeNumberOfTestedCells'.  */
+    RamTst_NumberOfTestedCellsType  RamTst_ExtNumberOfTestedCells;
+    RamTst_NumberOfTestedCellsType  RamTst_MaxNumberOfTestedCells;  /* Initial Value of a RAM variable,
+                                                                       can be change with 'RamTst_ChangeMaxNumberOfTestedCells'.  */
+    RamTst_NumberOfTestedCellsType RamTst_NumberOfTestedCells;      /* Initial Value of a RAM variable,
+                                                                       can be change with 'RamTst_ChangeNumberOfTestedCells'.  */
     const * const RamTst_BlockParams;
 
 } RamTst_AlgorithmParameterType;
@@ -126,7 +117,6 @@ typedef struct tagRamTst_AlgorithmParameterType {
 typedef struct tagRamTst_ConfigType {
     RamTst_AlgorithmParameterType const * const RamTst_AlgParams;
 } RamTst_ConfigType;
-
 
 /* This is a status value returned by the API service RamTst_GetExecutionStatus(). */
 typedef enum tagRamTst_ExecutionStatusType {
@@ -139,7 +129,6 @@ typedef enum tagRamTst_ExecutionStatusType {
     RAMTST_EXECUTION_STATE_UNDEFINED       /* State used for manufacturers white box testing. */
 } RamTst_ExecutionStatusType;
 
-
 /* This is a status value returned by the API service RamTst_GetTestResult(). */
 typedef enum tagRamTst_TestResultType {
     RAMTST_RESULT_NOT_TESTED,
@@ -148,26 +137,24 @@ typedef enum tagRamTst_TestResultType {
     RAMTST_RESULT_UNDEFINED
 } RamTst_TestResultType;
 
-
 /*
 **  Global Functions.
 */
-FUNC(void,RAMTST_CODE) RamTst_Init(void);
-FUNC(void,RAMTST_CODE) RamTst_DeInit(void);
-FUNC(void,RAMTST_CODE) RamTst_Stop(void);
-FUNC(void,RAMTST_CODE) RamTst_Allow(void);
-FUNC(void,RAMTST_CODE) RamTst_Suspend(void);
-FUNC(void,RAMTST_CODE) RamTst_Resume(void);
-FUNC(RamTst_ExecutionStatusType,RAMTST_CODE) RamTst_GetExecutionStatus(void);
-FUNC(RamTst_TestResultType,RAMTST_CODE) RamTst_GetTestResult(void);
-FUNC(RamTst_TestResultType,RAMTST_CODE) RamTst_GetTestResultPerBlock(RamTst_NumberOfBlocksType BlockID);
-FUNC(RamTst_AlgorithmType,RAMTST_CODE) RamTst_GetTestAlgorithm(void);
-FUNC(RamTst_NumberOfTestedCellsType,RAMTST_CODE) RamTst_GetNumberOfTestedCells(void);
-FUNC(void,RAMTST_CODE) RamTst_ChangeTestAlgorithm(RamTst_AlgorithmType NewTestAlgorithm);
-FUNC(void,RAMTST_CODE) RamTst_ChangeNumberOfTestedCells(RamTst_NumberOfTestedCellsType NewNumberOfTestedCells);
-FUNC(void,RAMTST_CODE) RamTst_ChangeMaxNumberOfTestedCells(RamTst_NumberOfTestedCellsType NewNumberOfTestedCells);
-FUNC(void,RAMTST_CODE) RamTst_MainFunction(void);
-
+FUNC(void, RAMTST_CODE) RamTst_Init(void);
+FUNC(void, RAMTST_CODE) RamTst_DeInit(void);
+FUNC(void, RAMTST_CODE) RamTst_Stop(void);
+FUNC(void, RAMTST_CODE) RamTst_Allow(void);
+FUNC(void, RAMTST_CODE) RamTst_Suspend(void);
+FUNC(void, RAMTST_CODE) RamTst_Resume(void);
+FUNC(RamTst_ExecutionStatusType, RAMTST_CODE) RamTst_GetExecutionStatus(void);
+FUNC(RamTst_TestResultType, RAMTST_CODE) RamTst_GetTestResult(void);
+FUNC(RamTst_TestResultType, RAMTST_CODE) RamTst_GetTestResultPerBlock(RamTst_NumberOfBlocksType BlockID);
+FUNC(RamTst_AlgorithmType, RAMTST_CODE) RamTst_GetTestAlgorithm(void);
+FUNC(RamTst_NumberOfTestedCellsType, RAMTST_CODE) RamTst_GetNumberOfTestedCells(void);
+FUNC(void, RAMTST_CODE) RamTst_ChangeTestAlgorithm(RamTst_AlgorithmType NewTestAlgorithm);
+FUNC(void, RAMTST_CODE) RamTst_ChangeNumberOfTestedCells(RamTst_NumberOfTestedCellsType NewNumberOfTestedCells);
+FUNC(void, RAMTST_CODE) RamTst_ChangeMaxNumberOfTestedCells(RamTst_NumberOfTestedCellsType NewNumberOfTestedCells);
+FUNC(void, RAMTST_CODE) RamTst_MainFunction(void);
 
 /*
 **  Global Function-like Macros.
@@ -176,10 +163,8 @@ FUNC(void,RAMTST_CODE) RamTst_MainFunction(void);
 #define RamTst_GetVersionInfo(vp) AR_GET_VERSION_INFO(RAMTST, vp)
 #endif /* RAMTST_GET_VERSION_INFO_API */
 
-
 #if defined(__cplusplus)
 }
 #endif  /* __cplusplus */
-
 
 #endif  /* __RAMTST_H */

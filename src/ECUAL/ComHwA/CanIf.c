@@ -22,7 +22,6 @@
  *
  */
 
-
 #include "CanIf.h"
 #include "Det.h"
 #include "Dem.h"
@@ -48,14 +47,14 @@ typedef struct tagHeapType {
 static uint8    N;
 static uint16   Arr[64 + 1];
 
-static void    Heap_Test(void);
-static void    Heap_Init(uint16 * Heap);
+static void Heap_Test(void);
+static void Heap_Init(uint16 * Heap);
 
-static void    Heap_Up(uint16 * Heap, uint16 Position);
-static void    Heap_Down(uint16 * Heap, uint16 Position);
+static void Heap_Up(uint16 * Heap, uint16 Position);
+static void Heap_Down(uint16 * Heap, uint16 Position);
 
-static void    Heap_Push(uint16 * Heap, uint16 Item);
-static uint16  Heap_Pop(uint16 * Heap);
+static void     Heap_Push(uint16 * Heap, uint16 Item);
+static uint16   Heap_Pop(uint16 * Heap);
 
 
 void Heap_Init(uint16 * Heap)
@@ -69,6 +68,7 @@ void Heap_Init(uint16 * Heap)
 void Heap_Up(uint16 * Heap, uint16 Position)
 {
     uint16 v;
+
     v = Heap[Position];
 
     while (Heap[PARENT(Position)] <= v) {
@@ -149,4 +149,5 @@ void Heap_Test(void)
         largest = Heap_Pop(Arr);
     }
 }
+
 

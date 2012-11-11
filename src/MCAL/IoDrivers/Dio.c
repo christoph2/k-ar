@@ -178,3 +178,4 @@ FUNC(void, DIO_CODE) Dio_WriteChannelGroup(P2CONST(Dio_ChannelGroupType, AUTOMAT
 
 #define DIO_STOP_SEC_CODE
 #include "MemMap.h"
+

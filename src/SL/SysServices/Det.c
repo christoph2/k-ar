@@ -79,7 +79,10 @@ FUNC(void, DET_CODE) Det_Init(void)
 
 FUNC(void, DET_CODE) Det_ReportError(uint16 ModuleId, uint8 InstanceId, uint8 ApiId, uint8 ErrorId)
 {
-    CPU_BREAKPOINT();
+    uint8 idx;
+
+    idx = (uint8)0;
+    // CPU_BREAKPOINT();
 /*
 **
 **  Note: The way the error is handles varies, both in terms of implementation

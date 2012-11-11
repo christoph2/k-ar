@@ -49,154 +49,154 @@
 /*
 **	OS: OS.
 */
-#if defined(OS_START_SEC_CODE)
-    #undef OS_START_SEC_CODE
+#if defined(OSEK_OS_START_SEC_CODE)
+    #undef OSEK_OS_START_SEC_CODE
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_NOINIT_BOOLEAN)
+#elif defined(OSEK_OS_START_SEC_VAR_NOINIT_BOOLEAN)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_NOINIT_BOOLEAN
+    #undef OSEK_OS_START_SEC_VAR_NOINIT_BOOLEAN
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_NOINIT_8BIT)
+#elif defined(OSEK_OS_START_SEC_VAR_NOINIT_8BIT)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_NOINIT_8BIT
+    #undef OSEK_OS_START_SEC_VAR_NOINIT_8BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_NOINIT_16BIT)
+#elif defined(OSEK_OS_START_SEC_VAR_NOINIT_16BIT)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_NOINIT_16BIT
+    #undef OSEK_OS_START_SEC_VAR_NOINIT_16BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_NOINIT_32BIT)
+#elif defined(OSEK_OS_START_SEC_VAR_NOINIT_32BIT)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_NOINIT_32BIT
+    #undef OSEK_OS_START_SEC_VAR_NOINIT_32BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_NOINIT_UNSPECIFIED)
+#elif defined(OSEK_OS_START_SEC_VAR_NOINIT_UNSPECIFIED)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_NOINIT_UNSPECIFIED
+    #undef OSEK_OS_START_SEC_VAR_NOINIT_UNSPECIFIED
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+#elif defined(OSEK_OS_START_SEC_VAR_POWER_ON_INIT_BOOLEAN)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
+    #undef OSEK_OS_START_SEC_VAR_POWER_ON_INIT_BOOLEAN
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_POWER_ON_INIT_8BIT)
+#elif defined(OSEK_OS_START_SEC_VAR_POWER_ON_INIT_8BIT)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_POWER_ON_INIT_8BIT
+    #undef OSEK_OS_START_SEC_VAR_POWER_ON_INIT_8BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_POWER_ON_INIT_16BIT)
+#elif defined(OSEK_OS_START_SEC_VAR_POWER_ON_INIT_16BIT)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_POWER_ON_INIT_16BIT
+    #undef OSEK_OS_START_SEC_VAR_POWER_ON_INIT_16BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_POWER_ON_INIT_32BIT)
+#elif defined(OSEK_OS_START_SEC_VAR_POWER_ON_INIT_32BIT)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_POWER_ON_INIT_32BIT
+    #undef OSEK_OS_START_SEC_VAR_POWER_ON_INIT_32BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+#elif defined(OSEK_OS_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+    #undef OSEK_OS_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_FAST_BOOLEAN)
+#elif defined(OSEK_OS_START_SEC_VAR_FAST_BOOLEAN)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_FAST_BOOLEAN
+    #undef OSEK_OS_START_SEC_VAR_FAST_BOOLEAN
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_FAST_8BIT)
+#elif defined(OSEK_OS_START_SEC_VAR_FAST_8BIT)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_FAST_8BIT
+    #undef OSEK_OS_START_SEC_VAR_FAST_8BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_FAST_16BIT)
+#elif defined(OSEK_OS_START_SEC_VAR_FAST_16BIT)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_FAST_16BIT
+    #undef OSEK_OS_START_SEC_VAR_FAST_16BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_FAST_32BIT)
+#elif defined(OSEK_OS_START_SEC_VAR_FAST_32BIT)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_FAST_32BIT
+    #undef OSEK_OS_START_SEC_VAR_FAST_32BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_FAST_UNSPECIFIED)
+#elif defined(OSEK_OS_START_SEC_VAR_FAST_UNSPECIFIED)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_FAST_UNSPECIFIED
+    #undef OSEK_OS_START_SEC_VAR_FAST_UNSPECIFIED
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_INTERNAL_VAR_BOOLEAN)
+#elif defined(OSEK_OS_START_SEC_INTERNAL_VAR_BOOLEAN)
     #pragma dataseg=default
-    #undef OS_START_SEC_INTERNAL_VAR_BOOLEAN
+    #undef OSEK_OS_START_SEC_INTERNAL_VAR_BOOLEAN
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_INTERNAL_VAR_8BIT)
+#elif defined(OSEK_OS_START_SEC_INTERNAL_VAR_8BIT)
     #pragma dataseg=default
-    #undef OS_START_SEC_INTERNAL_VAR_8BIT
+    #undef OSEK_OS_START_SEC_INTERNAL_VAR_8BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_INTERNAL_VAR_16BIT)
+#elif defined(OSEK_OS_START_SEC_INTERNAL_VAR_16BIT)
     #pragma dataseg=default
-    #undef OS_START_SEC_INTERNAL_VAR_16BIT
+    #undef OSEK_OS_START_SEC_INTERNAL_VAR_16BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_INTERNAL_VAR_32BIT)
+#elif defined(OSEK_OS_START_SEC_INTERNAL_VAR_32BIT)
     #pragma dataseg=default
-    #undef OS_START_SEC_INTERNAL_VAR_32BIT
+    #undef OSEK_OS_START_SEC_INTERNAL_VAR_32BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_INTERNAL_VAR_UNSPECIFIED)
+#elif defined(OSEK_OS_START_SEC_INTERNAL_VAR_UNSPECIFIED)
     #pragma dataseg=default
-    #undef OS_START_SEC_INTERNAL_VAR_UNSPECIFIED
+    #undef OSEK_OS_START_SEC_INTERNAL_VAR_UNSPECIFIED
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_BOOLEAN)
+#elif defined(OSEK_OS_START_SEC_VAR_BOOLEAN)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_BOOLEAN
+    #undef OSEK_OS_START_SEC_VAR_BOOLEAN
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_8BIT)
+#elif defined(OSEK_OS_START_SEC_VAR_8BIT)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_8BIT
+    #undef OSEK_OS_START_SEC_VAR_8BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_16BIT)
+#elif defined(OSEK_OS_START_SEC_VAR_16BIT)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_16BIT
+    #undef OSEK_OS_START_SEC_VAR_16BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_32BIT)
+#elif defined(OSEK_OS_START_SEC_VAR_32BIT)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_32BIT
+    #undef OSEK_OS_START_SEC_VAR_32BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_VAR_UNSPECIFIED)
+#elif defined(OSEK_OS_START_SEC_VAR_UNSPECIFIED)
     #pragma dataseg=default
-    #undef OS_START_SEC_VAR_UNSPECIFIED
+    #undef OSEK_OS_START_SEC_VAR_UNSPECIFIED
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_CONST_BOOLEAN)
+#elif defined(OSEK_OS_START_SEC_CONST_BOOLEAN)
     #pragma constseg=default
-    #undef OS_START_SEC_CONST_BOOLEAN
+    #undef OSEK_OS_START_SEC_CONST_BOOLEAN
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_CONST_8BIT)
+#elif defined(OSEK_OS_START_SEC_CONST_8BIT)
     #pragma constseg=default
-    #undef OS_START_SEC_CONST_8BIT
+    #undef OSEK_OS_START_SEC_CONST_8BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_CONST_16BIT)
+#elif defined(OSEK_OS_START_SEC_CONST_16BIT)
     #pragma constseg=default
-    #undef OS_START_SEC_CONST_16BIT
+    #undef OSEK_OS_START_SEC_CONST_16BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_CONST_32BIT)
+#elif defined(OSEK_OS_START_SEC_CONST_32BIT)
     #pragma constseg=default
-    #undef OS_START_SEC_CONST_32BIT
+    #undef OSEK_OS_START_SEC_CONST_32BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_CONST_UNSPECIFIED)
+#elif defined(OSEK_OS_START_SEC_CONST_UNSPECIFIED)
     #pragma constseg=default
-    #undef OS_START_SEC_CONST_UNSPECIFIED
+    #undef OSEK_OS_START_SEC_CONST_UNSPECIFIED
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_CONFIG_DATA_BOOLEAN)
+#elif defined(OSEK_OS_START_SEC_CONFIG_DATA_BOOLEAN)
     #pragma constseg=default
-    #undef OS_START_SEC_CONFIG_DATA_BOOLEAN
+    #undef OSEK_OS_START_SEC_CONFIG_DATA_BOOLEAN
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_CONFIG_DATA_8BIT)
+#elif defined(OSEK_OS_START_SEC_CONFIG_DATA_8BIT)
     #pragma constseg=default
-    #undef OS_START_SEC_CONFIG_DATA_8BIT
+    #undef OSEK_OS_START_SEC_CONFIG_DATA_8BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_CONFIG_DATA_16BIT)
+#elif defined(OSEK_OS_START_SEC_CONFIG_DATA_16BIT)
     #pragma constseg=default
-    #undef OS_START_SEC_CONFIG_DATA_16BIT
+    #undef OSEK_OS_START_SEC_CONFIG_DATA_16BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_CONFIG_DATA_32BIT)
+#elif defined(OSEK_OS_START_SEC_CONFIG_DATA_32BIT)
     #pragma constseg=default
-    #undef OS_START_SEC_CONFIG_DATA_32BIT
+    #undef OSEK_OS_START_SEC_CONFIG_DATA_32BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_CONFIG_DATA_UNSPECIFIED)
+#elif defined(OSEK_OS_START_SEC_CONFIG_DATA_UNSPECIFIED)
     #pragma constseg=default
-    #undef OS_START_SEC_CONFIG_DATA_UNSPECIFIED
+    #undef OSEK_OS_START_SEC_CONFIG_DATA_UNSPECIFIED
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_CODE_SLOW)
-    #undef OS_START_SEC_CODE_SLOW
+#elif defined(OSEK_OS_START_SEC_CODE_SLOW)
+    #undef OSEK_OS_START_SEC_CODE_SLOW
     #undef MEMMAP_ERROR
-#elif defined(OS_START_SEC_CODE_LIB)
-    #undef OS_START_SEC_CODE_LIB
+#elif defined(OSEK_OS_START_SEC_CODE_LIB)
+    #undef OSEK_OS_START_SEC_CODE_LIB
     #undef MEMMAP_ERROR
 
 /*
@@ -7247,154 +7247,154 @@
 /*
 **	OS: OS.
 */
-#if defined(OS_STOP_SEC_CODE)
-    #undef OS_STOP_SEC_CODE
+#if defined(OSEK_OS_STOP_SEC_CODE)
+    #undef OSEK_OS_STOP_SEC_CODE
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_NOINIT_BOOLEAN)
+#elif defined(OSEK_OS_STOP_SEC_VAR_NOINIT_BOOLEAN)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_NOINIT_BOOLEAN
+    #undef OSEK_OS_STOP_SEC_VAR_NOINIT_BOOLEAN
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_NOINIT_8BIT)
+#elif defined(OSEK_OS_STOP_SEC_VAR_NOINIT_8BIT)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_NOINIT_8BIT
+    #undef OSEK_OS_STOP_SEC_VAR_NOINIT_8BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_NOINIT_16BIT)
+#elif defined(OSEK_OS_STOP_SEC_VAR_NOINIT_16BIT)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_NOINIT_16BIT
+    #undef OSEK_OS_STOP_SEC_VAR_NOINIT_16BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_NOINIT_32BIT)
+#elif defined(OSEK_OS_STOP_SEC_VAR_NOINIT_32BIT)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_NOINIT_32BIT
+    #undef OSEK_OS_STOP_SEC_VAR_NOINIT_32BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+#elif defined(OSEK_OS_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+    #undef OSEK_OS_STOP_SEC_VAR_NOINIT_UNSPECIFIED
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
+#elif defined(OSEK_OS_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
+    #undef OSEK_OS_STOP_SEC_VAR_POWER_ON_INIT_BOOLEAN
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
+#elif defined(OSEK_OS_STOP_SEC_VAR_POWER_ON_INIT_8BIT)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_POWER_ON_INIT_8BIT
+    #undef OSEK_OS_STOP_SEC_VAR_POWER_ON_INIT_8BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
+#elif defined(OSEK_OS_STOP_SEC_VAR_POWER_ON_INIT_16BIT)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_POWER_ON_INIT_16BIT
+    #undef OSEK_OS_STOP_SEC_VAR_POWER_ON_INIT_16BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
+#elif defined(OSEK_OS_STOP_SEC_VAR_POWER_ON_INIT_32BIT)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_POWER_ON_INIT_32BIT
+    #undef OSEK_OS_STOP_SEC_VAR_POWER_ON_INIT_32BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
+#elif defined(OSEK_OS_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+    #undef OSEK_OS_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_FAST_BOOLEAN)
+#elif defined(OSEK_OS_STOP_SEC_VAR_FAST_BOOLEAN)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_FAST_BOOLEAN
+    #undef OSEK_OS_STOP_SEC_VAR_FAST_BOOLEAN
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_FAST_8BIT)
+#elif defined(OSEK_OS_STOP_SEC_VAR_FAST_8BIT)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_FAST_8BIT
+    #undef OSEK_OS_STOP_SEC_VAR_FAST_8BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_FAST_16BIT)
+#elif defined(OSEK_OS_STOP_SEC_VAR_FAST_16BIT)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_FAST_16BIT
+    #undef OSEK_OS_STOP_SEC_VAR_FAST_16BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_FAST_32BIT)
+#elif defined(OSEK_OS_STOP_SEC_VAR_FAST_32BIT)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_FAST_32BIT
+    #undef OSEK_OS_STOP_SEC_VAR_FAST_32BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_FAST_UNSPECIFIED)
+#elif defined(OSEK_OS_STOP_SEC_VAR_FAST_UNSPECIFIED)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_FAST_UNSPECIFIED
+    #undef OSEK_OS_STOP_SEC_VAR_FAST_UNSPECIFIED
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_INTERNAL_VAR_BOOLEAN)
+#elif defined(OSEK_OS_STOP_SEC_INTERNAL_VAR_BOOLEAN)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_INTERNAL_VAR_BOOLEAN
+    #undef OSEK_OS_STOP_SEC_INTERNAL_VAR_BOOLEAN
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_INTERNAL_VAR_8BIT)
+#elif defined(OSEK_OS_STOP_SEC_INTERNAL_VAR_8BIT)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_INTERNAL_VAR_8BIT
+    #undef OSEK_OS_STOP_SEC_INTERNAL_VAR_8BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_INTERNAL_VAR_16BIT)
+#elif defined(OSEK_OS_STOP_SEC_INTERNAL_VAR_16BIT)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_INTERNAL_VAR_16BIT
+    #undef OSEK_OS_STOP_SEC_INTERNAL_VAR_16BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_INTERNAL_VAR_32BIT)
+#elif defined(OSEK_OS_STOP_SEC_INTERNAL_VAR_32BIT)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_INTERNAL_VAR_32BIT
+    #undef OSEK_OS_STOP_SEC_INTERNAL_VAR_32BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
+#elif defined(OSEK_OS_STOP_SEC_INTERNAL_VAR_UNSPECIFIED)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
+    #undef OSEK_OS_STOP_SEC_INTERNAL_VAR_UNSPECIFIED
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_BOOLEAN)
+#elif defined(OSEK_OS_STOP_SEC_VAR_BOOLEAN)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_BOOLEAN
+    #undef OSEK_OS_STOP_SEC_VAR_BOOLEAN
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_8BIT)
+#elif defined(OSEK_OS_STOP_SEC_VAR_8BIT)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_8BIT
+    #undef OSEK_OS_STOP_SEC_VAR_8BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_16BIT)
+#elif defined(OSEK_OS_STOP_SEC_VAR_16BIT)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_16BIT
+    #undef OSEK_OS_STOP_SEC_VAR_16BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_32BIT)
+#elif defined(OSEK_OS_STOP_SEC_VAR_32BIT)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_32BIT
+    #undef OSEK_OS_STOP_SEC_VAR_32BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_VAR_UNSPECIFIED)
+#elif defined(OSEK_OS_STOP_SEC_VAR_UNSPECIFIED)
     #pragma dataseg=default
-    #undef OS_STOP_SEC_VAR_UNSPECIFIED
+    #undef OSEK_OS_STOP_SEC_VAR_UNSPECIFIED
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_CONST_BOOLEAN)
+#elif defined(OSEK_OS_STOP_SEC_CONST_BOOLEAN)
     #pragma constseg=default
-    #undef OS_STOP_SEC_CONST_BOOLEAN
+    #undef OSEK_OS_STOP_SEC_CONST_BOOLEAN
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_CONST_8BIT)
+#elif defined(OSEK_OS_STOP_SEC_CONST_8BIT)
     #pragma constseg=default
-    #undef OS_STOP_SEC_CONST_8BIT
+    #undef OSEK_OS_STOP_SEC_CONST_8BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_CONST_16BIT)
+#elif defined(OSEK_OS_STOP_SEC_CONST_16BIT)
     #pragma constseg=default
-    #undef OS_STOP_SEC_CONST_16BIT
+    #undef OSEK_OS_STOP_SEC_CONST_16BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_CONST_32BIT)
+#elif defined(OSEK_OS_STOP_SEC_CONST_32BIT)
     #pragma constseg=default
-    #undef OS_STOP_SEC_CONST_32BIT
+    #undef OSEK_OS_STOP_SEC_CONST_32BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_CONST_UNSPECIFIED)
+#elif defined(OSEK_OS_STOP_SEC_CONST_UNSPECIFIED)
     #pragma constseg=default
-    #undef OS_STOP_SEC_CONST_UNSPECIFIED
+    #undef OSEK_OS_STOP_SEC_CONST_UNSPECIFIED
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_CONFIG_DATA_BOOLEAN)
+#elif defined(OSEK_OS_STOP_SEC_CONFIG_DATA_BOOLEAN)
     #pragma constseg=default
-    #undef OS_STOP_SEC_CONFIG_DATA_BOOLEAN
+    #undef OSEK_OS_STOP_SEC_CONFIG_DATA_BOOLEAN
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_CONFIG_DATA_8BIT)
+#elif defined(OSEK_OS_STOP_SEC_CONFIG_DATA_8BIT)
     #pragma constseg=default
-    #undef OS_STOP_SEC_CONFIG_DATA_8BIT
+    #undef OSEK_OS_STOP_SEC_CONFIG_DATA_8BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_CONFIG_DATA_16BIT)
+#elif defined(OSEK_OS_STOP_SEC_CONFIG_DATA_16BIT)
     #pragma constseg=default
-    #undef OS_STOP_SEC_CONFIG_DATA_16BIT
+    #undef OSEK_OS_STOP_SEC_CONFIG_DATA_16BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_CONFIG_DATA_32BIT)
+#elif defined(OSEK_OS_STOP_SEC_CONFIG_DATA_32BIT)
     #pragma constseg=default
-    #undef OS_STOP_SEC_CONFIG_DATA_32BIT
+    #undef OSEK_OS_STOP_SEC_CONFIG_DATA_32BIT
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
+#elif defined(OSEK_OS_STOP_SEC_CONFIG_DATA_UNSPECIFIED)
     #pragma constseg=default
-    #undef OS_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+    #undef OSEK_OS_STOP_SEC_CONFIG_DATA_UNSPECIFIED
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_CODE_SLOW)
-    #undef OS_STOP_SEC_CODE_SLOW
+#elif defined(OSEK_OS_STOP_SEC_CODE_SLOW)
+    #undef OSEK_OS_STOP_SEC_CODE_SLOW
     #undef MEMMAP_ERROR
-#elif defined(OS_STOP_SEC_CODE_LIB)
-    #undef OS_STOP_SEC_CODE_LIB
+#elif defined(OSEK_OS_STOP_SEC_CODE_LIB)
+    #undef OSEK_OS_STOP_SEC_CODE_LIB
     #undef MEMMAP_ERROR
 
 /*
