@@ -25,29 +25,27 @@
 #if !defined(__MCAL_DEFINES_H)
 #define __MCAL_DEFINES_H
 
-
 #if defined(__cplusplus)
 extern "C"
 {
 #endif  /* __cplusplus */
 
 #if defined(KAR_DUMMY_TARGET)
-    /* dummy target */
-    #define KAR_MCAL_DEFINES_PATH  "MCALTemplates/dummy/Mcal_Defines_dummy.h"
+/* dummy target */
+    #define KAR_MCAL_DEFINES_PATH       "MCALTemplates/dummy/Mcal_Defines_dummy.h"
 #else
     #if CPU_FAMILY == CPU12_HC12
-        /* hc12 */
-        #define KAR_MCAL_DEFINES_PATH  "MCALTemplates/hc12/MCAL_Defines_hc12.h"
+/* hc12 */
+        #define KAR_MCAL_DEFINES_PATH   "MCALTemplates/hc12/MCAL_Defines_hc12.h"
     #elif CPU_FAMILY == CPU12_S12
-        /** s12 */
-        #define KAR_MCAL_DEFINES_PATH  "MCALTemplates/s12/MCAL_Defines_s12.h"
+/** s12 */
+        #define KAR_MCAL_DEFINES_PATH   "MCALTemplates/s12/MCAL_Defines_s12.h"
     #elif CPU_FAMILY == CPU12_S12X
         #error CPU12X not supported yet!
     #endif
 #endif
 
 #include KAR_MCAL_DEFINES_PATH
-
 
 #if defined(__cplusplus)
 }

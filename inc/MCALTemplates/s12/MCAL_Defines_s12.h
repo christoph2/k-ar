@@ -240,7 +240,11 @@ extern "C"
 /*
 **  Hardware-specific config pointers.
 */
-#define KAR_DEFINE_HARDWARE_SPECIFIC_CONFIG_PTR(mod)     S12 ## mod ## _ConfigType const * const mod ## _HardwareSpecificConfigPtr
+#define KAR_DEFINE_HARDWARE_SPECIFIC_CONFIG_PTR(mod) \
+    S12 ## mod ## _ConfigType const * const mod ## _HardwareSpecificConfigPtr
+
+#define KAR_DEFINE_HARDWARE_SPECIFIC_CONFIG_PTR_MULT(mod, inst) \
+    S12 ## mod ## _ConfigType const * const mod ## _HardwareSpecificConfigPtr ## inst
 
 #if defined(__cplusplus)
 }

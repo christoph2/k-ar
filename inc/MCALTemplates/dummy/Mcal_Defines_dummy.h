@@ -38,9 +38,8 @@ extern "C"
 ** DIO-Defines.
 */
 #define DIO_PORT_A      ((Dio_PortType)0x00)
-#define DIO_PORT_B	((Dio_PortType)0x01)
-#define DIO_PORT_C	((Dio_PortType)0x02)
-
+#define DIO_PORT_B      ((Dio_PortType)0x01)
+#define DIO_PORT_C      ((Dio_PortType)0x02)
 
 #define DIO_CHANNEL_A_0 ((Dio_ChannelType)0x00)
 #define DIO_CHANNEL_A_1 ((Dio_ChannelType)0x01)
@@ -99,12 +98,11 @@ extern "C"
 #define PORT_E_PIN_6    ((Port_PinType)0x16)
 #define PORT_E_PIN_7    ((Port_PinType)0x17)
 
-#define KAR_DEFINE_HARDWARE_SPECIFIC_CONFIG_PTR(mod)	void const * const mod ## _HardwareSpecificConfigPtr
+#define KAR_DEFINE_HARDWARE_SPECIFIC_CONFIG_PTR(mod) void const * const mod ## _HardwareSpecificConfigPtr
 
 #if defined(__cplusplus)
 }
 #endif  /* __cplusplus */
 
 #endif  /* __MCAL_DEFINES_DUMMY_H */
-
 

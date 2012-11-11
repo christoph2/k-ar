@@ -40,10 +40,10 @@ extern "C"
 #endif  /* __cplusplus */
 
 #if CPU_FAMILY == CPU12_HC12
-    /* hc12 */
+/* hc12 */
     #define KAR_MCAL_TEMPLATE_PATH  "MCALTemplates/hc12"
 #elif CPU_FAMILY == CPU12_S12
-    /** s12 */
+/** s12 */
     #define KAR_MCAL_TEMPLATE_PATH  "MCALTemplates/s12"
 #elif CPU_FAMILY == CPU12_S12X
     #error CPU12X not supported yet!
@@ -53,32 +53,62 @@ extern "C"
 ** todo: Must be configurable, we don't want to link unused Modules!!!
 */
 #define DEFINE_DIO_FUNCTIONS()                  \
-    const Dio_FunctionsType Dio_Functions[] = {       \
-        {                                           \
-            S12Mebi_WritePort,                      \
-            S12Mebi_ReadPort,                       \
-            S12Mebi_WriteChannel,                   \
-            S12Mebi_ReadChannel,                    \
-            S12Mebi_WriteChannelGroup,              \
-            S12Mebi_ReadChannelGroup,               \
-        },                                          \
-        {                                           \
-            S12Pim_WritePort,                       \
-            S12Pim_ReadPort,                        \
-            S12Pim_WriteChannel,                    \
-            S12Pim_ReadChannel,                     \
-            S12Pim_WriteChannelGroup,               \
-            S12Pim_ReadChannelGroup,                \
-        },                                          \
+    const Dio_FunctionsType Dio_Functions[] = { \
+        {                                       \
+            S12Mebi_WritePort,                  \
+            S12Mebi_ReadPort,                   \
+            S12Mebi_WriteChannel,               \
+            S12Mebi_ReadChannel,                \
+            S12Mebi_WriteChannelGroup,          \
+            S12Mebi_ReadChannelGroup,           \
+        },                                      \
+        {                                       \
+            S12Pim_WritePort,                   \
+            S12Pim_ReadPort,                    \
+            S12Pim_WriteChannel,                \
+            S12Pim_ReadChannel,                 \
+            S12Pim_WriteChannelGroup,           \
+            S12Pim_ReadChannelGroup,            \
+        },                                      \
     }
 
-#define DEFINE_DIO_PORT_TO_FUNCTIONS()                      \
-    static const Dio_PortMappingType Dio_Ports_to_Functions[] =  \
+
+#define DEFINE_DIO_PORT_TO_FUNCTIONS()                          \
+    static const Dio_PortMappingType Dio_Ports_to_Functions[] = \
     {                                                           \
-        {0, S12MEBI_PORT_A},                                     \
-        {0, S12MEBI_PORT_B},                                     \
-        {0, S12MEBI_PORT_E},                                     \
-        {0, S12MEBI_PORT_K},                                     \
+        {0, S12MEBI_PORT_A},                                    \
+        {0, S12MEBI_PORT_B},                                    \
+        {0, S12MEBI_PORT_E},                                    \
+        {0, S12MEBI_PORT_K},                                    \
+        {1, S12PIM_PORT_T },                                    \
+        {1, S12PIM_PORT_S },                                    \
+        {1, S12PIM_PORT_M },                                    \
+        {1, S12PIM_PORT_P },                                    \
+        {1, S12PIM_PORT_H },                                    \
+        {1, S12PIM_PORT_J },                                    \
+    }
+
+
+#define DIO_NUM_PORTS SIZEOF_ARRAY(Dio_Ports_to_Functions)
+
+#define DEFINE_PORT_FUNCTIONS()                   \
+    const Port_FunctionsType Port_Functions[] = { \
+        {                                         \
+            S12Mebi_SetPinDirection,              \
+        },                                        \
+        {                                         \
+            S12Pim_SetPinDirection,               \
+        },                                        \
+    }
+
+
+#define DEFINE_PORT_PORT_TO_FUNCTIONS()                           \
+    static const Port_PortMappingType Port_Ports_to_Functions[] = \
+    {                                                             \
+        {0, S12MEBI_PORT_A},                                      \
+        {0, S12MEBI_PORT_B},                                      \
+        {0, S12MEBI_PORT_E},                                      \
+        {0, S12MEBI_PORT_K},                                      \
         {1, S12PIM_PORT_T },                                      \
         {1, S12PIM_PORT_S },                                      \
         {1, S12PIM_PORT_M },                                      \
@@ -87,57 +117,31 @@ extern "C"
         {1, S12PIM_PORT_J },                                      \
     }
 
-#define DIO_NUM_PORTS SIZEOF_ARRAY(Dio_Ports_to_Functions)
 
-#define DEFINE_PORT_FUNCTIONS()             \
-    const Port_FunctionsType Port_Functions[] = { \
-        {                                       \
-            S12Mebi_SetPinDirection,            \
-        },                                      \
-        {                                       \
-            S12Pim_SetPinDirection,             \
-        },                                      \
-    }
-
-#define DEFINE_PORT_PORT_TO_FUNCTIONS()                         \
-    static const Port_PortMappingType Port_Ports_to_Functions[] =    \
-    {                                                               \
-        {0, S12MEBI_PORT_A},                                         \
-        {0, S12MEBI_PORT_B},                                         \
-        {0, S12MEBI_PORT_E},                                         \
-        {0, S12MEBI_PORT_K},                                         \
-        {1, S12PIM_PORT_T },                                          \
-        {1, S12PIM_PORT_S },                                          \
-        {1, S12PIM_PORT_M },                                          \
-        {1, S12PIM_PORT_P },                                          \
-        {1, S12PIM_PORT_H },                                          \
-        {1, S12PIM_PORT_J },                                          \
-    }
-
-#define KAR_IMPLEMENT_PORT_INIT()                                   \
-    _BEGIN_BLOCK                                                    \
-    S12Mebi_Init(ConfigPtr->Mebi);                                  \
-    S12Pim_Init(ConfigPtr->Pim);                                    \
+#define KAR_IMPLEMENT_PORT_INIT()  \
+    _BEGIN_BLOCK                   \
+    S12Mebi_Init(ConfigPtr->Mebi); \
+    S12Pim_Init(ConfigPtr->Pim);   \
     _END_BLOCK
 
-#define KAR_IMPLEMENT_PORT_REFRESH_DIRECTION()                      \
-    _BEGIN_BLOCK                                                    \
-    S12Pim_RefreshPortDirection(Port_Config->Pim);                  \
-    S12Mebi_RefreshPortDirection(Port_Config->Mebi);                \
+#define KAR_IMPLEMENT_PORT_REFRESH_DIRECTION()       \
+    _BEGIN_BLOCK                                     \
+    S12Pim_RefreshPortDirection(Port_Config->Pim);   \
+    S12Mebi_RefreshPortDirection(Port_Config->Mebi); \
     _END_BLOCK
 
-#define KAR_IMPLEMENT_PORT_SET_MODE()                               \
-    _BEGIN_BLOCK                                                    \
-    UNREFERENCED_PARAMETER(Pin);                                    \
-    UNREFERENCED_PARAMETER(Mode);                                   \
+#define KAR_IMPLEMENT_PORT_SET_MODE() \
+    _BEGIN_BLOCK                      \
+    UNREFERENCED_PARAMETER(Pin);      \
+    UNREFERENCED_PARAMETER(Mode);     \
     _END_BLOCK
 
 /*
 **  SPI.
 */
-#define KAR_IMPLEMENT_SPI_INIT()                                    \
-    _BEGIN_BLOCK                                                    \
-    S12Spi_Init(ConfigPtr->Cfg);                                    \
+#define KAR_IMPLEMENT_SPI_INIT() \
+    _BEGIN_BLOCK                 \
+    S12Spi_Init(ConfigPtr->Cfg); \
     _END_BLOCK
 
 #if defined(__cplusplus)

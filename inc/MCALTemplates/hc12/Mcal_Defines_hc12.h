@@ -240,7 +240,7 @@ extern "C"
 }
 #endif  /* __cplusplus */
 
-#define KAR_DEFINE_HARDWARE_SPECIFIC_CONFIG_PTR(mod)     HC12 ## mod ## _ConfigType const * const mod ## _HardwareSpecificConfigPtr
+#define KAR_DEFINE_HARDWARE_SPECIFIC_CONFIG_PTR(mod) HC12 ## mod ## _ConfigType const * const mod ## _HardwareSpecificConfigPtr
 
 #endif  /* __MCAL_DEFINES_S12_H */
 

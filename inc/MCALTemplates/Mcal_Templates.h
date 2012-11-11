@@ -25,21 +25,20 @@
 #if !defined(__MCAL_TEMPLATES_H)
 #define __MCAL_TEMPLATES_H
 
-
 #if defined(__cplusplus)
 extern "C"
 {
 #endif  /* __cplusplus */
 
 #if defined(KAR_DUMMY_TARGET)
-    /* dummy target */
-    #define KAR_MCAL_TEMPLATE_PATH  "MCALTemplates/dummy/Mcal_Templates_dummy.h"
+/* dummy target */
+    #define KAR_MCAL_TEMPLATE_PATH      "MCALTemplates/dummy/Mcal_Templates_dummy.h"
 #else
     #if CPU_FAMILY == CPU12_HC12
-        /* hc12 */
+/* hc12 */
         #define KAR_MCAL_TEMPLATE_PATH  "MCALTemplates/hc12/MCAL_Templates_hc12.h"
     #elif CPU_FAMILY == CPU12_S12
-        /** s12 */
+/** s12 */
         #define KAR_MCAL_TEMPLATE_PATH  "MCALTemplates/s12/MCAL_Templates_s12.h"
     #elif CPU_FAMILY == CPU12_S12X
         #error CPU12X not supported yet!
