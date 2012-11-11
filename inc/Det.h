@@ -26,6 +26,7 @@
 #define __DET_H
 
 #include "ComStack_Types.h"
+#include "Std_Types.h"
 
 #define DET_VENDOR_ID                   AR_VENDOR_ID
 #define DET_MODULE_ID                   AR_MODULE_ID_DET
