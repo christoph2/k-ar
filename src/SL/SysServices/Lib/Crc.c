@@ -417,54 +417,6 @@ uint32 Crc_Reflect(sint32 data, uint16 data_len)
 
     return ret;
 }
-
-
-#endif
-
-static const uint8  SAE_T0[4] = {0x00, 0x00, 0x00, 0x00};
-static const uint8  SAE_T1[4] = {0xff, 0xff, 0xff, 0xff};
-
-#if 0
-/*
-**
-**  Test-Vectors taken from: [1]-7.4.1 h)./Table 1.
-**
-*/
-typedef struct tagSAEJ1850_TestVectorType {
-    uint8   len;
-    uint8   expected_result;
-    uint8   data[9];
-} SAEJ1850_TestVectorType;
-
-static const SAEJ1850_TestVectorType SAEJ1850_TestVectors[] = {
-    {(uint8)0x04, (uint8)0x59, {(uint8)0x00, (uint8)0x00, (uint8)0x00, (uint8)0x00}},
-    {(uint8)0x03, (uint8)0x37, {(uint8)0xf1, (uint8)0x01, (uint8)0x83}},
-    {(uint8)0x04, (uint8)0x79, {(uint8)0x0f, (uint8)0xaa, (uint8)0x00, (uint8)0x55}},
-    {(uint8)0x04, (uint8)0xb8, {(uint8)0x00, (uint8)0xff, (uint8)0x55, (uint8)0x11}},
-    {(uint8)0x09, (uint8)0xcb, {(uint8)0x33, (uint8)0x22, (uint8)0x55, (uint8)0xaa}},
-    {(uint8)0xbb, (uint8)0xcc, {(uint8)0xdd, (uint8)0xee, (uint8)0xff}},
-    {(uint8)0x03, (uint8)0x8c, {(uint8)0x92, (uint8)0x6b, (uint8)0x55}},
-    {(uint8)0x04, (uint8)0x74, {(uint8)0xff, (uint8)0xff, (uint8)0xff, (uint8)0xff}},
-};
-
-void Crc_Test(void)
-{
-    uint32  res32;
-    uint16  res16;
-    uint8   res8;
-
-    res8   = Crc_CalculateCRC8(SAE_T0, 4, CRC_INITIAL_VALUE8);
-    res8   = Crc_CalculateCRC8(SAE_T1, 4, CRC_INITIAL_VALUE8);
-    res8   = Crc_CalculateCRC8(SAE_T1, 4, CRC_INITIAL_VALUE8);
-    res8   = Crc_CalculateCRC8(Crc_TestVector, 9, CRC_INITIAL_VALUE8);
-    res8   = Crc_CalculateCRC8(Crc_TestVector, 9, CRC_INITIAL_VALUE8);
-
-    res16 = Crc_CalculateCRC16(Crc_TestVector, 9, CRC_INITIAL_VALUE16);
-
-    res32 = Crc_CalculateCRC32(Crc_TestVector, 9, CRC_INITIAL_VALUE32);
-}
-
-
 #endif
 
 #define CRC_STOP_SEC_CODE
