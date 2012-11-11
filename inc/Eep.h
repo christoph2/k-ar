@@ -53,6 +53,20 @@ extern "C"
 #define EEP_SW_PATCH_VERSION            0
 #define EEP_VENDOR_API_INFIX
 
+/* Folgendes nur exemplarisch!!! Die Werte müssen vom entsprechenden Treiber geliefert werden. */
+#define EEP_ALLOWED_WRITE_CYCLES        10000
+#define EEP_ERASE_TIME                  0.00005
+#define EEP_ERASE_UNIT_SIZE             4
+#define EEP_ERASE_VALUE                 0xff
+#define EEP_MINIMUM_ADDRESS_SIZE        16
+#define EEP_MINIMUM_LENGTH_TYPE         8
+#define EEP_READ_UNIT_SIZE              1
+#define EEP_SPECIFIED_ERASE_CYCLES      10000
+#define EEP_TOTAL_SIZE                  0x1000
+#define EEP_WRITE_TIME                  0.00003
+#define EEP_WRITE_UNIT_SIZE             2
+
+
 /*
 **
 **  Service-IDs.
@@ -80,9 +94,7 @@ extern "C"
 #define EEP_E_UNINIT                    ((uint8)0x20)
 #define EEP_E_BUSY                      ((uint8)0x21)
 #if 0
-
 /* assigned by DEM */	
-
 #define EEP_E_ERASE_FAILED
 #define EEP_E_WRITE_FAILED
 #define EEP_E_READ_FAILED
@@ -105,12 +117,17 @@ typedef struct tagEep_ConfigType {
     uint8 dummy;
 } Eep_ConfigType;
 
+
+typedef struct tagEep_PublicInterface {
+    void (*Init)(Eep_ConfigType ConfigPtr);
+} Eep_PublicInterface;
+
 /*
 **  Global Functions.
 */
 FUNC(void, EEP_CODE) Eep_Init(
     P2CONST(Eep_ConfigType, AUTOMATIC, EEP_APPL_DATA) ConfigPtr
-    );
+);
 
 FUNC(void, EEP_CODE) Eep_SetMode(MemIf_ModeType Mode);
 
@@ -118,24 +135,24 @@ FUNC(Std_ReturnType, EEP_CODE) Eep_Read(
     Eep_AddressType EepromAddress,
     P2VAR(uint8, AUTOMATIC, EEP_APPL_DATA) DataBufferPtr,
     Eep_LengthType Length
-    );
+);
 
 FUNC(Std_ReturnType, EEP_CODE) Eep_Write(
     Eep_AddressType EepromAddress,
     P2CONST(uint8, AUTOMATIC, EEP_APPL_DATA) DataBufferPtr,
     Eep_LengthType Length
-    );
+);
 
 FUNC(Std_ReturnType, EEP_CODE) Eep_Erase(
     Eep_AddressType EepromAddress,
     Eep_LengthType Length
-    );
+);
 
 FUNC(Std_ReturnType, EEP_CODE) Eep_Compare(
     Eep_AddressType EepromAddress,
     P2CONST(uint8, AUTOMATIC, EEP_APPL_DATA) DataBufferPtr,
     Eep_LengthType Length
-    );
+);
 
 FUNC(void, EEP_CODE) Eep_Cancel(void);
 
@@ -150,11 +167,11 @@ FUNC(void, EEP_CODE) Eep_MainFunction(void);
 */
 #if EEP_GET_VERSION_INFO_API == STD_ON
 #define Eep_GetVersionInfo(vp) AR_GET_VERSION_INFO(EEP, vp)
-#endif /* GPT_GET_VERSION_INFO_API */
+#endif /* EEP_GET_VERSION_INFO_API */
+
 
 #if defined(__cplusplus)
 }
 #endif  /* __cplusplus */
 
 #endif  /* __EEP_H */
-
