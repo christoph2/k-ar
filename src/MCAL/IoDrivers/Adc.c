@@ -59,6 +59,8 @@ AR_IMPLEMENT_MODULE_STATE_VAR(Adc);
 #endif
 
 VAR(Adc_StatusType, STATIC) Adc_GroupStatus[ADC_NUMBER_OF_GROUPS];
+P2VAR(Adc_ValueGroupType, STATIC, ADC_APPL_DATA) Adc_ResultBufferPtr[ADC_NUMBER_OF_GROUPS];
+
 
 #define ADC_STOP_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
@@ -327,6 +329,7 @@ FUNC(Std_ReturnType, ADC_CODE) Adc_SetupResultBuffer(Adc_GroupType Group,
         return E_NOT_OK;
     }
 #endif
+    Adc_ResultBufferPtr[Group] = DataBufferPtr;
 
     return KAR_IMPLEMENT_ADC_SETUP_RESULT_BUFFER(Group, DataBufferPtr);
 }
@@ -341,6 +344,7 @@ STATIC void Adc_SetDefaultState(void)
 
     for (idx = (uint8)0; idx < ADC_NUMBER_OF_GROUPS; ++idx) {
         Adc_GroupStatus[idx] = ADC_IDLE;
+        Adc_ResultBufferPtr[idx] = NULL_PTR;
     }
 
 }
@@ -357,6 +361,17 @@ FUNC(Adc_StatusType, ADC_CODE) ADC_Ivis_GetGroupStatus(Adc_GroupType Group)
 }
 #endif
 
+#if 0
+ADC Result Buffer
+(ADC Streaming
+Buffer, ADC
+Stream Buffer)
+
+The user of the ADC Driver has to provide a buffer for every group. This buffer
+can hold multiple samples of the same group channel if streaming access mode
+is selected. If single access mode is selected one sample of each group channel
+is held in the buffer.
+#endif
 
 #define ADC_STOP_SEC_CODE
 #include "MemMap.h"
