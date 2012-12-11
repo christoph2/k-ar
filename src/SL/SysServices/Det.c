@@ -33,7 +33,6 @@
 */
 
 #include "Det.h"
-#include "Hw_Cfg.h"
 
 /*
 **  Local Types.
