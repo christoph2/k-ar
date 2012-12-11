@@ -127,7 +127,19 @@ KAR_IMPLEMENT_<Module>_<FunctionName>
     _BEGIN_BLOCK                    \
         S12Atd_DeInit(0);           \
         S12Atd_DeInit(1);           \
-    _END_BLOCK                      \
+    _END_BLOCK                      
+
+#define KAR_IMPLEMENT_ADC_START_GROUP_CONVERSION(Group)
+#define KAR_IMPLEMENT_ADC_STOP_GROUP_CONVERSION(Group)
+#define KAR_IMPLEMENT_ADC_READ_GROUP(Group, DataBufferPtr)                  (E_OK)
+#define KAR_IMPLEMENT_ADC_ENABLE_HARDWARE_TRIGGER(Group)
+#define KAR_IMPLEMENT_ADC_DISABLE_HARDWARE_TRIGGER(Group)
+#define KAR_IMPLEMENT_ADC_ENABLE_GROUP_NOTIFICATION(Group)
+#define KAR_IMPLEMENT_ADC_DISABLE_GROUP_NOTIFICATION(Group)
+#define KAR_IMPLEMENT_ADC_GET_GROUP_STATUS(Group)                           (ADC_COMPLETED)
+#define KAR_IMPLEMENT_ADC_GET_STREAM_LAST_POINTER(Group, PtrToSamplePtr)    ((Adc_StreamNumSampleType)1)
+#define KAR_IMPLEMENT_ADC_SETUP_RESULT_BUFFER(Group, DataBufferPtr)         (E_OK)
+
 /*
 **  PORT.
 */

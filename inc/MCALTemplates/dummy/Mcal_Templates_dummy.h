@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -114,6 +114,23 @@ extern "C"
 
 
 #endif
+
+/*
+**  ADC
+*/
+#define KAR_IMPLEMENT_ADC_INIT(ConfigPtr)
+#define KAR_IMPLEMENT_ADC_DEINIT()
+#define KAR_IMPLEMENT_ADC_START_GROUP_CONVERSION(Group)
+#define KAR_IMPLEMENT_ADC_STOP_GROUP_CONVERSION(Group)
+#define KAR_IMPLEMENT_ADC_READ_GROUP(Group, DataBufferPtr)                  (E_OK)
+#define KAR_IMPLEMENT_ADC_ENABLE_HARDWARE_TRIGGER(Group)
+#define KAR_IMPLEMENT_ADC_DISABLE_HARDWARE_TRIGGER(Group)
+#define KAR_IMPLEMENT_ADC_ENABLE_GROUP_NOTIFICATION(Group)
+#define KAR_IMPLEMENT_ADC_DISABLE_GROUP_NOTIFICATION(Group)
+#define KAR_IMPLEMENT_ADC_GET_GROUP_STATUS(Group)                           (ADC_COMPLETED)
+#define KAR_IMPLEMENT_ADC_GET_STREAM_LAST_POINTER(Group, PtrToSamplePtr)    ((Adc_StreamNumSampleType)1)
+#define KAR_IMPLEMENT_ADC_SETUP_RESULT_BUFFER(Group, DataBufferPtr)         (E_OK)
+
 
 /*
 **  PORT.

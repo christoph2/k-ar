@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2011 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -98,7 +98,9 @@ extern "C"
 #define PORT_E_PIN_6    ((Port_PinType)0x16)
 #define PORT_E_PIN_7    ((Port_PinType)0x17)
 
-#define KAR_DEFINE_HARDWARE_SPECIFIC_CONFIG_PTR(mod) void const * const mod ## _HardwareSpecificConfigPtr
+#define KAR_DEFINE_HARDWARE_SPECIFIC_CONFIG_PTR(mod)            void const * const mod ## _HardwareSpecificConfigPtr
+#define KAR_DEFINE_HARDWARE_SPECIFIC_CONFIG_PTR_MULT(mod, inst) void const * const mod ## _HardwareSpecificConfigPtr ## inst
+
 
 #if defined(__cplusplus)
 }
