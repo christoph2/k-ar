@@ -2,7 +2,7 @@
  * k_dk - Driver Kit for k_os (Konnex Operating-System based on the
  * OSEK/VDX-Standard).
  *
- * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2014 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -32,7 +32,7 @@ extern "C"
 #endif  /* __cplusplus */
 
 #include "AR_ModuleIDs.h"
-#include "Std_Macros.h"
+#include "kdk/common/Std_Macros.h"
 
 /*
 **
