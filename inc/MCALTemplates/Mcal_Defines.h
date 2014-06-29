@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2014 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -32,23 +32,25 @@ extern "C"
 
 #if defined(KAR_DUMMY_TARGET)
 /* dummy target */
-    #define KAR_MCAL_DEFINES_PATH       "MCALTemplates/dummy/Mcal_Defines_dummy.h"
+    #include "MCALTemplates/dummy/Mcal_Defines_dummy.h"
 #else
     #if CPU_FAMILY == CPU12_HC12
 /* hc12 */
-        #define KAR_MCAL_DEFINES_PATH   "MCALTemplates/hc12/MCAL_Defines_hc12.h"
+        #include "MCALTemplates/hc12/MCAL_Defines_hc12.h"
     #elif CPU_FAMILY == CPU12_S12
 /** s12 */
-        #define KAR_MCAL_DEFINES_PATH   "MCALTemplates/s12/MCAL_Defines_s12.h"
+        #include "MCALTemplates/s12/MCAL_Defines_s12.h"
     #elif CPU_FAMILY == CPU12_S12X
         #error CPU12X not supported yet!
+    #elif CPU_FAMILY == COLDFIRE
+        #include "MCALTemplates/mcf5255/MCAL_Defines_mcf5255.h"
     #endif
 #endif
 
-#include KAR_MCAL_DEFINES_PATH
 
 #if defined(__cplusplus)
 }
 #endif  /* __cplusplus */
 
 #endif  /* __MCAL_DEFINES_H */
+
