@@ -143,6 +143,13 @@ KAR_IMPLEMENT_<Module>_<FunctionName>
 /*
 **  PORT.
 */
+
+#if 0
+// Config.
+S12Pim_ConfigType const *   Pim;
+S12Mebi_ConfigType const *  Mebi;
+#endif
+
 #define KAR_IMPLEMENT_PORT_INIT()  \
     _BEGIN_BLOCK                   \
     S12Mebi_Init(ConfigPtr->Mebi); \

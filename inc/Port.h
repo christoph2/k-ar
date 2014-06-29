@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2014 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -87,8 +87,7 @@
  */
 
 typedef struct tagPort_ConfigType {
-    S12Pim_ConfigType const *   Pim;
-    S12Mebi_ConfigType const *  Mebi;
+    KAR_DEFINE_HARDWARE_SPECIFIC_CONFIG_PTR(Port);
 } Port_ConfigType;
 
 typedef uint8 Port_PinType;
@@ -111,7 +110,7 @@ typedef enum tagPort_PinDirectionType {
 #define PORT_PIN_MODE_ICU       ((uint8)0x06)
 #define PORT_PIN_MODE_LIN       ((uint8)0x07)
 #define PORT_PIN_MODE_MEM       ((uint8)0x08)
-/* #define PORT_PIN_MODE_MEM	((uint8)0x09) */
+/* #define PORT_PIN_MODE_MEM    ((uint8)0x09) */
 #define PORT_PIN_MODE_PWM       ((uint8)0x0a)
 #define PORT_PIN_MODE_SPI       ((uint8)0x0b)
 
