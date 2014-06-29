@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2014 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -29,10 +29,10 @@
 **  NOTE: This file is handcrafted, future versions will be generated.
 */
 
-#include "mcu/s12/inc/S12_Atd.h"
-#include "mcu/s12/inc/S12_Mebi.h"
-#include "mcu/s12/inc/S12_Pim.h"
-#include "mcu/s12/inc/S12_Spi.h"
+#include "mcu/s12/S12_Atd.h"
+#include "mcu/s12/S12_Mebi.h"
+#include "mcu/s12/S12_Pim.h"
+#include "mcu/s12/S12_Spi.h"
 
 #if defined(__cplusplus)
 extern "C"
@@ -127,7 +127,7 @@ KAR_IMPLEMENT_<Module>_<FunctionName>
     _BEGIN_BLOCK                    \
         S12Atd_DeInit(0);           \
         S12Atd_DeInit(1);           \
-    _END_BLOCK                      
+    _END_BLOCK
 
 #define KAR_IMPLEMENT_ADC_START_GROUP_CONVERSION(Group)
 #define KAR_IMPLEMENT_ADC_STOP_GROUP_CONVERSION(Group)
