@@ -1,7 +1,7 @@
 /*
    k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
 
-   (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
+   (C) 2007-2014 by Christoph Schueler <github.com/Christoph2,
                                        cpu12.gems@googlemail.com>
 
    All Rights Reserved
@@ -24,7 +24,7 @@
 #if !defined(__COMSTACK_TYPES_H)
 #define __COMSTACK_TYPES_H
 
-#include "Std_Types.h"
+#include "kdk/common/Std_Types.h"
 
 #define COMSTACK_TYPES_VENDOR_ID        1
 #define COMSTACK_TYPES_MODULE_ID        80

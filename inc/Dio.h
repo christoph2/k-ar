@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2014 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -26,7 +26,7 @@
 #define __DIO_H
 
 #include "K_Ar.h"
-#include "Std_Types.h"
+#include "kdk/common/Std_Types.h"
 #include "MCALTemplates/Mcal_Defines.h"
 #include "Dio_Cfg.h"
 

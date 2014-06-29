@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2014 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -37,17 +37,17 @@ extern "C"
 #define MEMIF_TYPES_VENDOR_ID           AR_VENDOR_ID
 #define MEMIF_TYPES_MODULE_ID           AR_MODULE_ID_MEMIF_TYPES
 #define MEMIF_TYPES_INSTANCE_ID         0
-#define MEMIF_TYPES_AR_MAJOR_VERSION	3
-#define MEMIF_TYPES_AR_MINOR_VERSION	1
-#define MEMIF_TYPES_AR_PATCH_VERSION	0
-#define MEMIF_TYPES_SW_MAJOR_VERSION	1
-#define MEMIF_TYPES_SW_MINOR_VERSION	0
-#define MEMIF_TYPES_SW_PATCH_VERSION	0
-#define MEMIF_TYPES_VENDOR_API_INFIX	
+#define MEMIF_TYPES_AR_MAJOR_VERSION    3
+#define MEMIF_TYPES_AR_MINOR_VERSION    1
+#define MEMIF_TYPES_AR_PATCH_VERSION    0
+#define MEMIF_TYPES_SW_MAJOR_VERSION    1
+#define MEMIF_TYPES_SW_MINOR_VERSION    0
+#define MEMIF_TYPES_SW_PATCH_VERSION    0
+#define MEMIF_TYPES_VENDOR_API_INFIX
 
 /*
 ** Global Types.
-*/    
+*/
 /* Denotes the current status of the underlying abstraction module and device drive. */
 typedef enum tagMemIf_StatusType {
     /* The underlying abstraction module or device driver has not been initialized (yet). */

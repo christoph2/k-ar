@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2014 by Christoph Schueler <github.com/Christoph2,
  *                                     cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -26,7 +26,7 @@
 #define __DEM_H
 
 /* #include "Dem_Cfg.h" */
-#include "Std_Types.h"
+#include "kdk/common/Std_Types.h"
 #include "Dem_IntErrId.h"
 
 

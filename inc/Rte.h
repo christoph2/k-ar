@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2010 by Christoph Schueler <chris@konnex-tools.de>
+ * (C) 2007-2014 by Christoph Schueler <chris@konnex-tools.de>
  *
  * All Rights Reserved
  *
@@ -27,7 +27,7 @@
 extern "C" {
 #endif  /* __cplusplus */
 
-#include "Std_Types.h"
+#include "kdk/common/Std_Types.h"
 
 #define RTE_E_OK                ((Std_ReturnType)0)
 #define RTE_E_INVALID           ((Std_ReturnType)1)

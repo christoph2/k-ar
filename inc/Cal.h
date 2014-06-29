@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2009 by Christoph Schueler <chris@konnex-tools.de,
+ * (C) 2007-2014 by Christoph Schueler <chris@konnex-tools.de,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -30,7 +30,8 @@
 **
 */
 
-#include "Std_Types.h"
+#include "kdk/common/Std_Types.h"
+
 
 /*
 **  Global Defines.

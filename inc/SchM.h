@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2009 by Christoph Schueler <chris@konnex-tools.de>
+ * (C) 2007-2014 by Christoph Schueler <chris@konnex-tools.de>
  *
  * All Rights Reserved
  *
@@ -23,7 +23,7 @@
 #if !defined(__SCHM_H)
 #define __SCHM_H
 
-#include "Std_Types.h"
+#include "kdk/common/Std_Types.h"
 
 #endif /* __SCHM_H */
 

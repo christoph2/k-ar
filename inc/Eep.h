@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2014 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -26,7 +26,7 @@
 #if !defined(__EEP_H)
 #define __EEP_H
 
-#include "Std_Types.h"
+#include "kdk/common/Std_Types.h"
 #include "Eep_Cfg.h"
 
 #if 0
@@ -94,7 +94,7 @@ extern "C"
 #define EEP_E_UNINIT                    ((uint8)0x20)
 #define EEP_E_BUSY                      ((uint8)0x21)
 #if 0
-/* assigned by DEM */	
+/* assigned by DEM */
 #define EEP_E_ERASE_FAILED
 #define EEP_E_WRITE_FAILED
 #define EEP_E_READ_FAILED

@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2014 by Christoph Schueler <github.com/Christoph2,
  *                                     cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -26,7 +26,6 @@
 #define __DET_H
 
 #include "ComStack_Types.h"
-#include "Std_Types.h"
 
 #define DET_VENDOR_ID                   AR_VENDOR_ID
 #define DET_MODULE_ID                   AR_MODULE_ID_DET

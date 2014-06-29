@@ -1,7 +1,7 @@
 /*
  * k_os (Konnex Operating-System based on the OSEK/VDX-Standard).
  *
- * (C) 2007-2012 by Christoph Schueler <github.com/Christoph2,
+ * (C) 2007-2014 by Christoph Schueler <github.com/Christoph2,
  *                                      cpu12.gems@googlemail.com>
  *
  * All Rights Reserved
@@ -30,7 +30,7 @@ extern "C"
 {
 #endif  /* __cplusplus */
 
-#include "Std_Types.h"
+#include "kdk/common/Std_Types.h"
 #include "MemIf_Cfg.h"
 
 /* TODO: Config!!! */
