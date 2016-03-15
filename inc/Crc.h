@@ -77,13 +77,13 @@ FUNC(uint8, CRC_CODE) Crc_CalculateCRC8(
 FUNC(uint16, CRC_CODE) Crc_CalculateCRC16(
     P2CONST(uint8, AUTOMATIC, CRC_APPL_DATA) Crc_DataPtr,
     uint32 Crc_Length,
-    uint8 Crc_StartValue16
+    uint16 Crc_StartValue16
     );
 
 FUNC(uint32, CRC_CODE) Crc_CalculateCRC32(
     P2CONST(uint8, AUTOMATIC, CRC_APPL_DATA) Crc_DataPtr,
     uint32 Crc_Length,
-    uint8 Crc_StartValue32
+    uint32 Crc_StartValue32
     );
 
 
